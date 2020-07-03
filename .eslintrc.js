@@ -17,11 +17,11 @@ module.exports = {
         'react',
     ],
     rules: {
+        indent: ['error', 4],
+        'func-names': 0,
         'react/jsx-filename-extension': [1, {
             extensions: ['.js', '.jsx'],
         }],
-        'func-names': 0,
-        indent: ['error', 4],
         'react/jsx-indent': ['error', 4],
         'react/jsx-indent-props': ['error', 4],
         'linebreak-style': 0,
