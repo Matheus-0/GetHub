@@ -1,6 +1,16 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
+    buttonText: {
+        color: 'white',
+        fontSize: 15,
+    },
+    gradientButton: {
+        alignItems: 'center',
+        borderRadius: 5,
+        marginTop: 10,
+        padding: 15,
+    },
     input: {
         backgroundColor: 'white',
         borderRadius: 5,
