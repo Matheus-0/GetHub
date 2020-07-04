@@ -1,6 +1,8 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+
+import LoginForm from '../../components/LoginForm';
 
 import colors from '../../data/colors';
 import styles from './styles';
@@ -16,7 +18,7 @@ export default function LoginScreen() {
                 end={[0.7, 0.7]}
                 style={styles.gradient}
             />
-            <Text style={styles.text}>Hello, LoginScreen!</Text>
+            <LoginForm />
         </View>
     );
 }
