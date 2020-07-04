@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, TextInput, View } from 'react-native';
+import { Text, TextInput, TouchableHighlight, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import styles from './styles';
@@ -19,14 +19,19 @@ const LoginForm = ({ style }) => (
             secureTextEntry
             style={styles.input}
         />
-        <LinearGradient
-            colors={['#555fa0', '#695596', '#503769']}
-            style={styles.gradientButton}
+        <TouchableHighlight
+            onPress={() => { alert('Test!'); }}
+            style={styles.touchable}
         >
-            <Text style={styles.buttonText}>
-                Log In
-            </Text>
-        </LinearGradient>
+            <LinearGradient
+                colors={['#555fa0', '#695596', '#503769']}
+                style={styles.gradientButton}
+            >
+                <Text style={styles.buttonText}>
+                    Log In
+                </Text>
+            </LinearGradient>
+        </TouchableHighlight>
     </View>
 );
 

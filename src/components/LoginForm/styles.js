@@ -8,7 +8,6 @@ const styles = StyleSheet.create({
     gradientButton: {
         alignItems: 'center',
         borderRadius: 5,
-        marginTop: 10,
         padding: 15,
     },
     input: {
@@ -22,6 +21,10 @@ const styles = StyleSheet.create({
             height: 1,
             width: 1,
         },
+    },
+    touchable: {
+        borderRadius: 5,
+        marginTop: 10,
     },
 });
 
