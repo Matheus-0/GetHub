@@ -7,8 +7,18 @@ import styles from './styles';
 // eslint-disable-next-line react/prop-types
 const LoginForm = ({ style }) => (
     <View style={style}>
-        <TextInput elevation={5} placeholder="Username or email address" style={styles.input} />
-        <TextInput elevation={5} placeholder="Password" style={styles.input} />
+        <TextInput
+            autoCapitalize="none"
+            elevation={5}
+            placeholder="Username or email address"
+            style={styles.input}
+        />
+        <TextInput
+            elevation={5}
+            placeholder="Password"
+            secureTextEntry
+            style={styles.input}
+        />
         <LinearGradient
             colors={['#555fa0', '#695596', '#503769']}
             style={styles.gradientButton}
