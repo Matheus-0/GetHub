@@ -1,6 +1,9 @@
 import { Dimensions, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
+    form: {
+        width: '80%',
+    },
     gradient: {
         position: 'absolute',
         left: 0,

@@ -18,7 +18,7 @@ export default function LoginScreen() {
                 end={[0.7, 0.7]}
                 style={styles.gradient}
             />
-            <LoginForm />
+            <LoginForm style={styles.form} />
         </View>
     );
 }
