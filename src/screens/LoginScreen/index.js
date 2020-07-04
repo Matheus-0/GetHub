@@ -12,10 +12,10 @@ export default function LoginScreen() {
         <View style={styles.screen}>
             <LinearGradient
                 colors={[
-                    colors.softLilac, colors.hardYellow,
+                    colors.hardYellow, colors.softLilac,
                 ]}
-                start={[0.4, 0.1]}
-                end={[0.7, 0.7]}
+                start={[0.6, 0.3]}
+                end={[0.3, 0.7]}
                 style={styles.gradient}
             />
             <LoginForm style={styles.form} />
