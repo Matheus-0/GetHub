@@ -23,6 +23,7 @@ const LoginForm = ({ style }) => (
             <Feather name="lock" size={32} color="black" />
             <TextInput
                 autoCapitalize="none"
+                secureTextEntry
                 placeholder="Username or email address"
                 style={styles.input}
                 underlineColorAndroid="transparent"
