@@ -1,24 +1,35 @@
 import React from 'react';
 import { Text, TextInput, TouchableHighlight, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { Feather } from '@expo/vector-icons';
 
 import styles from './styles';
 
 // eslint-disable-next-line react/prop-types
 const LoginForm = ({ style }) => (
     <View style={style}>
-        <TextInput
-            autoCapitalize="none"
-            elevation={5}
-            placeholder="Username or email address"
-            style={styles.input}
-        />
-        <TextInput
-            elevation={5}
-            placeholder="Password"
-            secureTextEntry
-            style={styles.input}
-        />
+        <View style={styles.inputView}>
+            <Feather name="user" size={32} color="black" />
+            <TextInput
+                autoCapitalize="none"
+                placeholder="Username or email address"
+                style={styles.input}
+                underlineColorAndroid="transparent"
+                inlineImageLeft="username"
+            />
+        </View>
+
+        <View style={styles.inputView}>
+            <Feather name="lock" size={32} color="black" />
+            <TextInput
+                autoCapitalize="none"
+                placeholder="Username or email address"
+                style={styles.input}
+                underlineColorAndroid="transparent"
+                inlineImageLeft="username"
+            />
+        </View>
+         
         <TouchableHighlight
             onPress={() => { alert('Test!'); }}
             style={styles.touchable}
