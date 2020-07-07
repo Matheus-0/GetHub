@@ -10,6 +10,13 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         padding: 15,
     },
+    input: {
+        backgroundColor: 'white',
+        flex: 1,
+        padding: 10,
+        paddingLeft: 5,
+        borderRadius: 5,
+    },
     inputView: {
         flexDirection: 'row',
         justifyContent: 'center',
@@ -18,14 +25,8 @@ const styles = StyleSheet.create({
         paddingLeft: 5,
         height: 50,
         borderRadius: 5,
-        margin: 10,
-    },
-    input: {
-        backgroundColor: 'white',
-        flex: 1,
-        padding: 10,
-        paddingLeft: 5,
-        borderRadius: 5,
+        marginBottom: 10,
+        marginTop: 10,
     },
     touchable: {
         borderRadius: 5,

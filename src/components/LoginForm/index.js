@@ -24,13 +24,13 @@ const LoginForm = ({ style }) => (
             <TextInput
                 autoCapitalize="none"
                 secureTextEntry
-                placeholder="Username or email address"
+                placeholder="Password"
                 style={styles.input}
                 underlineColorAndroid="transparent"
                 inlineImageLeft="username"
             />
         </View>
-         
+
         <TouchableHighlight
             onPress={() => { alert('Test!'); }}
             style={styles.touchable}
