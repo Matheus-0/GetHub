@@ -11,12 +11,13 @@ function Routes() {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                <Stack.Screen 
-                    name="Login" 
+                <Stack.Screen
+                    name="Login"
                     component={LoginScreen}
                     options={{
                         headerShown: false,
-                    }}/>
+                    }}
+                />
             </Stack.Navigator>
         </NavigationContainer>
     );
