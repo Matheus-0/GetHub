@@ -9,25 +9,23 @@ import styles from './styles';
 const LoginForm = ({ style }) => (
     <View style={style}>
         <View style={styles.inputView}>
-            <Feather name="user" size={32} color="black" />
+            <Feather name="user" size={28} color="black" />
             <TextInput
                 autoCapitalize="none"
                 placeholder="Username or email address"
                 style={styles.input}
                 underlineColorAndroid="transparent"
-                inlineImageLeft="username"
             />
         </View>
 
         <View style={styles.inputView}>
-            <Feather name="lock" size={32} color="black" />
+            <Feather name="lock" size={28} color="black" />
             <TextInput
                 autoCapitalize="none"
                 secureTextEntry
                 placeholder="Password"
                 style={styles.input}
                 underlineColorAndroid="transparent"
-                inlineImageLeft="username"
             />
         </View>
 
