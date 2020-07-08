@@ -1,16 +1,23 @@
 const colors = {
-    softLilac: '#d700ff',
-    hardLilac: '#be00ff',
-    softBlue: '#00b9ff',
-    hardBlue: '#001eff',
+    // Shades of blue
     darkBlue: '#0a1932',
-    softYellow: '#fff055',
-    hardYellow: '#ffb900',
+    hardBlue: '#001eff',
+    softBlue: '#00b9ff',
+    // Shades of green
+    green: '#41ff2d',
+    // Shades of lilac
+    hardLilac: '#be00ff',
+    softLilac: '#d700ff',
+    // Shades of orange
     softOrange: '#ff911e',
+    // Shades of purple
+    hardPurple: '#8c1eff',
+    // Shades of red
     hardRed: '#ff2873',
     softRed: '#ff2d2d',
-    hardPurple: '#8c1eff',
-    green: '#41ff2d',
+    // Shades of yellow
+    hardYellow: '#ffb900',
+    softYellow: '#fff055',
 };
 
 export default colors;
