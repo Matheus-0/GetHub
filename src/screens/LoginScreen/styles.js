@@ -11,6 +11,14 @@ const styles = StyleSheet.create({
         top: 0,
         height: Dimensions.get('window').height,
     },
+    noAccountButton: {
+        alignSelf: 'center',
+        bottom: 20,
+        padding: 10,
+    },
+    noAccountText: {
+        color: 'white',
+    },
     screen: {
         flex: 1,
         alignItems: 'center',

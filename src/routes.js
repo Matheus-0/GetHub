@@ -10,6 +10,7 @@ const Stack = createStackNavigator(
     
 );
 
+// eslint-disable-next-line react/prop-types
 function Routes({ isFirstLaunch }) {
     return (
         <NavigationContainer>

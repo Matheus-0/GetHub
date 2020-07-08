@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { Text, TouchableHighlight, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import LoginForm from '../../components/LoginForm';
@@ -9,16 +9,27 @@ import styles from './styles';
 
 export default function LoginScreen() {
     return (
-        <View style={styles.screen}>
-            <LinearGradient
-                colors={[
-                    colors.hardYellow, colors.softLilac,
-                ]}
-                start={[0.6, 0.3]}
-                end={[0.3, 0.7]}
-                style={styles.gradient}
-            />
-            <LoginForm style={styles.form} />
-        </View>
+        <>
+            <View style={styles.screen}>
+                <LinearGradient
+                    colors={[
+                        colors.hardYellow, colors.softLilac,
+                    ]}
+                    start={[0.6, 0.3]}
+                    end={[0.3, 0.7]}
+                    style={styles.gradient}
+                />
+                <LoginForm style={styles.form} />
+            </View>
+            <TouchableHighlight
+                style={styles.noAccountButton}
+                onPress={() => alert('Pressed!')}
+                underlayColor="transparent"
+            >
+                <Text style={styles.noAccountText}>
+                    Continue without an account
+                </Text>
+            </TouchableHighlight>
+        </>
     );
 }
