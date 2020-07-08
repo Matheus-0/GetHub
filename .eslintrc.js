@@ -24,6 +24,7 @@ module.exports = {
         }],
         'react/jsx-indent': ['error', 4],
         'react/jsx-indent-props': ['error', 4],
+        'react/style-prop-object': 0,
         'linebreak-style': 0,
     },
 };

@@ -1,5 +1,4 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import AsyncStorage from '@react-native-community/async-storage';
 
@@ -8,6 +7,7 @@ import Routes from './src/routes';
 export default class App extends React.Component {
     constructor(props) {
         super(props);
+
         this.state = {
             firstLaunch: false,
         };
@@ -16,6 +16,7 @@ export default class App extends React.Component {
     async componentDidMount() {
         try {
             const firstLaunch = await AsyncStorage.getItem('firstLaunch');
+
             if (!firstLaunch) {
                 this.setState({ firstLaunch: true });
             } else {
@@ -27,10 +28,12 @@ export default class App extends React.Component {
     }
 
     render() {
+        const { firstLaunch } = this.state;
+
         return (
             <>
                 <StatusBar style="light" />
-                <Routes isLoggedIn={this.state.firstLaunch} />
+                <Routes isLoggedIn={firstLaunch} />
             </>
         );
     }
