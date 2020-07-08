@@ -6,13 +6,15 @@ import { createStackNavigator } from '@react-navigation/stack';
 import LoginScreen from './screens/LoginScreen';
 import Showcase from './screens/Showcase';
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator(
+    
+);
 
-function Routes({ isLoggedIn }) {
+function Routes({ isFirstLaunch }) {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                {isLoggedIn ? (
+                {isFirstLaunch ? (
                     <Stack.Screen
                         name="Login"
                         component={LoginScreen}

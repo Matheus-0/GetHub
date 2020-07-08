@@ -30,7 +30,7 @@ export default class App extends React.Component {
         return (
             <>
                 <StatusBar style="light" />
-                <Routes isLoggedIn={this.state.firstLaunch} />
+                <Routes isFirstLaunch={this.state.firstLaunch} />
             </>
         );
     }
