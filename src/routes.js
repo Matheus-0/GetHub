@@ -8,11 +8,12 @@ import Showcase from './screens/Showcase';
 
 const Stack = createStackNavigator();
 
-function Routes({ isLoggedIn }) {
+// eslint-disable-next-line react/prop-types
+function Routes({ isFirstLaunch }) {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                {isLoggedIn ? (
+                {isFirstLaunch ? (
                     <Stack.Screen
                         name="Login"
                         component={LoginScreen}
