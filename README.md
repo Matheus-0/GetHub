@@ -2,7 +2,7 @@
 
 An application used for seeing user information and repositories from GitHub.
 
-# Built With
+## Built With
 
 - [Expo](https://expo.io/)
 - [React Native](https://reactnative.dev/)
