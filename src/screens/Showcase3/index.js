@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 import styles from './styles';
 import Icon from './icon';
@@ -17,6 +18,19 @@ export default function LoginScreen({ navigation }) {
                 prevScreenName="ShowCase2"
                 nextScreenName={null}
             />
+            <TouchableOpacity
+                onPress={() => { alert('Go to Login') }}
+                style={styles.touchable}
+            >
+                <LinearGradient
+                    colors={['#54521a', '#fa4a51', '#313131']}
+                    style={styles.gradientButton}
+                >
+                    <Text style={styles.buttonText}>
+                        Start now!
+                    </Text>
+                </LinearGradient>
+            </TouchableOpacity>
         </View>
     );
 }

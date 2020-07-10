@@ -17,7 +17,7 @@ function Routes({ isFirstLaunch }) {
             <MainStack.Navigator>
                 {!isFirstLaunch ? (
                     <MainStack.Screen
-                        name="Login"
+                        name="LoginScreen"
                         component={LoginScreen}
                         options={{
                             headerShown: false,

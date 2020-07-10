@@ -14,6 +14,19 @@ const styles = StyleSheet.create({
         width: '80%',
         marginBottom: '20%',
     },
+    buttonText: {
+        color: 'white',
+        fontSize: 15,
+    },
+    gradientButton: {
+        alignItems: 'center',
+        borderRadius: 5,
+        padding: 15,
+    },
+    touchable: {
+        borderRadius: 5,
+        marginTop: 10,
+    },
 });
 
 export default styles;
