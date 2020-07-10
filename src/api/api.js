@@ -43,6 +43,26 @@ export async function getUser(username) {
     }
 }
 
+export async function getRepository(owner, repository) {
+    try {
+        const response = await api.get(`repos/${owner}/${repository}`);
+
+        return response.data;
+    } catch (error) {
+        return null;
+    }
+}
+
+export async function getUserRepositories(username) {
+    try {
+        const response = await api.get(`users/${username}/repos`);
+
+        return response.data;
+    } catch (error) {
+        return null;
+    }
+}
+
 export async function getFollowers(username) {
     try {
         const response = await api.get(`users/${username}/followers`);
