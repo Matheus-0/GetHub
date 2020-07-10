@@ -1,7 +1,5 @@
 import React from 'react';
-import Svg, {
-    Path, G, Defs, ClipPath, Rect,
-} from 'react-native-svg';
+import Svg, { Path } from 'react-native-svg';
 
 export default function Icon() {
     return (
