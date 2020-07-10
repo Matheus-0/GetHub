@@ -15,7 +15,7 @@ export default function LoginScreen({ navigation }) {
             <PageSelector page={2} />
             <SwitchShowcase
                 navigation={navigation}
-                prevScreenName="ShowCase2"
+                prevScreenName="Showcase2"
                 nextScreenName={null}
             />
         </View>
