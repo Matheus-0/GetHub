@@ -4,6 +4,7 @@ const styles = StyleSheet.create({
     buttons: {
         flexDirection: 'row',
         justifyContent: 'space-around',
+        marginTop: 15,
         width: '100%',
     },
 });
