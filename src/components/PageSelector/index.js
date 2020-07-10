@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 
 import colors from '../../data/colors';
 import styles from './styles';
@@ -17,9 +17,8 @@ function Selector({ color = colors.green }) {
 export default function PageSelector({ page }) {
     return (
         <View style={styles.pageSelector}>
-            {showcaseScreens.map((value, index) => {
-                return (page === index) ? <Selector key={index} /> : <Selector key={index} color="white" />;
-            })}
+            {/* eslint-disable-next-line react/no-array-index-key */}
+            {showcaseScreens.map((value, index) => ((page === index) ? <Selector key={index} /> : <Selector key={index} color="white" />))}
         </View>
     );
 }

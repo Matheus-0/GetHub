@@ -12,7 +12,7 @@ const rightActionHandler = (nextScreenName, navigation) => {
     if (nextScreenName) { return navigation.navigate(nextScreenName); }
 };
 
-export default function SwitchShowcase({ navigation, prevScreenName = null, nextScreenName = null, }) {
+export default function SwitchShowcase({ navigation, prevScreenName = null, nextScreenName = null }) {
     return (
         <View style={styles.buttons}>
             {prevScreenName && (
