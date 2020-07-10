@@ -26,5 +26,6 @@ module.exports = {
         'react/jsx-indent-props': ['error', 4],
         'react/style-prop-object': 0,
         'linebreak-style': 0,
+        'no-unused-vars': 0,
     },
 };

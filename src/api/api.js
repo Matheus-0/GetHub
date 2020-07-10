@@ -5,4 +5,18 @@ const api = axios.create({
     timeout: 10000,
 });
 
+async function searchUsers(username) {
+    try {
+        const response = await api.get('search/users', {
+            params: {
+                q: username,
+            },
+        });
+
+        return response.data;
+    } catch (error) {
+        return null;
+    }
+}
+
 export default api;
