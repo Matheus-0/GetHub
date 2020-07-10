@@ -5,7 +5,7 @@ const api = axios.create({
     timeout: 10000,
 });
 
-async function searchUsers(username) {
+export async function searchUsers(username) {
     try {
         const response = await api.get('search/users', {
             params: {
@@ -19,7 +19,7 @@ async function searchUsers(username) {
     }
 }
 
-async function searchRepositories(repository) {
+export async function searchRepositories(repository) {
     try {
         const response = await api.get('search/repositories', {
             params: {
@@ -33,9 +33,29 @@ async function searchRepositories(repository) {
     }
 }
 
-async function getUser(username) {
+export async function getUser(username) {
     try {
         const response = await api.get(`users/${username}`);
+
+        return response.data;
+    } catch (error) {
+        return null;
+    }
+}
+
+export async function getFollowers(username) {
+    try {
+        const response = await api.get(`users/${username}/followers`);
+
+        return response.data;
+    } catch (error) {
+        return null;
+    }
+}
+
+export async function getFollowing(username) {
+    try {
+        const response = await api.get(`users/${username}/following`);
 
         return response.data;
     } catch (error) {
