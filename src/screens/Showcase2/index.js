@@ -9,12 +9,12 @@ import SwitchShowcase from '../../components/SwitchShowcase';
 export default function LoginScreen({ navigation }) {
     return (
         <View style={styles.screen}>
-            <Text style={styles.description}>Find users and repositories on GitHub</Text>
+            <Text style={styles.description}>Check what is going on in your favorite repository</Text>
             <Icon />
-            <PageSelector page={0} />
+            <PageSelector page={1} />
             <SwitchShowcase 
                 navigation={navigation}
-                prevScreenName={'ShowCase1'}
+                prevScreenName={'Showcase1'}
                 nextScreenName={'Showcase3'} 
             />
         </View>
