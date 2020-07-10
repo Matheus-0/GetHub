@@ -19,4 +19,28 @@ async function searchUsers(username) {
     }
 }
 
+async function searchRepositories(repository) {
+    try {
+        const response = await api.get('search/repositories', {
+            params: {
+                q: repository,
+            },
+        });
+
+        return response.data;
+    } catch (error) {
+        return null;
+    }
+}
+
+async function getUser(username) {
+    try {
+        const response = await api.get(`users/${username}`);
+
+        return response.data;
+    } catch (error) {
+        return null;
+    }
+}
+
 export default api;
