@@ -2,7 +2,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import LoginScreen from './screens/LoginScreen';
+import SearchScreen from './screens/SearchScreen';
 import Showcase1 from './screens/Showcase1';
 import Showcase2 from './screens/Showcase2';
 import Showcase3 from './screens/Showcase3';
@@ -15,8 +15,8 @@ function Routes({ isFirstLaunch }) {
             <MainStack.Navigator>
                 {!isFirstLaunch ? (
                     <MainStack.Screen
-                        name="Login"
-                        component={LoginScreen}
+                        name="Search"
+                        component={SearchScreen}
                         options={{
                             headerShown: false,
                         }}

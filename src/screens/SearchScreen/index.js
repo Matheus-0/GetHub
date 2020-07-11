@@ -7,7 +7,7 @@ import LoginForm from '../../components/LoginForm';
 import colors from '../../data/colors';
 import styles from './styles';
 
-export default function LoginScreen() {
+export default function SearchScreen() {
     return (
         <>
             <View style={styles.screen}>
