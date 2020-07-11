@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -10,7 +9,6 @@ import Showcase3 from './screens/Showcase3';
 
 const MainStack = createStackNavigator();
 
-// eslint-disable-next-line react/prop-types
 function Routes({ isFirstLaunch }) {
     return (
         <NavigationContainer>

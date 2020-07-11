@@ -5,11 +5,11 @@ const styles = StyleSheet.create({
         width: '80%',
     },
     gradient: {
+        height: Dimensions.get('window').height,
         position: 'absolute',
         left: 0,
         right: 0,
         top: 0,
-        height: Dimensions.get('window').height,
     },
     noAccountButton: {
         alignSelf: 'center',
@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
         color: 'white',
     },
     screen: {
-        flex: 1,
         alignItems: 'center',
+        flex: 1,
         justifyContent: 'center',
     },
     text: {

@@ -3,8 +3,8 @@ import { Text, TouchableHighlight, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
-import styles from './styles';
 import colors from '../../data/colors';
+import styles from './styles';
 
 export default function NoConnectionScreen() {
     return (
@@ -29,7 +29,6 @@ export default function NoConnectionScreen() {
                 </Text>
             </View>
             <TouchableHighlight
-                onPress={() => { alert('Pressed!'); }}
                 style={styles.touchable}
             >
                 <LinearGradient

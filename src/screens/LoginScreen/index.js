@@ -23,7 +23,6 @@ export default function LoginScreen() {
             </View>
             <TouchableHighlight
                 style={styles.noAccountButton}
-                onPress={() => alert('Pressed!')}
                 underlayColor="transparent"
             >
                 <Text style={styles.noAccountText}>

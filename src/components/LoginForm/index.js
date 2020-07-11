@@ -7,7 +7,6 @@ import { Feather } from '@expo/vector-icons';
 
 import styles from './styles';
 
-// eslint-disable-next-line react/prop-types
 const LoginForm = ({ style }) => (
     <View style={style}>
         <View style={styles.inputView}>
@@ -32,7 +31,6 @@ const LoginForm = ({ style }) => (
         </View>
 
         <TouchableHighlight
-            onPress={() => { alert('Test!'); }}
             style={styles.touchable}
         >
             <LinearGradient
