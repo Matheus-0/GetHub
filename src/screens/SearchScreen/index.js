@@ -2,7 +2,7 @@ import React from 'react';
 import { Text, TouchableHighlight, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-import LoginForm from '../../components/LoginForm';
+import SearchForm from '../../components/SearchForm';
 
 import colors from '../../data/colors';
 import styles from './styles';
@@ -19,7 +19,7 @@ export default function SearchScreen() {
                     end={[0.3, 0.7]}
                     style={styles.gradient}
                 />
-                <LoginForm style={styles.form} />
+                <SearchForm style={styles.form} />
             </View>
         </>
     );

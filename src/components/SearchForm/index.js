@@ -7,24 +7,13 @@ import { Feather } from '@expo/vector-icons';
 
 import styles from './styles';
 
-const LoginForm = ({ style }) => (
+const SearchForm = ({ style }) => (
     <View style={style}>
         <View style={styles.inputView}>
-            <Feather name="user" size={28} color="black" />
+            <Feather name="search" size={28} color="black" />
             <TextInput
                 autoCapitalize="none"
-                placeholder="Username or email address"
-                style={styles.input}
-                underlineColorAndroid="transparent"
-            />
-        </View>
-
-        <View style={styles.inputView}>
-            <Feather name="lock" size={28} color="black" />
-            <TextInput
-                autoCapitalize="none"
-                secureTextEntry
-                placeholder="Password"
+                placeholder="Search for a repository or user"
                 style={styles.input}
                 underlineColorAndroid="transparent"
             />
@@ -38,11 +27,11 @@ const LoginForm = ({ style }) => (
                 style={styles.gradientButton}
             >
                 <Text style={styles.buttonText}>
-                    Log In
+                    Search
                 </Text>
             </LinearGradient>
         </TouchableHighlight>
     </View>
 );
 
-export default LoginForm;
+export default SearchForm;
