@@ -12,40 +12,35 @@ const MainStack = createStackNavigator();
 function Routes({ isFirstLaunch }) {
     return (
         <NavigationContainer>
-            <MainStack.Navigator>
-                {!isFirstLaunch ? (
-                    <MainStack.Screen
-                        name="Search"
-                        component={SearchScreen}
-                        options={{
-                            headerShown: false,
-                        }}
-                    />
-                ) : (
-                    <>
-                        <MainStack.Screen
-                            name="Showcase1"
-                            component={Showcase1}
-                            options={{
-                                headerShown: false,
-                            }}
-                        />
-                        <MainStack.Screen
-                            name="Showcase2"
-                            component={Showcase2}
-                            options={{
-                                headerShown: false,
-                            }}
-                        />
-                        <MainStack.Screen
-                            name="Showcase3"
-                            component={Showcase3}
-                            options={{
-                                headerShown: false,
-                            }}
-                        />
-                    </>
-                )}
+            <MainStack.Navigator initialRouteName={isFirstLaunch ? 'Showcase1' : 'Search'}>
+                <MainStack.Screen
+                    name="Showcase1"
+                    component={Showcase1}
+                    options={{
+                        headerShown: false,
+                    }}
+                />
+                <MainStack.Screen
+                    name="Showcase2"
+                    component={Showcase2}
+                    options={{
+                        headerShown: false,
+                    }}
+                />
+                <MainStack.Screen
+                    name="Showcase3"
+                    component={Showcase3}
+                    options={{
+                        headerShown: false,
+                    }}
+                />
+                <MainStack.Screen
+                    name="Search"
+                    component={SearchScreen}
+                    options={{
+                        headerShown: false,
+                    }}
+                />
             </MainStack.Navigator>
         </NavigationContainer>
     );
