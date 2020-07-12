@@ -21,14 +21,6 @@ export default function SearchScreen() {
                 />
                 <LoginForm style={styles.form} />
             </View>
-            <TouchableHighlight
-                style={styles.noAccountButton}
-                underlayColor="transparent"
-            >
-                <Text style={styles.noAccountText}>
-                    Continue without an account
-                </Text>
-            </TouchableHighlight>
         </>
     );
 }

@@ -11,14 +11,6 @@ const styles = StyleSheet.create({
         right: 0,
         top: 0,
     },
-    noAccountButton: {
-        alignSelf: 'center',
-        bottom: 20,
-        padding: 10,
-    },
-    noAccountText: {
-        color: 'white',
-    },
     screen: {
         alignItems: 'center',
         flex: 1,
