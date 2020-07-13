@@ -1,22 +1,23 @@
 import { StyleSheet } from 'react-native';
+
 import colors from '../../data/colors';
 
 const styles = StyleSheet.create({
-    selector: {
-        height: 20,
-        width: 20,
-        borderRadius: 10,
-        backgroundColor: colors.green,
-    },
     pageSelector: {
-        height: 40,
-        width: 100,
+        alignItems: 'center',
+        backgroundColor: colors.softRed,
         borderRadius: 50,
         flexDirection: 'row',
-        alignItems: 'center',
+        height: 40,
         justifyContent: 'space-around',
-        backgroundColor: colors.softRed,
         marginTop: 50,
+        width: 100,
+    },
+    selector: {
+        backgroundColor: colors.green,
+        borderRadius: 10,
+        height: 20,
+        width: 20,
     },
 });
 

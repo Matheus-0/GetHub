@@ -2,12 +2,12 @@ import React from 'react';
 import { Text, TouchableHighlight, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-import LoginForm from '../../components/LoginForm';
+import SearchForm from '../../components/SearchForm';
 
 import colors from '../../data/colors';
 import styles from './styles';
 
-export default function LoginScreen() {
+export default function SearchScreen() {
     return (
         <>
             <View style={styles.screen}>
@@ -19,17 +19,8 @@ export default function LoginScreen() {
                     end={[0.3, 0.7]}
                     style={styles.gradient}
                 />
-                <LoginForm style={styles.form} />
+                <SearchForm style={styles.form} />
             </View>
-            <TouchableHighlight
-                style={styles.noAccountButton}
-                onPress={() => alert('Pressed!')}
-                underlayColor="transparent"
-            >
-                <Text style={styles.noAccountText}>
-                    Continue without an account
-                </Text>
-            </TouchableHighlight>
         </>
     );
 }

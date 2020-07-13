@@ -6,14 +6,12 @@ import styles from './styles';
 
 const showcaseScreens = ['findUsers', 'seeGitInfo', 'seeRepositories'];
 
-// eslint-disable-next-line react/prop-types
 function Selector({ color = colors.green }) {
     return (
         <View style={[styles.selector, { backgroundColor: color }]} />
     );
 }
 
-// eslint-disable-next-line react/prop-types
 export default function PageSelector({ page }) {
     return (
         <View style={styles.pageSelector}>
