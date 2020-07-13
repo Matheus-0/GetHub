@@ -1,5 +1,6 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
+import { getNetworkStateAsync } from 'expo-network';
 import AsyncStorage from '@react-native-community/async-storage';
 
 import Routes from './src/routes';
@@ -10,12 +11,16 @@ export default class App extends React.Component {
 
         this.state = {
             firstLaunch: false,
+            networkAvailable: false,
         };
     }
 
     async componentDidMount() {
         try {
             const firstLaunch = await AsyncStorage.getItem('firstLaunch');
+            const { isConnected } = await getNetworkStateAsync();
+
+            this.setState({ networkAvailable: isConnected });
 
             if (!firstLaunch) {
                 this.setState({ firstLaunch: true });
@@ -28,12 +33,12 @@ export default class App extends React.Component {
     }
 
     render() {
-        const { firstLaunch } = this.state;
+        const { firstLaunch, networkAvailable } = this.state;
 
         return (
             <>
                 <StatusBar style="light" />
-                <Routes isFirstLaunch={firstLaunch} />
+                <Routes isFirstLaunch={firstLaunch} networkAvailable={networkAvailable} />
             </>
         );
     }
