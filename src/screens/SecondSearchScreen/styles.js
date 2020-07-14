@@ -6,6 +6,12 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
     },
+    scrollView: {
+        paddingVertical: 50,
+    },
+    userView: {
+        marginBottom: 10,
+    },
 });
 
 export default styles;
