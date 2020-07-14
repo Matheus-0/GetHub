@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import NoConnectionScreen from './screens/NoConnectionScreen';
 import SearchScreen from './screens/SearchScreen';
+import SecondSearchScreen from './screens/SecondSearchScreen';
 import Showcase1 from './screens/Showcase1';
 import Showcase2 from './screens/Showcase2';
 import Showcase3 from './screens/Showcase3';
@@ -14,15 +15,7 @@ function Routes({ isFirstLaunch, networkAvailable }) {
     return (
         <NavigationContainer>
             <MainStack.Navigator initialRouteName={isFirstLaunch ? 'Showcase1' : 'Search'} >
-                {networkAvailable && (
-                    <MainStack.Screen
-                        name="NoConnectionScreen"
-                        component={NoConnectionScreen}
-                        options={{
-                            headerShown: false,
-                        }}
-                    />
-                )}
+
                 <MainStack.Screen
                     name="Showcase1"
                     component={Showcase1}
@@ -47,6 +40,20 @@ function Routes({ isFirstLaunch, networkAvailable }) {
                 <MainStack.Screen
                     name="Search"
                     component={SearchScreen}
+                    options={{
+                        headerShown: false,
+                    }}
+                />
+                <MainStack.Screen
+                    name="NoConnectionScreen"
+                    component={NoConnectionScreen}
+                    options={{
+                        headerShown: false,
+                    }}
+                />
+                <MainStack.Screen
+                    name="SecondSearchScreen"
+                    component={SecondSearchScreen}
                     options={{
                         headerShown: false,
                     }}
