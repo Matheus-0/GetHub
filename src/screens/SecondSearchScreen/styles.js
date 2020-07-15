@@ -1,4 +1,5 @@
 import { Dimensions, StyleSheet } from 'react-native';
+
 import colors from '../../data/colors';
 
 const styles = StyleSheet.create({
@@ -19,7 +20,14 @@ const styles = StyleSheet.create({
     },
     scrollView: {
         paddingHorizontal: 30,
-        paddingVertical: 50,
+        marginVertical: 40,
+    },
+    searchTitle: {
+        alignSelf: 'center',
+        color: colors.softLilac,
+        fontSize: 30,
+        fontWeight: 'bold',
+        marginTop: 50,
     },
     touchableStyle: {
         borderRadius: 10,
