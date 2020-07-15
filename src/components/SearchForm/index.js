@@ -21,16 +21,18 @@ class SearchForm extends React.Component {
     }
 
     componentDidMount() {
+        // Need to set to false to guarantee no bugs
         this.setState({ searchNow: false });
     }
 
     async componentDidUpdate(prevProps, prevState) {
         const { itemName, searchNow } = this.state;
 
-        if (searchNow) {
+        // If we want to search and the input isn't empty
+        if (searchNow && itemName.trim()) {
             const users = await searchUsers(itemName);
 
-            this.props.navigation.navigate('SecondSearchScreen', { users });
+            if (users) this.props.navigation.navigate('SecondSearchScreen', { users });
         }
     }
 
