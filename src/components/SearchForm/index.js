@@ -20,6 +20,10 @@ class SearchForm extends React.Component {
         };
     }
 
+    componentDidMount() {
+        this.setState({ searchNow: false });
+    }
+
     async componentDidUpdate(prevProps, prevState) {
         const { itemName, searchNow } = this.state;
 
@@ -28,10 +32,6 @@ class SearchForm extends React.Component {
 
             this.props.navigation.navigate('SecondSearchScreen', { users });
         }
-    }
-
-    componentDidMount() {
-        this.setState({ searchNow: false });
     }
 
     render() {
