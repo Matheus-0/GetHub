@@ -14,7 +14,7 @@ const MainStack = createStackNavigator();
 function Routes({ isFirstLaunch, networkAvailable }) {
     return (
         <NavigationContainer>
-            <MainStack.Navigator initialRouteName={isFirstLaunch ? 'Showcase1' : 'Search'} >
+            <MainStack.Navigator initialRouteName={isFirstLaunch ? 'Showcase1' : 'Search'}>
 
                 <MainStack.Screen
                     name="Showcase1"

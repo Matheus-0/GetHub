@@ -7,7 +7,6 @@ import SearchForm from '../../components/SearchForm';
 import colors from '../../data/colors';
 import styles from './styles';
 
-
 export default function SearchScreen({ navigation }) {
     return (
         <>
