@@ -30,6 +30,10 @@ class SearchForm extends React.Component {
         }
     }
 
+    componentDidMount() {
+        this.setState({ searchNow: false });
+    }
+
     render() {
         return (
             <View style={this.props.style}>
