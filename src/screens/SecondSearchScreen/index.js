@@ -7,31 +7,30 @@ import { Feather } from '@expo/vector-icons';
 
 import UserContainer from '../../components/UserContainer';
 
-import styles from './styles';
 import { searchUsers } from '../../api/api';
+
+import styles from './styles';
 
 export default class SecondSearchScreen extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            query: '',
             users: this.props.route.params.users,
+            timeout: 0,
         };
     }
 
-    async componentDidUpdate(prevProps, prevState, snapshot) {
-        await this.updateUserList();
-    }
+    updateUserList(query) {
+        if (this.state.timeout) clearTimeout(this.state.timeout);
 
-    async updateUserList() {
-        const { query } = this.state;
+        this.state.timeout = setTimeout(async () => {
+            if (query.trim()) {
+                const users = await searchUsers(query);
 
-        if (query.trim()) {
-            const users = await searchUsers(query);
-
-            if (users) this.setState({ users });
-        }
+                if (users) this.setState({ users });
+            }
+        }, 500);
     }
 
     render() {
@@ -53,14 +52,16 @@ export default class SecondSearchScreen extends React.Component {
                             style={styles.input}
                             underlineColorAndroid="transparent"
                             onChangeText={(query) => {
-                                this.setState({ query });
+                                this.updateUserList(query);
                             }}
                         />
                     </View>
                 </View>
+
                 <View style={styles.searchTitleView}>
                     <Text style={styles.searchTitle}>Search results</Text>
                 </View>
+
                 <View style={styles.scrollViewParent}>
                     <ScrollView contentContainerStyle={styles.scrollView}>
                         {this.state.users.items.map((user) => (

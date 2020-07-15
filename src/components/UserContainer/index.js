@@ -1,5 +1,7 @@
 import React from 'react';
-import { Text, TouchableHighlight, View } from 'react-native';
+import {
+    Image, Text, TouchableHighlight, View,
+} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import colors from '../../data/colors';
@@ -16,14 +18,28 @@ export default class UserContainer extends React.Component {
                     colors={[colors.softYellow, colors.hardYellow]}
                     start={[0, 0.5]}
                     end={[1, 0.5]}
-                    style={this.props.gradientStyle}
+                    style={[this.props.gradientStyle, styles.gradientFlex]}
                 >
-                    <Text>
-                        {`Username: ${this.props.user.login}`}
-                    </Text>
-                    <Text>
-                        {`URL: ${this.props.user.html_url}`}
-                    </Text>
+                    <View style={{ flex: 1 }}>
+                        <Image
+                            source={{ uri: this.props.user.avatar_url }}
+                            style={styles.image}
+                        />
+                    </View>
+
+                    <View style={{ flex: 3 }}>
+                        <Text
+                            style={{
+                                fontSize: 18,
+                                fontWeight: 'bold',
+                            }}
+                        >
+                            {`${this.props.user.login}`}
+                        </Text>
+                        <Text>
+                            {`URL: ${this.props.user.html_url}`}
+                        </Text>
+                    </View>
                 </LinearGradient>
             </TouchableHighlight>
         );
