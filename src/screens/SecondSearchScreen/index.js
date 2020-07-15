@@ -2,8 +2,9 @@ import React from 'react';
 import { Text, View, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
+import UserContainer from '../../components/UserContainer';
+
 import styles from './styles';
-import colors from '../../data/colors';
 
 export default function SecondSearchScreen({ route, navigation }) {
     const { users } = route.params;
@@ -19,14 +20,7 @@ export default function SecondSearchScreen({ route, navigation }) {
 
             <ScrollView contentContainerStyle={styles.scrollView}>
                 {users.items.map((user) => (
-                    <View style={styles.userView} key={user.id}>
-                        <Text>
-                            {`Username: ${user.login}`}
-                        </Text>
-                        <Text>
-                            {`URL: ${user.html_url}`}
-                        </Text>
-                    </View>
+                    <UserContainer key={user.id} style={styles.userView} user={user} />
                 ))}
             </ScrollView>
         </View>

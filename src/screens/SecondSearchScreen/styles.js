@@ -1,4 +1,5 @@
 import { Dimensions, StyleSheet } from 'react-native';
+import colors from '../../data/colors';
 
 const styles = StyleSheet.create({
     gradient: {
@@ -13,11 +14,15 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     scrollView: {
-        paddingLeft: 20,
+        paddingHorizontal: 30,
         paddingVertical: 50,
     },
     userView: {
-        marginBottom: 10,
+        backgroundColor: colors.softYellow,
+        borderRadius: 10,
+        margin: 10,
+        paddingLeft: 20,
+        paddingVertical: 10,
     },
 });
 
