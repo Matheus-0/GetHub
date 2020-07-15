@@ -9,6 +9,10 @@ const styles = StyleSheet.create({
         right: 0,
         top: 0,
     },
+    gradientStyle: {
+        borderRadius: 10,
+        padding: 15,
+    },
     screen: {
         flex: 1,
         justifyContent: 'center',
@@ -17,12 +21,9 @@ const styles = StyleSheet.create({
         paddingHorizontal: 30,
         paddingVertical: 50,
     },
-    userView: {
-        backgroundColor: colors.softYellow,
+    touchableStyle: {
         borderRadius: 10,
         margin: 10,
-        paddingLeft: 20,
-        paddingVertical: 10,
     },
 });
 

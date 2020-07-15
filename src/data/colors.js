@@ -17,7 +17,7 @@ const colors = {
     softRed: '#ff2d2d',
     // Shades of yellow
     hardYellow: '#ffb900',
-    softYellow: '#fff055',
+    softYellow: '#ffef24',
     // Showcase colors
     background1: '#143c7d',
     background2: '#0050ff',

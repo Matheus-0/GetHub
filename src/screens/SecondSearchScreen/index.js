@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, ScrollView } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import UserContainer from '../../components/UserContainer';
@@ -20,7 +20,12 @@ export default function SecondSearchScreen({ route, navigation }) {
 
             <ScrollView contentContainerStyle={styles.scrollView}>
                 {users.items.map((user) => (
-                    <UserContainer key={user.id} style={styles.userView} user={user} />
+                    <UserContainer
+                        gradientStyle={styles.gradientStyle}
+                        key={user.id}
+                        touchableStyle={styles.touchableStyle}
+                        user={user}
+                    />
                 ))}
             </ScrollView>
         </View>
