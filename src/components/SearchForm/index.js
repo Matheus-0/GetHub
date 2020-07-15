@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    Text, TextInput, TouchableHighlight, View, 
+    Text, TextInput, TouchableHighlight, View,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Feather } from '@expo/vector-icons';
@@ -13,16 +13,19 @@ import styles from './styles';
 class SearchForm extends React.Component {
     constructor(props) {
         super(props);
-        state={
+
+        this.state = {
             itemName: '',
             searchNow: false,
-        }
+        };
     }
 
     async componentDidUpdate(prevProps, prevState) {
         const { itemName, searchNow } = this.state;
+
         if (searchNow) {
             const users = await searchUsers(itemName);
+
             this.props.navigation.navigate('SecondSearchScreen', { users });
         }
     }
@@ -57,6 +60,6 @@ class SearchForm extends React.Component {
             </View>
         );
     }
-};
+}
 
 export default SearchForm;

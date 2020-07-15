@@ -21,6 +21,7 @@ module.exports = {
         'func-names': 0,
         'linebreak-style': 0,
         'no-unused-vars': 0,
+        'react/destructuring-assignment': 0,
         'react/jsx-filename-extension': [1, {
             extensions: ['.js', '.jsx'],
         }],
