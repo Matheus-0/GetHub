@@ -62,12 +62,13 @@ export default class SecondSearchScreen extends React.Component {
                             <Feather name="search" size={24} color="black" />
                             <TextInput
                                 autoCapitalize="none"
-                                placeholder={this.state.prevSearch}
+                                placeholder="Search for user/repository"
                                 style={styles.input}
                                 underlineColorAndroid="transparent"
                                 onChangeText={(query) => {
                                     this.updateUserList(query);
                                 }}
+                                defaultValue={this.state.prevSearch}
                             />
                         </View>
                         <View style={styles.pickerView}>

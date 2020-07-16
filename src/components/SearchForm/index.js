@@ -32,7 +32,7 @@ class SearchForm extends React.Component {
         if (searchNow && itemName.trim()) {
             const users = await searchUsers(itemName);
 
-            if (users) this.props.navigation.navigate('SecondSearchScreen', { itemName, users });
+            if (users) this.props.navigation.replace('SecondSearchScreen', { itemName, users });
         }
     }
 
