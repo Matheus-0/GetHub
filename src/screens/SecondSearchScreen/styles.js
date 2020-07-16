@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         marginTop: 10,
         paddingLeft: 5,
-        width: '70%',
+        width: '60%',
     },
     searchContainer: {
         flexDirection: 'row',
@@ -40,9 +40,8 @@ const styles = StyleSheet.create({
     },
     pickerView: {
         height: 50,
-        width: '25%',
-        backgroundColor: colors.softBlue,
-        borderRadius: 25,
+        width: '30%',
+        borderRadius: 10,
         overflow: 'hidden',
         textAlign: 'center',
     },

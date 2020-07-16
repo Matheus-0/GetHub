@@ -7,7 +7,7 @@ import { Feather } from '@expo/vector-icons';
 
 import UserContainer from '../../components/UserContainer';
 
-import { searchUsers } from '../../api/api';
+import { searchUsers, searchRepositories } from '../../api/api';
 
 import styles from './styles';
 
@@ -16,21 +16,34 @@ export default class SecondSearchScreen extends React.Component {
         super(props);
 
         this.state = {
-            users: this.props.route.params.users,
+            searchItems: this.props.route.params.users,
             prevSearch: this.props.route.params.itemName,
             option: 'user',
             timeout: 0,
         };
     }
-
+ 
     updateUserList(query) {
         if (this.state.timeout) clearTimeout(this.state.timeout);
 
         this.state.timeout = setTimeout(async () => {
             if (query.trim()) {
-                const users = await searchUsers(query);
+                let data;
+                switch (this.state.option) {
+                    case 'user':
+                        data = await searchUsers(query);
+                        break;
+                    case 'repo':
+                        data = await searchRepositories(query);
+                        break;
+                    default:
+                        data = await searchUsers(query);
+                        break;
+                }
 
-                if (users) this.setState({ prevSearch: query, users });
+                console.log(data);
+
+                if (data) this.setState({ prevSearch: query, searchItems: data });
             }
         }, 500);
     }
@@ -63,7 +76,10 @@ export default class SecondSearchScreen extends React.Component {
                             <Picker
                                 style={styles.pickerOption}
                                 selectedValue={this.state.option}
-                                onValueChange={(itemValue) => this.setState({ option: itemValue })}
+                                onValueChange={(itemValue) => {
+                                    this.setState({ option: itemValue });
+                                    this.updateUserList(this.state.prevSearch);
+                                }}
                             >
                                 <Picker.Item label="User" value="user" />
                                 <Picker.Item label="Repository" value="repo" />
@@ -79,7 +95,7 @@ export default class SecondSearchScreen extends React.Component {
 
                 <View style={styles.scrollViewParent}>
                     <ScrollView contentContainerStyle={styles.scrollView}>
-                        {this.state.users.items.map((user) => (
+                        {this.state.searchItems.items.map((user) => (
                             <UserContainer
                                 gradientStyle={styles.gradientStyle}
                                 key={user.id}
