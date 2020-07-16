@@ -41,7 +41,6 @@ export default class SecondSearchScreen extends React.Component {
                         data = await searchUsers(query);
                         break;
                 }
-                console.log(data.total_count);
                 if (data) this.setState({ prevSearch: query, searchItems: data });
             }
         }, 500);
@@ -93,7 +92,7 @@ export default class SecondSearchScreen extends React.Component {
                 </View>
 
                 <View style={styles.scrollViewParent}>
-                    {!this.state.searchItems.total_count
+                    {this.state.searchItems.items.length
                         ? (
                             <ScrollView contentContainerStyle={styles.scrollView}>
                                 {this.state.searchItems.items.map((user) => (
