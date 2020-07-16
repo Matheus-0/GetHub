@@ -6,6 +6,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Feather } from '@expo/vector-icons';
 
 import UserContainer from '../../components/UserContainer';
+import NothingFound from '../../components/NothingFound';
 
 import { searchUsers, searchRepositories } from '../../api/api';
 
@@ -22,13 +23,13 @@ export default class SecondSearchScreen extends React.Component {
             timeout: 0,
         };
     }
- 
+
     updateUserList(query) {
         if (this.state.timeout) clearTimeout(this.state.timeout);
 
         this.state.timeout = setTimeout(async () => {
             if (query.trim()) {
-                let data;
+                let data = [];
                 switch (this.state.option) {
                     case 'user':
                         data = await searchUsers(query);
@@ -40,9 +41,7 @@ export default class SecondSearchScreen extends React.Component {
                         data = await searchUsers(query);
                         break;
                 }
-
-                console.log(data);
-
+                console.log(data.total_count);
                 if (data) this.setState({ prevSearch: query, searchItems: data });
             }
         }, 500);
@@ -94,16 +93,22 @@ export default class SecondSearchScreen extends React.Component {
                 </View>
 
                 <View style={styles.scrollViewParent}>
-                    <ScrollView contentContainerStyle={styles.scrollView}>
-                        {this.state.searchItems.items.map((user) => (
-                            <UserContainer
-                                gradientStyle={styles.gradientStyle}
-                                key={user.id}
-                                touchableStyle={styles.touchableStyle}
-                                user={user}
-                            />
-                        ))}
-                    </ScrollView>
+                    {!this.state.searchItems.total_count
+                        ? (
+                            <ScrollView contentContainerStyle={styles.scrollView}>
+                                {this.state.searchItems.items.map((user) => (
+                                    <UserContainer
+                                        gradientStyle={styles.gradientStyle}
+                                        key={user.id}
+                                        touchableStyle={styles.touchableStyle}
+                                        user={user}
+                                    />
+                                ))}
+                            </ScrollView>
+                        )
+                        : (
+                            <NothingFound />
+                        )}
                 </View>
             </View>
         );
