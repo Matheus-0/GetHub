@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    ScrollView, Text, TextInput, View,
+    ScrollView, Text, TextInput, View, Picker,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Feather } from '@expo/vector-icons';
@@ -17,6 +17,8 @@ export default class SecondSearchScreen extends React.Component {
 
         this.state = {
             users: this.props.route.params.users,
+            prevSearch: this.props.route.params.itemName,
+            option: 'user',
             timeout: 0,
         };
     }
@@ -28,7 +30,7 @@ export default class SecondSearchScreen extends React.Component {
             if (query.trim()) {
                 const users = await searchUsers(query);
 
-                if (users) this.setState({ users });
+                if (users) this.setState({ prevSearch: query, users });
             }
         }, 500);
     }
@@ -44,18 +46,31 @@ export default class SecondSearchScreen extends React.Component {
                 />
 
                 <View style={styles.searchInputView}>
-                    <View style={styles.inputView}>
-                        <Feather name="search" size={28} color="black" />
-                        <TextInput
-                            autoCapitalize="none"
-                            placeholder="Search for a repository or user"
-                            style={styles.input}
-                            underlineColorAndroid="transparent"
-                            onChangeText={(query) => {
-                                this.updateUserList(query);
-                            }}
-                        />
+                    <View style={styles.searchContainer}>
+                        <View style={styles.inputView}>
+                            <Feather name="search" size={24} color="black" />
+                            <TextInput
+                                autoCapitalize="none"
+                                placeholder={this.state.prevSearch}
+                                style={styles.input}
+                                underlineColorAndroid="transparent"
+                                onChangeText={(query) => {
+                                    this.updateUserList(query);
+                                }}
+                            />
+                        </View>
+                        <View style={styles.pickerView}>
+                            <Picker
+                                style={styles.pickerOption}
+                                selectedValue={this.state.option}
+                                onValueChange={(itemValue) => this.setState({ option: itemValue })}
+                            >
+                                <Picker.Item label="User" value="user" />
+                                <Picker.Item label="Repository" value="repo" />
+                            </Picker>
+                        </View>
                     </View>
+
                 </View>
 
                 <View style={styles.searchTitleView}>

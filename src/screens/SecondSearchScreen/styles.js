@@ -31,7 +31,28 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         marginTop: 10,
         paddingLeft: 5,
-        width: '75%',
+        width: '70%',
+    },
+    searchContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+    },
+    pickerView: {
+        height: 50,
+        width: '25%',
+        backgroundColor: colors.softBlue,
+        borderRadius: 25,
+        overflow: 'hidden',
+        textAlign: 'center',
+    },
+    pickerOption: {
+        flex: 1,
+        backgroundColor: colors.softOrange,
+        color: 'white',
+        textAlign: 'center',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     screen: {
         flex: 1,
@@ -41,7 +62,7 @@ const styles = StyleSheet.create({
         paddingHorizontal: 30,
     },
     scrollViewParent: {
-        flex: 4,
+        flex: 5,
     },
     searchInputView: {
         alignItems: 'center',
