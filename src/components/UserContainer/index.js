@@ -27,7 +27,7 @@ export default class UserContainer extends React.Component {
                         />
                     </View>
 
-                    <View style={{ flex: 3 }}>
+                    <View style={styles.itemUser}>
                         <Text
                             style={{
                                 fontSize: 18,

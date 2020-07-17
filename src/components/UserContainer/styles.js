@@ -1,6 +1,10 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
+    itemUser: {
+        flex: 3,
+        justifyContent: 'center',
+    },
     gradientFlex: {
         flexDirection: 'row',
     },
