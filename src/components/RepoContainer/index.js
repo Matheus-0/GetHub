@@ -21,13 +21,13 @@ export default class UserContainer extends React.Component {
                     style={[this.props.gradientStyle, styles.gradientFlex]}
                 >
 
-                <View style={{ flex: 3 }}>
+                <View style={styles.repoItem}>
                     <Text
-                        style={{}}
+                        style={styles.repoName}
                     >
-                        {`${this.props.repo.login}`}
+                        {`${this.props.repo.full_name}`}
                     </Text>
-                    <Text>{`URL: ${this.props.repo.html_url}`}</Text>
+                    <Text>{`${this.props.repo.description}`}</Text>
                 </View>
                 </LinearGradient>
             </TouchableHighlight>
