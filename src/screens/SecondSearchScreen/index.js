@@ -6,11 +6,31 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { Feather } from '@expo/vector-icons';
 
 import UserContainer from '../../components/UserContainer';
+import RepoContainer from '../../components/RepoContainer';
 import NothingFound from '../../components/NothingFound';
 
 import { searchUsers, searchRepositories } from '../../api/api';
 
 import styles from './styles';
+
+const mapUser = (user) => (
+    <UserContainer
+        gradientStyle={styles.gradientStyle}
+        key={user.id}
+        touchableStyle={styles.touchableStyle}
+        user={user}
+    />
+);
+
+const mapRepo = (repo) => (
+    <RepoContainer
+        gradientStyle={styles.gradientStyle}
+        key={repo.id}
+        touchableStyle={styles.touchableStyle}
+        repo={repo}
+    />
+);
+
 
 export default class SecondSearchScreen extends React.Component {
     constructor(props) {
@@ -96,14 +116,9 @@ export default class SecondSearchScreen extends React.Component {
                     {this.state.searchItems.items.length
                         ? (
                             <ScrollView contentContainerStyle={styles.scrollView}>
-                                {this.state.searchItems.items.map((user) => (
-                                    <UserContainer
-                                        gradientStyle={styles.gradientStyle}
-                                        key={user.id}
-                                        touchableStyle={styles.touchableStyle}
-                                        user={user}
-                                    />
-                                ))}
+                                {this.state.searchItems.items.map( 
+                                    this.state.option === 'user' ? mapUser : mapRepo
+                                 )}
                             </ScrollView>
                         )
                         : (
