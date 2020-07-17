@@ -5,8 +5,8 @@ import {
 import { LinearGradient } from 'expo-linear-gradient';
 import { Feather } from '@expo/vector-icons';
 
-import UserContainer from '../../components/UserContainer';
 import NothingFound from '../../components/NothingFound';
+import UserContainer from '../../components/UserContainer';
 
 import { searchUsers, searchRepositories } from '../../api/api';
 
@@ -17,9 +17,9 @@ export default class SecondSearchScreen extends React.Component {
         super(props);
 
         this.state = {
-            searchItems: this.props.route.params.users,
             prevSearch: this.props.route.params.itemName,
             option: 'user',
+            searchItems: this.props.route.params.users,
             timeout: 0,
         };
     }
@@ -29,7 +29,8 @@ export default class SecondSearchScreen extends React.Component {
 
         this.state.timeout = setTimeout(async () => {
             if (query.trim()) {
-                let data = [];
+                let data;
+
                 switch (this.state.option) {
                     case 'user':
                         data = await searchUsers(query);
@@ -41,7 +42,9 @@ export default class SecondSearchScreen extends React.Component {
                         data = await searchUsers(query);
                         break;
                 }
-                console.log(data.total_count);
+
+                // console.log(data.total_count);
+
                 if (data) this.setState({ prevSearch: query, searchItems: data });
             }
         }, 500);
@@ -85,7 +88,6 @@ export default class SecondSearchScreen extends React.Component {
                             </Picker>
                         </View>
                     </View>
-
                 </View>
 
                 <View style={styles.searchTitleView}>
