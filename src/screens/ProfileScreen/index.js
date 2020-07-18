@@ -7,13 +7,19 @@ export default class ProfileScreen extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {};
+        this.state = {
+            userInfo: this.props.route.params.userInfo,
+            userRepositories: this.props.route.params.userRepositories,
+        };
     }
 
     render() {
+        const { userInfo, userRepositories } = this.state;
+
         return (
             <View style={styles.screen}>
-                <Text>Initial code.</Text>
+                <Text>{userInfo.login}</Text>
+                <Text>{userInfo.name}</Text>
             </View>
         );
     }

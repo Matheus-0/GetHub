@@ -7,11 +7,20 @@ import { LinearGradient } from 'expo-linear-gradient';
 import colors from '../../data/colors';
 import styles from './styles';
 
+import { getUser, getUserRepositories } from '../../api/api';
+
 export default class UserContainer extends React.Component {
+    async handleUserClick(username) {
+        const userInfo = await getUser(username);
+        const userRepositories = await getUserRepositories(username);
+
+        this.props.navigation.navigate('ProfileScreen', { userInfo, userRepositories });
+    }
+
     render() {
         return (
             <TouchableHighlight
-                onPress={() => {}}
+                onPress={() => this.handleUserClick(this.props.user.login)}
                 style={this.props.touchableStyle}
             >
                 <LinearGradient
