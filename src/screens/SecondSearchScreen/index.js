@@ -101,8 +101,8 @@ export default class SecondSearchScreen extends React.Component {
                                     this.updateUserList(this.state.prevSearch);
                                 }}
                             >
-                                <Picker.Item label="User" value="user" />
-                                <Picker.Item label="Repository" value="repo" />
+                                <Picker.Item label="Users" value="user" />
+                                <Picker.Item label="Repositories" value="repo" />
                             </Picker>
                         </View>
                     </View>
@@ -116,7 +116,7 @@ export default class SecondSearchScreen extends React.Component {
                     {this.state.searchItems.items.length
                         ? (
                             <ScrollView contentContainerStyle={styles.scrollView}>
-                                {this.state.searchItems.items.map( 
+                                {this.state.searchItems.items.map(
                                     this.state.option === 'user' ? mapUser : mapRepo
                                  )}
                             </ScrollView>
