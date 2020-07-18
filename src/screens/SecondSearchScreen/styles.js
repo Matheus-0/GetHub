@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     },
     pickerView: {
         height: 50,
-        width: '30%',
+        width: '33%',
         borderRadius: 5,
         overflow: 'hidden',
         textAlign: 'center',

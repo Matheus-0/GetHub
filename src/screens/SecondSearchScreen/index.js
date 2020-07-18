@@ -1,13 +1,13 @@
 import React from 'react';
 import {
-    ScrollView, Text, TextInput, View, Picker,
+    Picker, ScrollView, Text, TextInput, View,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Feather } from '@expo/vector-icons';
 
-import UserContainer from '../../components/UserContainer';
-import RepoContainer from '../../components/RepoContainer';
 import NothingFound from '../../components/NothingFound';
+import RepoContainer from '../../components/RepoContainer';
+import UserContainer from '../../components/UserContainer';
 
 import { searchUsers, searchRepositories } from '../../api/api';
 
@@ -30,7 +30,6 @@ const mapRepo = (repo) => (
         repo={repo}
     />
 );
-
 
 export default class SecondSearchScreen extends React.Component {
     constructor(props) {
@@ -117,8 +116,8 @@ export default class SecondSearchScreen extends React.Component {
                         ? (
                             <ScrollView contentContainerStyle={styles.scrollView}>
                                 {this.state.searchItems.items.map(
-                                    this.state.option === 'user' ? mapUser : mapRepo
-                                 )}
+                                    this.state.option === 'user' ? mapUser : mapRepo,
+                                )}
                             </ScrollView>
                         )
                         : (
