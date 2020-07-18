@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 import styles from './styles';
 
@@ -18,8 +19,11 @@ export default class ProfileScreen extends React.Component {
 
         return (
             <View style={styles.screen}>
-                <Text>{userInfo.login}</Text>
-                <Text>{userInfo.name}</Text>
+                <View style={{ backgroundColor: 'green', flex: 3, width: '100%' }} />
+                <View style={{ backgroundColor: 'blue', flex: 1, width: '100%' }} />
+                <View style={{ backgroundColor: 'orange', flex: 1, width: '100%' }} />
+                <View style={{ backgroundColor: 'red', flex: 1, width: '100%' }} />
+                <View style={{ backgroundColor: 'purple', flex: 7, width: '100%' }} />
             </View>
         );
     }
