@@ -37,9 +37,9 @@ export default class SecondSearchScreen extends React.Component {
         super(props);
 
         this.state = {
-            searchItems: this.props.route.params.users,
             prevSearch: this.props.route.params.itemName,
             option: 'user',
+            searchItems: this.props.route.params.users,
             timeout: 0,
         };
     }
@@ -49,7 +49,8 @@ export default class SecondSearchScreen extends React.Component {
 
         this.state.timeout = setTimeout(async () => {
             if (query.trim()) {
-                let data = [];
+                let data;
+
                 switch (this.state.option) {
                     case 'user':
                         data = await searchUsers(query);
@@ -105,7 +106,6 @@ export default class SecondSearchScreen extends React.Component {
                             </Picker>
                         </View>
                     </View>
-
                 </View>
 
                 <View style={styles.searchTitleView}>
