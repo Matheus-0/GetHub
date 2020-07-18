@@ -3,10 +3,16 @@ import { Text, View } from 'react-native';
 
 import styles from './styles';
 
-export default function ProfileScreen() {
-    return (
-        <View style={styles.screen}>
-            <Text>Initial code.</Text>
-        </View>
-    );
+export default class ProfileScreen extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <View style={styles.screen}>
+                <Text>Initial code.</Text>
+            </View>
+        );
+    }
 }
