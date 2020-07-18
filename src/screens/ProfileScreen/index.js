@@ -4,6 +4,8 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 import styles from './styles';
 
+import UserBasicData from '../../components/UserBasicData';
+
 export default class ProfileScreen extends React.Component {
     constructor(props) {
         super(props);
@@ -19,11 +21,21 @@ export default class ProfileScreen extends React.Component {
 
         return (
             <View style={styles.screen}>
-                <View style={{ backgroundColor: 'green', flex: 3, width: '100%' }} />
-                <View style={{ backgroundColor: 'blue', flex: 1, width: '100%' }} />
-                <View style={{ backgroundColor: 'orange', flex: 1, width: '100%' }} />
-                <View style={{ backgroundColor: 'red', flex: 1, width: '100%' }} />
-                <View style={{ backgroundColor: 'purple', flex: 7, width: '100%' }} />
+                <LinearGradient
+                    colors={['#1e1e1e', '#0f0f0f']}
+                    start={[0.6, 0.3]}
+                    end={[0.3, 0.7]}
+                    style={styles.gradient}
+                />
+
+                <View style={{ flex: 4 }}>
+                    <UserBasicData user={userInfo} />
+                </View>
+
+                <View style={{ flex: 1 }} />
+                <View style={{ flex: 1 }} />
+                <View style={{ flex: 1 }} />
+                <View style={{ flex: 7 }} />
             </View>
         );
     }
