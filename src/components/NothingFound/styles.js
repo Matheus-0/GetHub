@@ -2,17 +2,18 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
         alignItems: 'center',
+        flex: 1,
     },
     nothingFound: {
-        fontSize: 30,
         color: 'white',
-        marginBottom: 10,
+        fontSize: 30,
+        marginBottom: 20,
     },
     description: {
-        fontSize: 16,
         color: 'white',
+        fontSize: 16,
+        marginHorizontal: 15,
         textAlign: 'center',
     },
 });
