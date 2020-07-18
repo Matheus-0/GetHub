@@ -4,6 +4,7 @@ const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
         flex: 1,
+        padding: 20,
     },
     nothingFound: {
         color: 'white',
@@ -13,7 +14,6 @@ const styles = StyleSheet.create({
     description: {
         color: 'white',
         fontSize: 16,
-        marginHorizontal: 15,
         textAlign: 'center',
     },
 });
