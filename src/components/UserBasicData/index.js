@@ -5,18 +5,20 @@ import { SimpleLineIcons } from '@expo/vector-icons';
 
 import styles from './styles';
 
-export default function UserBasicData({ user }) {
+export default function UserBasicData({
+    avatar, bio, location, username,
+}) {
     return (
         <View style={styles.container}>
             <View style={styles.containerItem}>
-                <Image source={{ uri: user.avatar_url }} style={styles.image} />
+                <Image source={{ uri: avatar }} style={styles.image} />
             </View>
             <View style={styles.containerItem}>
-                <Text style={styles.username}>{user.login}</Text>
-                <Text style={styles.bio}>{user.bio}</Text>
+                <Text style={styles.username}>{username}</Text>
+                <Text style={styles.bio}>{bio}</Text>
                 <View style={styles.locationView}>
                     <SimpleLineIcons name="location-pin" size={20} color="white" />
-                    <Text style={styles.locationText}>{user.location}</Text>
+                    <Text style={styles.locationText}>{location}</Text>
                 </View>
             </View>
         </View>

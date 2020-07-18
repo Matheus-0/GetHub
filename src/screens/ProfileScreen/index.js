@@ -5,6 +5,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import styles from './styles';
 
 import UserBasicData from '../../components/UserBasicData';
+import UserNumbers from '../../components/UserNumbers';
 
 export default class ProfileScreen extends React.Component {
     constructor(props) {
@@ -29,10 +30,22 @@ export default class ProfileScreen extends React.Component {
                 />
 
                 <View style={{ flex: 4 }}>
-                    <UserBasicData user={userInfo} />
+                    <UserBasicData
+                        avatar={userInfo.avatar_url}
+                        bio={userInfo.bio}
+                        location={userInfo.location}
+                        username={userInfo.login}
+                    />
                 </View>
 
-                <View style={{ flex: 1 }} />
+                <View style={{ flex: 1 }}>
+                    <UserNumbers
+                        followers={userInfo.followers}
+                        following={userInfo.following}
+                        repositories={userInfo.public_repos}
+                    />
+                </View>
+
                 <View style={{ flex: 1 }} />
                 <View style={{ flex: 1 }} />
                 <View style={{ flex: 7 }} />
