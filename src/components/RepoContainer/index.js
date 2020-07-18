@@ -14,7 +14,7 @@ const handleRepoClick = async (url) => {
     return callback;
 };
 
-export default class UserContainer extends React.Component {
+export default class RepoContainer extends React.Component {
     render() {
         return (
             <TouchableHighlight
