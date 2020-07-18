@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import NoConnectionScreen from './screens/NoConnectionScreen';
+import ProfileScreen from './screens/ProfileScreen';
 import SearchScreen from './screens/SearchScreen';
 import SecondSearchScreen from './screens/SecondSearchScreen';
 import Showcase1 from './screens/Showcase1';
@@ -58,6 +59,14 @@ function Routes({ isFirstLaunch, networkAvailable }) {
                 <MainStack.Screen
                     name="SecondSearchScreen"
                     component={SecondSearchScreen}
+                    options={{
+                        headerShown: false,
+                    }}
+                />
+
+                <MainStack.Screen
+                    name="ProfileScreen"
+                    component={ProfileScreen}
                     options={{
                         headerShown: false,
                     }}

@@ -6,6 +6,8 @@ import styles from './styles';
 export default class ProfileScreen extends React.Component {
     constructor(props) {
         super(props);
+
+        this.state = {};
     }
 
     render() {
