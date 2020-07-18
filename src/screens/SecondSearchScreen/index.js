@@ -61,6 +61,7 @@ export default class SecondSearchScreen extends React.Component {
                         data = await searchUsers(query);
                         break;
                 }
+
                 if (data) this.setState({ prevSearch: query, searchItems: data });
             }
         }, 500);
