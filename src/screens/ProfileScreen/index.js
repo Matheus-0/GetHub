@@ -30,7 +30,7 @@ export default class ProfileScreen extends React.Component {
                     style={styles.gradient}
                 />
 
-                <View style={{ flex: 4 }}>
+                <View style={{ flex: 5 }}>
                     <UserBasicData
                         avatar={userInfo.avatar_url}
                         bio={userInfo.bio}
@@ -57,8 +57,21 @@ export default class ProfileScreen extends React.Component {
                     </TouchableOpacity>
                 </View>
 
-                <View style={{ flex: 1 }} />
-                <View style={{ flex: 7 }} />
+                <View style={{
+                    alignItems: 'center',
+                    borderBottomColor: 'white',
+                    borderBottomWidth: 1,
+                    borderTopColor: 'white',
+                    borderTopWidth: 1,
+                    flex: 1,
+                    justifyContent: 'center',
+                    width: '100%',
+                }}
+                >
+                    <Text style={{ color: 'white', fontWeight: 'bold' }}>PUBLIC REPOSITORIES</Text>
+                </View>
+
+                <View style={{ flex: 9 }} />
             </View>
         );
     }
