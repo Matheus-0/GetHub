@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
+import { TouchableHighlight as TouchableOpacity } from 'react-native-gesture-handler';
 import styles from './styles';
 
 import UserBasicData from '../../components/UserBasicData';
@@ -46,7 +47,18 @@ export default class ProfileScreen extends React.Component {
                     />
                 </View>
 
-                <View style={{ flex: 1 }} />
+                <View style={{ alignItems: 'center', flex: 2, justifyContent: 'center' }}>
+                    <TouchableOpacity
+                        onPress={() => {}}
+                        style={{
+                            backgroundColor: 'darkgray', borderRadius: 5, paddingVertical: 3, paddingHorizontal: 70,
+                        }}
+                        underlayColor="gray"
+                    >
+                        <Text style={{ fontSize: 12, fontWeight: 'bold' }}>Open Profile</Text>
+                    </TouchableOpacity>
+                </View>
+
                 <View style={{ flex: 1 }} />
                 <View style={{ flex: 7 }} />
             </View>
