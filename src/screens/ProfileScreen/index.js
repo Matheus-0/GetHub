@@ -47,15 +47,13 @@ export default class ProfileScreen extends React.Component {
                     />
                 </View>
 
-                <View style={{ alignItems: 'center', flex: 2, justifyContent: 'center' }}>
+                <View style={styles.openProfileView}>
                     <TouchableOpacity
                         onPress={() => {}}
-                        style={{
-                            backgroundColor: 'darkgray', borderRadius: 5, paddingVertical: 3, paddingHorizontal: 70,
-                        }}
+                        style={styles.openProfileTouchable}
                         underlayColor="gray"
                     >
-                        <Text style={{ fontSize: 12, fontWeight: 'bold' }}>Open Profile</Text>
+                        <Text style={styles.openProfileText}>Open Profile</Text>
                     </TouchableOpacity>
                 </View>
 
