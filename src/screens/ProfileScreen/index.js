@@ -57,18 +57,8 @@ export default class ProfileScreen extends React.Component {
                     </TouchableOpacity>
                 </View>
 
-                <View style={{
-                    alignItems: 'center',
-                    borderBottomColor: 'white',
-                    borderBottomWidth: 1,
-                    borderTopColor: 'white',
-                    borderTopWidth: 1,
-                    flex: 1,
-                    justifyContent: 'center',
-                    width: '100%',
-                }}
-                >
-                    <Text style={{ color: 'white', fontWeight: 'bold' }}>PUBLIC REPOSITORIES</Text>
+                <View style={styles.publicView}>
+                    <Text style={styles.publicText}>PUBLIC REPOSITORIES</Text>
                 </View>
 
                 <View style={{ flex: 9 }} />

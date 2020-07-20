@@ -23,6 +23,20 @@ const styles = StyleSheet.create({
         flex: 2,
         justifyContent: 'center',
     },
+    publicText: {
+        color: 'white',
+        fontWeight: 'bold',
+    },
+    publicView: {
+        alignItems: 'center',
+        borderBottomColor: 'white',
+        borderBottomWidth: 1,
+        borderTopColor: 'white',
+        borderTopWidth: 1,
+        flex: 1,
+        justifyContent: 'center',
+        width: '100%',
+    },
     screen: {
         alignItems: 'center',
         flex: 1,
