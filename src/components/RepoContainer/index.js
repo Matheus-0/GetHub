@@ -10,10 +10,11 @@ import styles from './styles';
 
 const handleRepoClick = async (url) => {
     const callback = await WebBrowser.openBrowserAsync(url);
+
     return callback;
 };
 
-export default class UserContainer extends React.Component {
+export default class RepoContainer extends React.Component {
     render() {
         return (
             <TouchableHighlight
@@ -26,7 +27,6 @@ export default class UserContainer extends React.Component {
                     end={[1, 0.5]}
                     style={[this.props.gradientStyle, styles.gradientFlex]}
                 >
-
                     <View style={styles.repoItem}>
                         <Text
                             style={styles.repoName}

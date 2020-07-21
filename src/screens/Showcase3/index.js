@@ -1,9 +1,10 @@
 import React from 'react';
-import { Text, View } from 'react-native';
-
-import styles from './styles';
+import { Text, TouchableOpacity, View } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 import Icon from './icon';
+import styles from './styles';
+
 import PageSelector from '../../components/PageSelector';
 import SwitchShowcase from '../../components/SwitchShowcase';
 
@@ -19,7 +20,7 @@ export default function LoginScreen({ navigation }) {
                 nextScreenName={null}
             />
             <TouchableOpacity
-                onPress={() => { alert('Go to Login') }}
+                onPress={() => { alert('Go to Login'); }}
                 style={styles.touchable}
             >
                 <LinearGradient

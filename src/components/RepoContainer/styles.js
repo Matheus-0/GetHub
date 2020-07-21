@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-    repoItem: { 
+    repoItem: {
         flex: 3,
         maxHeight: 100,
         overflow: 'scroll',

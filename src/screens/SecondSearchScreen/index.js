@@ -1,35 +1,17 @@
 import React from 'react';
 import {
-    ScrollView, Text, TextInput, View, Picker,
+    Picker, ScrollView, Text, TextInput, View,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Feather } from '@expo/vector-icons';
 
-import UserContainer from '../../components/UserContainer';
-import RepoContainer from '../../components/RepoContainer';
 import NothingFound from '../../components/NothingFound';
+import RepoContainer from '../../components/RepoContainer';
+import UserContainer from '../../components/UserContainer';
 
 import { searchUsers, searchRepositories } from '../../api/api';
 
 import styles from './styles';
-
-const mapUser = (user) => (
-    <UserContainer
-        gradientStyle={styles.gradientStyle}
-        key={user.id}
-        touchableStyle={styles.touchableStyle}
-        user={user}
-    />
-);
-
-const mapRepo = (repo) => (
-    <RepoContainer
-        gradientStyle={styles.gradientStyle}
-        key={repo.id}
-        touchableStyle={styles.touchableStyle}
-        repo={repo}
-    />
-);
 
 export default class SecondSearchScreen extends React.Component {
     constructor(props) {
@@ -41,6 +23,33 @@ export default class SecondSearchScreen extends React.Component {
             searchItems: this.props.route.params.users,
             timeout: 0,
         };
+
+        this.mapRepo = this.mapRepo.bind(this);
+        this.mapUser = this.mapUser.bind(this);
+    }
+
+    mapUser(user) {
+        return (
+            <UserContainer
+                gradientStyle={styles.gradientStyle}
+                key={user.id}
+                navigation={this.props.navigation}
+                touchableStyle={styles.touchableStyle}
+                user={user}
+            />
+        );
+    }
+
+    mapRepo(repo) {
+        return (
+            <RepoContainer
+                gradientStyle={styles.gradientStyle}
+                key={repo.id}
+                navigation={this.props.navigation}
+                touchableStyle={styles.touchableStyle}
+                repo={repo}
+            />
+        );
     }
 
     updateUserList(query) {
@@ -61,6 +70,7 @@ export default class SecondSearchScreen extends React.Component {
                         data = await searchUsers(query);
                         break;
                 }
+
                 if (data) this.setState({ prevSearch: query, searchItems: data });
             }
         }, 500);
@@ -100,8 +110,8 @@ export default class SecondSearchScreen extends React.Component {
                                     this.updateUserList(this.state.prevSearch);
                                 }}
                             >
-                                <Picker.Item label="User" value="user" />
-                                <Picker.Item label="Repository" value="repo" />
+                                <Picker.Item label="Users" value="user" />
+                                <Picker.Item label="Repositories" value="repo" />
                             </Picker>
                         </View>
                     </View>
@@ -115,9 +125,9 @@ export default class SecondSearchScreen extends React.Component {
                     {this.state.searchItems.items.length
                         ? (
                             <ScrollView contentContainerStyle={styles.scrollView}>
-                                {this.state.searchItems.items.map( 
-                                    this.state.option === 'user' ? mapUser : mapRepo
-                                 )}
+                                {this.state.searchItems.items.map(
+                                    this.state.option === 'user' ? this.mapUser : this.mapRepo,
+                                )}
                             </ScrollView>
                         )
                         : (

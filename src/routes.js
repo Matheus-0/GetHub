@@ -3,6 +3,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import NoConnectionScreen from './screens/NoConnectionScreen';
+import ProfileScreen from './screens/ProfileScreen';
 import SearchScreen from './screens/SearchScreen';
 import SecondSearchScreen from './screens/SecondSearchScreen';
 import Showcase1 from './screens/Showcase1';
@@ -15,7 +16,6 @@ function Routes({ isFirstLaunch, networkAvailable }) {
     return (
         <NavigationContainer>
             <MainStack.Navigator initialRouteName={isFirstLaunch ? 'Showcase1' : 'Search'}>
-
                 <MainStack.Screen
                     name="Showcase1"
                     component={Showcase1}
@@ -23,6 +23,7 @@ function Routes({ isFirstLaunch, networkAvailable }) {
                         headerShown: false,
                     }}
                 />
+
                 <MainStack.Screen
                     name="Showcase2"
                     component={Showcase2}
@@ -30,6 +31,7 @@ function Routes({ isFirstLaunch, networkAvailable }) {
                         headerShown: false,
                     }}
                 />
+
                 <MainStack.Screen
                     name="Showcase3"
                     component={Showcase3}
@@ -37,6 +39,7 @@ function Routes({ isFirstLaunch, networkAvailable }) {
                         headerShown: false,
                     }}
                 />
+
                 <MainStack.Screen
                     name="Search"
                     component={SearchScreen}
@@ -44,6 +47,7 @@ function Routes({ isFirstLaunch, networkAvailable }) {
                         headerShown: false,
                     }}
                 />
+
                 <MainStack.Screen
                     name="NoConnectionScreen"
                     component={NoConnectionScreen}
@@ -51,9 +55,18 @@ function Routes({ isFirstLaunch, networkAvailable }) {
                         headerShown: false,
                     }}
                 />
+
                 <MainStack.Screen
                     name="SecondSearchScreen"
                     component={SecondSearchScreen}
+                    options={{
+                        headerShown: false,
+                    }}
+                />
+
+                <MainStack.Screen
+                    name="ProfileScreen"
+                    component={ProfileScreen}
                     options={{
                         headerShown: false,
                     }}
