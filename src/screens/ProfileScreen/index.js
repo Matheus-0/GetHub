@@ -2,11 +2,12 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-import { TouchableHighlight as TouchableOpacity } from 'react-native-gesture-handler';
+import { TouchableHighlight as TouchableOpacity, ScrollView } from 'react-native-gesture-handler';
 import styles from './styles';
 
 import UserBasicData from '../../components/UserBasicData';
 import UserNumbers from '../../components/UserNumbers';
+import UserRepository from '../../components/UserRepository';
 
 export default class ProfileScreen extends React.Component {
     constructor(props) {
@@ -61,7 +62,11 @@ export default class ProfileScreen extends React.Component {
                     <Text style={styles.publicText}>PUBLIC REPOSITORIES</Text>
                 </View>
 
-                <View style={{ flex: 9 }} />
+                <View style={{ flex: 9 }}>
+                    <ScrollView>
+                        {this.state.userRepositories.map((repo) => <UserRepository repository={repo} />)}
+                    </ScrollView>
+                </View>
             </View>
         );
     }
