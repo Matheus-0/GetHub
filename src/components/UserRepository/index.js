@@ -25,24 +25,39 @@ function UserRepository({ repository }) {
                 </View>
             </View>
 
-            <View style={styles.textView}>
-                <Text style={styles.textDescription}>
-                    Description: {repository.description}
-                </Text>
+            <View style={{ width: '100%', maxWidth: '100%' }}>
+                <View style={styles.textView}>
+                    <Text style={styles.textDescription}>
+                        <Text style={{ fontWeight: 'bold' }}>
+                            Description:
+                            <Text style={{ fontWeight: 'normal' }} >
+                                 {repository.description}
+                            </Text>
+                        </Text>
+                    </Text>
+                </View>
+                <View style={styles.textView}>
+                    <Text style={styles.textDescription}>
+                        <Text style={{ fontWeight: 'bold' }}>
+                            Description:
+                            <Text style={{ fontWeight: 'normal' }} > 
+                                {repository.description}
+                            </Text>
+                        </Text>
+                    </Text>
+                </View>
+                <View style={styles.textView}>
+                    <Text style={styles.textDescription}>
+                        
+                    </Text>
+                </View>
+                <View style={styles.textView}>
+                    <Text style={styles.textDescription} >
+                        Last update: { parseDate(repository.updated_at) }
+                    </Text>
+                </View>
             </View>
-            <View style={styles.textView}>
-                <Text style={styles.textDescription}>
-                    Created at: { parseDate(repository.created_at) }
-                </Text>
-            </View>
-            <View style={styles.textView}>
-                <Text style={styles.textDescription} >
-                    Last update: { parseDate(repository.updated_at) }
-                </Text>
-            </View>
-            
 
-            
         </View>
     );
 }

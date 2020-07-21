@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
         height: 200,
         width: '85%',
         marginTop: 20,
-        backgroundColor: 'green',
+        backgroundColor: 'orange',
         borderRadius: 20,
         flexWrap: 'wrap',
     },
@@ -25,12 +25,13 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
     },
     textView: {
-        flexDirection: 'row',
-        flexShrink: 1,
-        textAlign: 'left',
+        alignItems: 'center',
     },
-    description: {
+    textDescription: {
+        textAlign: 'center',
         color: 'white',
+        paddingLeft: 10,
+        paddingRight: 10,
     },
 });
 
