@@ -15,7 +15,9 @@ function UserRepository({ repository }) {
     return (
         <View style={styles.repoContainer}>
             <View style={styles.icons}>
-                <Feather name="star" size={iconSize} />
+                <Feather 
+                    name="star" 
+                    size={iconSize} />
                 <Text style={styles.itemCount}>
                     {repository.watchers_count}
                 </Text>
@@ -25,7 +27,8 @@ function UserRepository({ repository }) {
                 </Text>
                 <Feather 
                     name="git-branch" 
-                    size={iconSize} />
+                    size={iconSize}
+                    color={ repository.fork ? 'green' : 'red' } />
             </View>
 
             <View style={styles.repoTitle}>
