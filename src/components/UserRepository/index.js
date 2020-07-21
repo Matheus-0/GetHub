@@ -14,15 +14,22 @@ function UserRepository({ repository }) {
     const iconSize = 24;
     return (
         <View style={styles.repoContainer}>
+            <View style={styles.icons}>
+                <Feather name="star" size={iconSize} />
+                <Text style={styles.itemCount}>
+                    {repository.watchers_count}
+                </Text>
+                <Feather name="eye" size={iconSize} />
+                <Text style={styles.itemCount}>
+                    {repository.stargazers_count}
+                </Text>
+                <Feather 
+                    name="git-branch" 
+                    size={iconSize} />
+            </View>
+
             <View style={styles.repoTitle}>
                 <Text style={styles.title}>{repository.name}</Text>
-                <View style={styles.icons}>
-                    <Feather name="git-branch" size={iconSize} />
-                    <Text style={styles.itemCount}>{repository.watchers_count}</Text>
-                    <Feather name="eye" size={iconSize} />
-                    <Text style={styles.itemCount}>{repository.stargazers_count}</Text>
-                    <Feather name="star" size={iconSize} />
-                </View>
             </View>
 
             <View style={{ width: '100%', maxWidth: '100%' }}>
@@ -30,7 +37,7 @@ function UserRepository({ repository }) {
                     <Text style={styles.textDescription}>
                         <Text style={{ fontWeight: 'bold' }}>
                             Description:
-                            <Text style={{ fontWeight: 'normal' }} > 
+                            <Text style={{ fontWeight: 'normal' }}>
                                 {repository.description}
                             </Text>
                         </Text>

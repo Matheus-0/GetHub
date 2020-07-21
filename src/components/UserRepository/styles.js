@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         height: 200,
-        width: '85%',
+        width: '100%',
         marginTop: 20,
         backgroundColor: 'orange',
         borderRadius: 20,
@@ -15,6 +15,8 @@ const styles = StyleSheet.create({
     repoTitle: {
         flexDirection: 'row',
         marginBottom: 20,
+        paddingLeft: 30,
+        paddingRight: 30,
     },
     title: {
         fontSize: 20,
@@ -24,6 +26,15 @@ const styles = StyleSheet.create({
     },
     icons: {
         flexDirection: 'row',
+        position: 'absolute',
+        right: 10,
+        top: 10,
+    },
+    itemCount: {
+        marginRight: 5,
+        fontSize: 18,
+        paddingLeft: 2,
+        paddingRight: 2,
     },
     textView: {
         alignItems: 'center',
