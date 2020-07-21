@@ -7,9 +7,7 @@ import styles from './styles';
 const parseDate = (date) => {
     const NewDate = new Date(date);
 
-    console.log(NewDate);
-
-    return 'a';
+    return `${NewDate.toLocaleDateString()} at ${NewDate.getHours()}:${NewDate.getMinutes()}`;
 };
 
 function UserRepository({ repository }) {
@@ -29,7 +27,12 @@ function UserRepository({ repository }) {
 
             <View style={styles.textView}>
                 <Text style={styles.textDescription}>
-                    Created at: {repository.description}
+                    Description: {repository.description}
+                </Text>
+            </View>
+            <View style={styles.textView}>
+                <Text style={styles.textDescription}>
+                    Created at: { parseDate(repository.created_at) }
                 </Text>
             </View>
             <View style={styles.textView}>
