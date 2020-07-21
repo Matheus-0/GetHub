@@ -6,20 +6,31 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         height: 200,
-        width: '90%',
+        width: '85%',
         marginTop: 20,
         backgroundColor: 'green',
+        borderRadius: 20,
+        flexWrap: 'wrap',
     },
     repoTitle: {
         flexDirection: 'row',
+        marginBottom: 20,
     },
     title: {
-        fontSize: 18,
+        fontSize: 20,
         fontWeight: 'bold',
         color: 'white',
     },
     icons: {
         flexDirection: 'row',
+    },
+    textView: {
+        flexDirection: 'row',
+        flexShrink: 1,
+        textAlign: 'left',
+    },
+    description: {
+        color: 'white',
     },
 });
 

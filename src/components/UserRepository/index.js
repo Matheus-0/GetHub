@@ -4,6 +4,14 @@ import { Feather } from '@expo/vector-icons';
 
 import styles from './styles';
 
+const parseDate = (date) => {
+    const NewDate = new Date(date);
+
+    console.log(NewDate);
+
+    return 'a';
+};
+
 function UserRepository({ repository }) {
     const iconSize = 24;
     return (
@@ -19,8 +27,19 @@ function UserRepository({ repository }) {
                 </View>
             </View>
 
-            <Text>Created at: {repository.description}</Text>
-            <Text>Last update: {repository.update_at}</Text>
+            <View style={styles.textView}>
+                <Text style={styles.textDescription}>
+                    Created at: {repository.description}
+                </Text>
+            </View>
+            <View style={styles.textView}>
+                <Text style={styles.textDescription} >
+                    Last update: { parseDate(repository.updated_at) }
+                </Text>
+            </View>
+            
+
+            
         </View>
     );
 }
