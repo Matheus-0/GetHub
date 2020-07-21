@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
         paddingLeft: 2,
         paddingRight: 2,
+        color: 'white',
     },
     textView: {
         alignItems: 'center',

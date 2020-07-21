@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
+import colors from '../../data/colors';
+
 import styles from './styles';
 
 const parseDate = (date) => {
@@ -15,13 +17,19 @@ function UserRepository({ repository }) {
     return (
         <View style={styles.repoContainer}>
             <View style={styles.icons}>
-                <Feather 
+                <Feather
                     name="star" 
-                    size={iconSize} />
+                    size={iconSize}
+                    color={colors.softLilac}
+                />
                 <Text style={styles.itemCount}>
                     {repository.watchers_count}
                 </Text>
-                <Feather name="eye" size={iconSize} />
+                <Feather
+                    name="eye"
+                    size={iconSize}
+                    color={colors.hardBlue}
+                />
                 <Text style={styles.itemCount}>
                     {repository.stargazers_count}
                 </Text>
