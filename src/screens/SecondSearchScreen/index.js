@@ -31,7 +31,6 @@ const mapRepo = (repo) => (
     />
 );
 
-
 export default class SecondSearchScreen extends React.Component {
     constructor(props) {
         super(props);
