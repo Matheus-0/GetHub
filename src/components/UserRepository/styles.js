@@ -6,10 +6,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         height: 250,
-        marginTop: 20,
         backgroundColor: 'orange',
         borderRadius: 20,
         flexWrap: 'wrap',
+    },
+    repoContainerTouchable: {
+        borderRadius: 20,
+        marginTop: 20,
     },
     repoTitle: {
         flexDirection: 'row',
