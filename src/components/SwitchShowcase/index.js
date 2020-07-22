@@ -18,16 +18,19 @@ const rightActionHandler = (nextScreenName, navigation) => {
 export default function SwitchShowcase({ navigation, prevScreenName = null, nextScreenName = null }) {
     return (
         <View style={styles.buttons}>
-            {prevScreenName && (
-                <TouchableOpacity onPress={() => leftActionHandler(prevScreenName, navigation)}>
-                    <Feather color="#fff" size={32} name="chevrons-left" />
-                </TouchableOpacity>
-            )}
-            {nextScreenName && (
-                <TouchableOpacity onPress={() => rightActionHandler(nextScreenName, navigation)}>
-                    <Feather color="#fff" size={32} name="chevrons-right" />
-                </TouchableOpacity>
-            )}
+            <TouchableOpacity
+                onPress={() => leftActionHandler(prevScreenName, navigation)} 
+                disabled={prevScreenName == null}
+            >
+                <Feather color="#fff" size={32} name="chevrons-left" />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+                onPress={() => rightActionHandler(nextScreenName, navigation)}
+                disabled={nextScreenName == null}
+            >
+                <Feather color="#fff" size={32} name="chevrons-right" />
+            </TouchableOpacity>
         </View>
     );
 }
