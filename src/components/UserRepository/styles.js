@@ -6,9 +6,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         height: 250,
-        backgroundColor: 'orange',
         borderRadius: 20,
         flexWrap: 'wrap',
+    },
+    repoContainerGradient: {
+        borderRadius: 20,
     },
     repoContainerTouchable: {
         borderRadius: 20,
