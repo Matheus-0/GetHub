@@ -25,8 +25,11 @@ const styles = StyleSheet.create({
         padding: 15,
     },
     touchable: {
-        borderRadius: 5,
+        position: 'absolute',
+        bottom: 35,
+        borderRadius: 20,
         marginTop: 10,
+        width: '50%',
     },
 });
 
