@@ -6,12 +6,7 @@ import colors from '../../data/colors';
 import styles from './styles';
 
 import openOnBrowser from '../../utils/openOnBrowser';
-
-const parseDate = (date) => {
-    const newDate = new Date(date);
-
-    return `${newDate.toLocaleDateString()} at ${newDate.getHours()}:${newDate.getMinutes() < 10 ? '0' : ''}${newDate.getMinutes()}`;
-};
+import parseDate from '../../utils/parseDate';
 
 function UserRepository({ repository }) {
     const iconSize = 24;
