@@ -8,6 +8,7 @@ import styles from './styles';
 
 import openOnBrowser from '../../utils/openOnBrowser';
 import parseDate from '../../utils/parseDate';
+import parseRepoSize from '../../utils/parseRepoSize';
 
 function UserRepository({ repository }) {
     const iconSize = 24;
@@ -25,6 +26,15 @@ function UserRepository({ repository }) {
             >
                 <View style={styles.repoContainer}>
                     <View style={styles.icons}>
+                        <Feather
+                            name="package"
+                            size={iconSize}
+                            color={colors.softYellow}
+                        />
+                        <Text style={styles.itemCount}>
+                            { parseRepoSize(repository.size) }
+                        </Text>
+
                         <Feather
                             name="star"
                             size={iconSize}
@@ -80,6 +90,17 @@ function UserRepository({ repository }) {
                                     {'Created at: '}
                                     <Text style={{ fontWeight: 'normal' }}>
                                         { parseDate(repository.created_at) }
+                                    </Text>
+                                </Text>
+                            </Text>
+                        </View>
+
+                        <View style={styles.textView}>
+                            <Text style={[styles.textDescription, { marginTop: 8, fontSize: 16 }]}>
+                                <Text style={{ fontWeight: 'bold' }}>
+                                    {'Highlight language: '}
+                                    <Text style={{ fontWeight: 'normal' }}>
+                                        {repository.language}
                                     </Text>
                                 </Text>
                             </Text>
