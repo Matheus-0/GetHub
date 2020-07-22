@@ -8,17 +8,13 @@ import { LinearGradient } from 'expo-linear-gradient';
 import colors from '../../data/colors';
 import styles from './styles';
 
-const handleRepoClick = async (url) => {
-    const callback = await WebBrowser.openBrowserAsync(url);
-
-    return callback;
-};
+import openOnBrowser from '../../utils/openOnBrowser';
 
 export default class RepoContainer extends React.Component {
     render() {
         return (
             <TouchableHighlight
-                onPress={() => handleRepoClick(this.props.repo.html_url)}
+                onPress={() => openOnBrowser(this.props.repo.html_url)}
                 style={this.props.touchableStyle}
             >
                 <LinearGradient
