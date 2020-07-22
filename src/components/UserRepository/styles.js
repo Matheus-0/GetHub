@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        height: 250,
+        height: 300,
         borderRadius: 20,
         flexWrap: 'wrap',
     },
