@@ -1,8 +1,9 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import {
+    ScrollView, Text, TouchableHighlight, View,
+} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-import { TouchableHighlight as TouchableOpacity, ScrollView } from 'react-native-gesture-handler';
 import styles from './styles';
 
 import UserBasicData from '../../components/UserBasicData';
@@ -49,13 +50,13 @@ export default class ProfileScreen extends React.Component {
                 </View>
 
                 <View style={styles.openProfileView}>
-                    <TouchableOpacity
+                    <TouchableHighlight
                         onPress={() => {}}
                         style={styles.openProfileTouchable}
                         underlayColor="gray"
                     >
                         <Text style={styles.openProfileText}>Open Profile</Text>
-                    </TouchableOpacity>
+                    </TouchableHighlight>
                 </View>
 
                 <View style={styles.publicView}>
