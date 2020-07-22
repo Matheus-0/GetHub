@@ -1,42 +1,47 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { Text, View } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
 import colors from '../../data/colors';
-
 import styles from './styles';
 
 const parseDate = (date) => {
-    const NewDate = new Date(date);
+    const newDate = new Date(date);
 
-    return ` ${NewDate.toLocaleDateString()} at ${NewDate.getHours()}:${NewDate.getMinutes()}`;
+    return ` ${newDate.toLocaleDateString()} at ${newDate.getHours()}:${newDate.getMinutes()}`;
 };
 
 function UserRepository({ repository }) {
     const iconSize = 24;
+
     return (
         <View style={styles.repoContainer}>
             <View style={styles.icons}>
                 <Feather
-                    name="star" 
+                    name="star"
                     size={iconSize}
                     color={colors.softLilac}
                 />
+
                 <Text style={styles.itemCount}>
                     {repository.watchers_count}
                 </Text>
+
                 <Feather
                     name="eye"
                     size={iconSize}
                     color={colors.hardBlue}
                 />
+
                 <Text style={styles.itemCount}>
                     {repository.stargazers_count}
                 </Text>
-                <Feather 
-                    name="git-branch" 
+
+                <Feather
+                    name="git-branch"
                     size={iconSize}
-                    color={ repository.fork ? 'green' : 'red' } />
+                    color={repository.fork ? 'green' : 'red'}
+                />
             </View>
 
             <View style={styles.repoTitle}>
@@ -47,13 +52,14 @@ function UserRepository({ repository }) {
                 <View style={styles.textView}>
                     <Text style={styles.textDescription}>
                         <Text style={{ fontWeight: 'bold' }}>
-                            Description:
+                            {'Description: '}
                             <Text style={{ fontWeight: 'normal' }}>
                                 {repository.description}
                             </Text>
                         </Text>
                     </Text>
                 </View>
+
                 <View style={styles.textView}>
                     <Text style={styles.textDescription}>
                         <Text style={{ fontWeight: 'bold' }}>
@@ -64,18 +70,18 @@ function UserRepository({ repository }) {
                         </Text>
                     </Text>
                 </View>
+
                 <View style={styles.textView}>
                     <Text style={styles.textDescription}>
                         <Text style={{ fontWeight: 'bold' }}>
-                            Created At:
-                            <Text style={{ fontWeight: 'normal' }} > 
+                            Created at:
+                            <Text style={{ fontWeight: 'normal' }}>
                                 { parseDate(repository.created_at) }
                             </Text>
                         </Text>
                     </Text>
                 </View>
             </View>
-
         </View>
     );
 }

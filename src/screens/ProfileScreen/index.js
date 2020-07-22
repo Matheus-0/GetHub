@@ -64,10 +64,12 @@ export default class ProfileScreen extends React.Component {
 
                 <View style={{ flex: 9 }}>
                     <ScrollView
-                        style={{ width: '100%' }} 
+                        style={{ width: '100%' }}
                         contentContainerStyle={{ alignItems: 'center', width: '90%' }}
                     >
-                        {this.state.userRepositories.map((repo, index) => <UserRepository repository={repo} key={repo.id} />)}
+                        {this.state.userRepositories.map((repo) => (
+                            <UserRepository repository={repo} key={repo.id} />
+                        ))}
                     </ScrollView>
                 </View>
             </View>
