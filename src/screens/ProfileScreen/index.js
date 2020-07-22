@@ -3,12 +3,19 @@ import {
     ScrollView, Text, TouchableHighlight, View,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import * as WebBrowser from 'expo-web-browser';
 
 import styles from './styles';
 
 import UserBasicData from '../../components/UserBasicData';
 import UserNumbers from '../../components/UserNumbers';
 import UserRepository from '../../components/UserRepository';
+
+const handleOpenProfileClick = async (url) => {
+    const callback = await WebBrowser.openBrowserAsync(url);
+
+    return callback;
+};
 
 export default class ProfileScreen extends React.Component {
     constructor(props) {
@@ -51,7 +58,7 @@ export default class ProfileScreen extends React.Component {
 
                 <View style={styles.openProfileView}>
                     <TouchableHighlight
-                        onPress={() => {}}
+                        onPress={() => handleOpenProfileClick(userInfo.html_url)}
                         style={styles.openProfileTouchable}
                         underlayColor="gray"
                     >
@@ -68,7 +75,7 @@ export default class ProfileScreen extends React.Component {
                         style={{ width: '100%' }}
                         contentContainerStyle={{ alignItems: 'stretch', paddingBottom: 20, paddingHorizontal: 20 }}
                     >
-                        {this.state.userRepositories.map((repo) => (
+                        {userRepositories.map((repo) => (
                             <UserRepository repository={repo} key={repo.id} />
                         ))}
                     </ScrollView>
