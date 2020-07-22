@@ -48,7 +48,7 @@ function UserRepository({ repository }) {
                         <Feather
                             name="git-branch"
                             size={iconSize}
-                            color={repository.fork ? 'green' : 'red'}
+                            color={repository.fork ? colors.green : colors.softRed}
                         />
                     </View>
 
