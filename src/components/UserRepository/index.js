@@ -49,14 +49,9 @@ function UserRepository({ repository }) {
             </View>
 
             <View style={{ width: '100%', maxWidth: '100%' }}>
-                <View style={styles.textView}>
+                <View style={[styles.textView, { marginBottom: 10 }]}>
                     <Text style={styles.textDescription}>
-                        <Text style={{ fontWeight: 'bold' }}>
-                            {'Description: '}
-                            <Text style={{ fontWeight: 'normal' }}>
-                                {repository.description}
-                            </Text>
-                        </Text>
+                        {repository.description}
                     </Text>
                 </View>
 
