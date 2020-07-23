@@ -1,13 +1,13 @@
 import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-import { CommonActions } from '@react-navigation/native';
 
 import Icon from './icon';
 import styles from './styles';
 
 import PageSelector from '../../components/PageSelector';
 import SwitchShowcase from '../../components/SwitchShowcase';
+import Logo from '../../components/Logo';
 
 export default function LoginScreen({ navigation }) {
     function goToSearchScreen() {
@@ -16,6 +16,7 @@ export default function LoginScreen({ navigation }) {
 
     return (
         <View style={styles.screen}>
+            <Logo />
             <Text style={styles.description}>And much more!</Text>
             <Icon />
             <PageSelector page={2} />
