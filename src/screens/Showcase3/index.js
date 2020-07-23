@@ -11,15 +11,7 @@ import SwitchShowcase from '../../components/SwitchShowcase';
 
 export default function LoginScreen({ navigation }) {
     function goToSearchScreen() {
-        console.log('a')
-        return navigation.dispatch(state => {
-            const routes = state.routes.filter((r) => !r.name.includes('Showcase'));
-            return CommonActions.reset({
-                ...state,
-                routes,
-                index: 1,
-            });
-        });
+        return navigation.navigate('Search');
     }
 
     return (
