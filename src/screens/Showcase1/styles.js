@@ -7,7 +7,8 @@ const styles = StyleSheet.create({
         fontSize: 24,
         color: '#fff',
         width: '80%',
-        marginBottom: '20%',
+        marginTop: '5%',
+        marginBottom: '5%',
     },
     screen: {
         alignItems: 'center',

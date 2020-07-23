@@ -6,7 +6,8 @@ const styles = StyleSheet.create({
     description: {
         color: '#fff',
         fontSize: 24,
-        marginBottom: '20%',
+        marginTop: '5%',
+        marginBottom: '5%',
         width: '80%',
     },
     screen: {
