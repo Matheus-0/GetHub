@@ -10,7 +10,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         height: 40,
         justifyContent: 'space-around',
-        marginTop: 50,
         width: 100,
     },
     selector: {
