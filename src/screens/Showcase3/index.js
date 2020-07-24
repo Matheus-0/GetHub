@@ -17,7 +17,7 @@ export default function LoginScreen({ navigation }) {
     return (
         <View style={styles.screen}>
             <Logo />
-            <Text style={styles.description}>And much more!</Text>
+            <Text style={styles.description}>{'And much more...\nStart searching now!'}</Text>
             <Icon />
             <PageSelector page={2} />
             <SwitchShowcase

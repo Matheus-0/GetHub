@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     },
     touchable: {
         position: 'absolute',
-        bottom: 35,
+        bottom: 10,
         borderRadius: 20,
         marginTop: 10,
         width: '50%',
