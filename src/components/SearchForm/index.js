@@ -5,6 +5,7 @@ import {
 import { LinearGradient } from 'expo-linear-gradient';
 import { Feather } from '@expo/vector-icons';
 import { getNetworkStateAsync } from 'expo-network';
+import { CommonActions } from '@react-navigation/native';
 
 import { searchUsers } from '../../api/api';
 
@@ -32,8 +33,28 @@ class SearchForm extends React.Component {
         if (searchNow && itemName.trim()) {
             const users = await searchUsers(itemName);
 
-            if (users) this.props.navigation.replace('SecondSearchScreen', { itemName, users });
+            if (users) {
+                goToNextScreen(itemName, users);
+            }
         }
+    }
+
+    // eslint-disable-next-line class-methods-use-this
+    goToNextScreen(itemName, users) {
+        this.props.navigation.dispatch((state) => {
+            // Remove the home route from the stack
+            let { routes } = state;
+            let removeNumber = 1;
+            if (routes > 1) {
+                routes = routes.filter((route) => route.name !== 'Showcase');
+                removeNumber = 3;
+            }
+            return CommonActions.reset({
+                ...state,
+                routes,
+                index: (routes.length - removeNumber) + 1,
+            });
+        });
     }
 
     render() {
