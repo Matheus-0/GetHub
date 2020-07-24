@@ -34,7 +34,7 @@ class SearchForm extends React.Component {
             const users = await searchUsers(itemName);
 
             if (users) {
-                goToNextScreen(itemName, users);
+                this.props.navigation.replace('SecondSearchScreen', { itemName, users });
             }
         }
     }
