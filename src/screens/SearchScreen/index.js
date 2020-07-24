@@ -12,14 +12,21 @@ export default function SearchScreen({ navigation }) {
     return (
         <>
             <View style={styles.screen}>
-                <LinearGradient
+                {/* <LinearGradient
                     colors={[
                         colors.hardYellow, colors.softLilac,
                     ]}
                     start={[0.6, 0.3]}
                     end={[0.3, 0.7]}
                     style={styles.gradient}
+                /> */}
+                <LinearGradient
+                    colors={['#1e1e1e', '#0f0f0f']}
+                    start={[0.6, 0.3]}
+                    end={[0.3, 0.7]}
+                    style={styles.gradient}
                 />
+
                 <Logo />
                 <SearchForm style={styles.form} navigation={navigation} />
             </View>
