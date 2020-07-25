@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import React from 'react';
 import { Image, Text, View } from 'react-native';
 import { SimpleLineIcons } from '@expo/vector-icons';
@@ -15,11 +14,13 @@ export default function UserBasicData({
             </View>
             <View style={styles.containerItem}>
                 <Text style={styles.username}>{username}</Text>
-                <Text style={styles.bio}>{bio}</Text>
-                <View style={styles.locationView}>
-                    <SimpleLineIcons name="location-pin" size={20} color="white" />
-                    <Text style={styles.locationText}>{location}</Text>
-                </View>
+                {bio && <Text style={styles.bio}>{bio}</Text>}
+                {location && (
+                    <View style={styles.locationView}>
+                        <SimpleLineIcons name="location-pin" size={20} color="white" />
+                        <Text style={styles.locationText}>{location}</Text>
+                    </View>
+                )}
             </View>
         </View>
     );
