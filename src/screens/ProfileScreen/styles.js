@@ -14,9 +14,9 @@ const styles = StyleSheet.create({
     },
     openProfileTouchable: {
         backgroundColor: 'darkgray',
-        borderRadius: 5,
+        borderRadius: 20,
         paddingHorizontal: 70,
-        paddingVertical: 3,
+        paddingVertical: 5,
     },
     openProfileView: {
         alignItems: 'center',
@@ -29,10 +29,6 @@ const styles = StyleSheet.create({
     },
     publicView: {
         alignItems: 'center',
-        borderBottomColor: 'white',
-        borderBottomWidth: 1,
-        borderTopColor: 'white',
-        borderTopWidth: 1,
         flex: 1,
         justifyContent: 'center',
         width: '100%',

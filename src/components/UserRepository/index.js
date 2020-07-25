@@ -14,15 +14,19 @@ import languageColors from '../../data/languageColors';
 function UserRepository({ repository }) {
     const iconSize = 24;
 
+    const languageColor = repository.language ? languageColors[repository.language].color : 'white';
+    // eslint-disable-next-line no-bitwise
+    const darkerLanguageColor = ((languageColor & 0xfefefe) >> 1) | (languageColor & 0x808080);
+
     return (
         <TouchableHighlight
             onPress={() => openOnBrowser(repository.html_url)}
             style={styles.repoContainerTouchable}
         >
             <LinearGradient
-                colors={['orange', 'darkorange']}
-                start={[0, 0.5]}
-                end={[1, 0.5]}
+                colors={[languageColor, darkerLanguageColor]}
+                start={[0, 1]}
+                end={[1, 0]}
                 style={styles.repoContainerGradient}
             >
                 <View style={styles.repoContainer}>

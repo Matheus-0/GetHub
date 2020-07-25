@@ -57,7 +57,7 @@ export default class ProfileScreen extends React.Component {
                         style={styles.openProfileTouchable}
                         underlayColor="gray"
                     >
-                        <Text style={styles.openProfileText}>Open Profile</Text>
+                        <Text style={styles.openProfileText}>OPEN PROFILE</Text>
                     </TouchableHighlight>
                 </View>
 
