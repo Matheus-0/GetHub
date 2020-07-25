@@ -5,7 +5,6 @@ const iconSize = {
     width: Math.round(Dimensions.get('window').width * 0.6),
     viewHeight: Math.round(Dimensions.get('window').height * 0.45),
     viewWidth: Math.round(Dimensions.get('window').width * 0.5),
-
 };
 
 export default iconSize;
