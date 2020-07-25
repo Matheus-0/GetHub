@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, TouchableHighlight, View } from 'react-native';
-import { Feather } from '@expo/vector-icons';
+import { Feather, FontAwesome } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import colors from '../../data/colors';
@@ -9,6 +9,7 @@ import styles from './styles';
 import openOnBrowser from '../../utils/openOnBrowser';
 import parseDate from '../../utils/parseDate';
 import parseRepoSize from '../../utils/parseRepoSize';
+import languageColors from '../../data/languageColors';
 
 function UserRepository({ repository }) {
     const iconSize = 24;
@@ -96,19 +97,30 @@ function UserRepository({ repository }) {
                         </View>
 
                         {repository.language && (
-                            <View style={styles.textView}>
-                                <Text
-                                    style={
-                                        [styles.textDescription, { marginTop: 8, fontSize: 16 }]
-                                    }
-                                >
-                                    <Text style={{ fontWeight: 'bold' }}>
-                                        {'Main language: '}
+                            <View style={{
+                                alignItems: 'center',
+                                flexDirection: 'row',
+                                justifyContent: 'center',
+                                marginTop: 8,
+                            }}
+                            >
+                                <FontAwesome
+                                    name="circle"
+                                    size={16}
+                                    color={languageColors[repository.language].color}
+                                />
+
+                                <View style={styles.textView}>
+                                    <Text
+                                        style={
+                                            [styles.textDescription, { fontSize: 16 }]
+                                        }
+                                    >
                                         <Text style={{ fontWeight: 'normal' }}>
                                             {repository.language}
                                         </Text>
                                     </Text>
-                                </Text>
+                                </View>
                             </View>
                         )}
                     </View>
