@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    Picker, ScrollView, Text, TextInput, View,
+    KeyboardAvoidingView, Picker, Platform, ScrollView, Text, TextInput, View,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Feather } from '@expo/vector-icons';
@@ -78,7 +78,12 @@ export default class SecondSearchScreen extends React.Component {
 
     render() {
         return (
-            <View style={styles.screen}>
+            <KeyboardAvoidingView
+                behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+                keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 20}
+                enabled={Platform.OS === 'ios'}
+                style={styles.screen}
+            >
                 <LinearGradient
                     colors={['#1e1e1e', '#0f0f0f']}
                     start={[0.6, 0.3]}
@@ -118,7 +123,9 @@ export default class SecondSearchScreen extends React.Component {
                 </View>
 
                 <View style={styles.searchTitleView}>
-                    <Text style={styles.searchTitle}>Search results</Text>
+                    <Text style={styles.searchTitle}>
+                        {`${this.state.searchItems.items.length} result${this.state.searchItems.items.length === 1 ? '' : 's'}`}
+                    </Text>
                 </View>
 
                 <View style={styles.scrollViewParent}>
@@ -134,7 +141,7 @@ export default class SecondSearchScreen extends React.Component {
                             <NothingFound />
                         )}
                 </View>
-            </View>
+            </KeyboardAvoidingView>
         );
     }
 }
