@@ -65,15 +65,21 @@ export default class ProfileScreen extends React.Component {
                     <Text style={styles.publicText}>PUBLIC REPOSITORIES</Text>
                 </View>
 
-                <View style={{ flex: 9 }}>
-                    <ScrollView
-                        style={{ width: '100%' }}
-                        contentContainerStyle={{ alignItems: 'stretch', paddingBottom: 20, paddingHorizontal: 20 }}
-                    >
-                        {userRepositories.map((repo) => (
-                            <UserRepository repository={repo} key={repo.id} />
-                        ))}
-                    </ScrollView>
+                <View style={styles.repositoriesView}>
+                    {userRepositories.length > 0 && (
+                        <ScrollView
+                            style={{ width: '100%' }}
+                            contentContainerStyle={{ alignItems: 'stretch', paddingBottom: 20, paddingHorizontal: 20 }}
+                        >
+                            {userRepositories.map((repo) => (
+                                <UserRepository repository={repo} key={repo.id} />
+                            ))}
+                        </ScrollView>
+                    )}
+
+                    {userRepositories.length === 0 && (
+                        <Text style={{ color: 'white' }}>Nothing found.</Text>
+                    )}
                 </View>
             </View>
         );

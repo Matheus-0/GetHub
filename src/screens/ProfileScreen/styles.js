@@ -8,6 +8,11 @@ const styles = StyleSheet.create({
         right: 0,
         top: 0,
     },
+    repositoriesView: {
+        alignItems: 'center',
+        flex: 9,
+        justifyContent: 'center',
+    },
     openProfileText: {
         fontSize: 12,
         fontWeight: 'bold',
