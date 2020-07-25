@@ -95,16 +95,22 @@ function UserRepository({ repository }) {
                             </Text>
                         </View>
 
-                        <View style={styles.textView}>
-                            <Text style={[styles.textDescription, { marginTop: 8, fontSize: 16 }]}>
-                                <Text style={{ fontWeight: 'bold' }}>
-                                    {'Highlight language: '}
-                                    <Text style={{ fontWeight: 'normal' }}>
-                                        {repository.language}
+                        {repository.language && (
+                            <View style={styles.textView}>
+                                <Text
+                                    style={
+                                        [styles.textDescription, { marginTop: 8, fontSize: 16 }]
+                                    }
+                                >
+                                    <Text style={{ fontWeight: 'bold' }}>
+                                        {'Main language: '}
+                                        <Text style={{ fontWeight: 'normal' }}>
+                                            {repository.language}
+                                        </Text>
                                     </Text>
                                 </Text>
-                            </Text>
-                        </View>
+                            </View>
+                        )}
                     </View>
                 </View>
             </LinearGradient>

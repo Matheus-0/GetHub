@@ -2,7 +2,6 @@ import React from 'react';
 import {
     Image, Text, TouchableHighlight, View,
 } from 'react-native';
-import * as WebBrowser from 'expo-web-browser';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import colors from '../../data/colors';
