@@ -19,7 +19,7 @@ export default function SwitchShowcase({ navigation, prevScreenName = null, next
     return (
         <View style={styles.buttons}>
             <TouchableOpacity
-                onPress={() => leftActionHandler(prevScreenName, navigation)} 
+                onPress={() => leftActionHandler(prevScreenName, navigation)}
                 disabled={prevScreenName == null}
             >
                 <Feather color="#fff" size={32} name="chevrons-left" />

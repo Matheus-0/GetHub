@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     header: {
         width: 200,
         height: 100,
-        resizeMode: 'stretch'
+        resizeMode: 'stretch',
     },
 });
 
