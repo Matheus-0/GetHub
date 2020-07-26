@@ -53,7 +53,7 @@ function UserRepository({ repository }) {
                         <Feather
                             name="star"
                             size={iconSize}
-                            color={colors.softLilac}
+                            color={colors.softYellow}
                         />
 
                         <Text style={styles.itemCount}>
@@ -82,11 +82,13 @@ function UserRepository({ repository }) {
                     </View>
 
                     <View style={{ width: '100%', maxWidth: '100%' }}>
-                        <View style={[styles.textView, { marginBottom: 10 }]}>
-                            <Text style={styles.textDescription}>
-                                {repository.description}
-                            </Text>
-                        </View>
+                        {repository.description && (
+                            <View style={[styles.textView, { marginBottom: 10 }]}>
+                                <Text style={styles.textDescription}>
+                                    {repository.description}
+                                </Text>
+                            </View>
+                        )}
 
                         {/* <View style={styles.textView}>
                             <Text style={styles.textDescription}>
