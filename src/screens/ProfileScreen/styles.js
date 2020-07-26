@@ -1,5 +1,7 @@
 import { Dimensions, StyleSheet } from 'react-native';
 
+import colors from '../../data/colors';
+
 const styles = StyleSheet.create({
     gradient: {
         height: Dimensions.get('window').height,
@@ -18,7 +20,7 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     openProfileTouchable: {
-        backgroundColor: 'darkgray',
+        backgroundColor: colors.hardYellow,
         borderRadius: 20,
         paddingHorizontal: 70,
         paddingVertical: 5,

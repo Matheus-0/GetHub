@@ -4,6 +4,7 @@ import {
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
+import colors from '../../data/colors';
 import styles from './styles';
 
 import UserBasicData from '../../components/UserBasicData';
@@ -11,6 +12,7 @@ import UserNumbers from '../../components/UserNumbers';
 import UserRepository from '../../components/UserRepository';
 
 import openOnBrowser from '../../utils/openOnBrowser';
+import shadeColor from '../../utils/shadeColor';
 
 export default class ProfileScreen extends React.Component {
     constructor(props) {
@@ -55,7 +57,7 @@ export default class ProfileScreen extends React.Component {
                     <TouchableHighlight
                         onPress={() => openOnBrowser(userInfo.html_url)}
                         style={styles.openProfileTouchable}
-                        underlayColor="gray"
+                        underlayColor={shadeColor(colors.hardYellow, -25)}
                     >
                         <Text style={styles.openProfileText}>OPEN PROFILE</Text>
                     </TouchableHighlight>

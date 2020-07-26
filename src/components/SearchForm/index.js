@@ -4,11 +4,11 @@ import {
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Feather } from '@expo/vector-icons';
-import { getNetworkStateAsync } from 'expo-network';
 import { CommonActions } from '@react-navigation/native';
 
 import { searchUsers } from '../../api/api';
 
+import colors from '../../data/colors';
 import styles from './styles';
 
 class SearchForm extends React.Component {
@@ -79,7 +79,7 @@ class SearchForm extends React.Component {
                     onPress={() => this.setState({ searchNow: true })}
                 >
                     <LinearGradient
-                        colors={['#555fa0', '#503769']}
+                        colors={[colors.hardYellow, colors.softOrange]}
                         style={styles.gradientButton}
                     >
                         <Text style={styles.buttonText}>
