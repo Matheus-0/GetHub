@@ -1,8 +1,10 @@
 import { StyleSheet } from 'react-native';
 
+import colors from '../../data/colors';
+
 const styles = StyleSheet.create({
     buttonText: {
-        color: 'white',
+        color: 'black',
         fontSize: 15,
     },
     gradientButton: {
@@ -11,7 +13,7 @@ const styles = StyleSheet.create({
         padding: 15,
     },
     input: {
-        backgroundColor: 'white',
+        color: 'white',
         flex: 1,
         padding: 10,
         paddingLeft: 10,
@@ -19,8 +21,9 @@ const styles = StyleSheet.create({
     },
     inputView: {
         alignItems: 'center',
-        backgroundColor: '#fff',
+        borderColor: colors.hardYellow,
         borderRadius: 5,
+        borderWidth: 1,
         flexDirection: 'row',
         height: 50,
         justifyContent: 'center',

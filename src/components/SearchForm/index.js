@@ -63,11 +63,11 @@ class SearchForm extends React.Component {
         return (
             <View style={this.props.style}>
                 <View style={styles.inputView}>
-                    <Feather name="search" size={28} color="black" />
+                    <Feather name="search" size={28} color="white" />
 
                     <TextInput
                         autoCapitalize="none"
-                        placeholder="Search for a repository or user"
+                        placeholder="Search for user/repository"
                         style={styles.input}
                         underlineColorAndroid="transparent"
                         onChangeText={(item) => this.setState({ itemName: item })}
