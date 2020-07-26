@@ -122,12 +122,6 @@ export default class SecondSearchScreen extends React.Component {
                     </View>
                 </View>
 
-                <View style={styles.searchTitleView}>
-                    <Text style={styles.searchTitle}>
-                        {`${this.state.searchItems.items.length} result${this.state.searchItems.items.length === 1 ? '' : 's'}`}
-                    </Text>
-                </View>
-
                 <View style={styles.scrollViewParent}>
                     {this.state.searchItems.items.length
                         ? (

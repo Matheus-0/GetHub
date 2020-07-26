@@ -64,20 +64,10 @@ const styles = StyleSheet.create({
         flex: 9,
     },
     searchInputView: {
-        alignItems: 'flex-end',
+        alignItems: 'center',
         flex: 2,
         flexDirection: 'row',
         justifyContent: 'space-around',
-    },
-    searchTitle: {
-        color: colors.softLilac,
-        fontSize: 30,
-        fontWeight: 'bold',
-    },
-    searchTitleView: {
-        alignItems: 'center',
-        flex: 1,
-        justifyContent: 'center',
     },
     touchableStyle: {
         borderRadius: 10,

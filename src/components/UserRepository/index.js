@@ -12,12 +12,20 @@ import parseDate from '../../utils/parseDate';
 import parseRepoSize from '../../utils/parseRepoSize';
 import shadeColor from '../../utils/shadeColor';
 
+const DEFAULT_REPOSITORY_COLOR = '#ffffff';
+
 function UserRepository({ repository }) {
     const iconSize = 24;
 
-    const languageColor = repository.language ? languageColors[repository.language].color : '#ffffff';
-    // eslint-disable-next-line no-bitwise
-    const darkerLanguageColor = shadeColor(languageColor, -75);
+    // First, need to check if repository has a language, if not, set a default color
+    const languageColor = repository.language
+        ? languageColors[repository.language].color
+        : DEFAULT_REPOSITORY_COLOR;
+
+    // Now we need to check if we could successfully get a color, if not, set default
+    const darkerLanguageColor = languageColor
+        ? shadeColor(languageColor, -75)
+        : DEFAULT_REPOSITORY_COLOR;
 
     return (
         <TouchableHighlight
