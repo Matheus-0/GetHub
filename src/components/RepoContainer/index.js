@@ -17,7 +17,7 @@ export default class RepoContainer extends React.Component {
                 style={this.props.touchableStyle}
             >
                 <LinearGradient
-                    colors={[colors.softYellow, colors.hardYellow]}
+                    colors={[colors.softYellow, colors.softOrange]}
                     start={[0, 0.5]}
                     end={[1, 0.5]}
                     style={[this.props.gradientStyle, styles.gradientFlex]}
