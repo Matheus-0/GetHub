@@ -36,10 +36,22 @@ const styles = StyleSheet.create({
     },
     itemCount: {
         marginRight: 5,
-        fontSize: 18,
-        paddingLeft: 2,
+        fontSize: 16,
+        paddingLeft: 4,
         paddingRight: 2,
         color: 'white',
+    },
+    languageText: {
+        color: 'white',
+        fontSize: 16,
+        fontWeight: 'bold',
+        marginLeft: 5,
+    },
+    languageView: {
+        bottom: 15,
+        flexDirection: 'row',
+        position: 'absolute',
+        right: 15,
     },
     textView: {
         alignItems: 'center',

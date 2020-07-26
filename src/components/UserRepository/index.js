@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, TouchableHighlight, View } from 'react-native';
-import { Feather, FontAwesome } from '@expo/vector-icons';
+import { AntDesign, Feather } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import colors from '../../data/colors';
@@ -15,7 +15,7 @@ import shadeColor from '../../utils/shadeColor';
 const DEFAULT_REPOSITORY_COLOR = '#ffffff';
 
 function UserRepository({ repository }) {
-    const iconSize = 24;
+    const iconSize = 20;
 
     // First, need to check if repository has a language, if not, set a default color
     const languageColor = repository.language
@@ -45,6 +45,7 @@ function UserRepository({ repository }) {
                             size={iconSize}
                             color={colors.softYellow}
                         />
+
                         <Text style={styles.itemCount}>
                             { parseRepoSize(repository.size) }
                         </Text>
@@ -62,7 +63,7 @@ function UserRepository({ repository }) {
                         <Feather
                             name="eye"
                             size={iconSize}
-                            color={colors.hardBlue}
+                            color={colors.softBlue}
                         />
 
                         <Text style={styles.itemCount}>
@@ -87,7 +88,7 @@ function UserRepository({ repository }) {
                             </Text>
                         </View>
 
-                        <View style={styles.textView}>
+                        {/* <View style={styles.textView}>
                             <Text style={styles.textDescription}>
                                 <Text style={{ fontWeight: 'bold' }}>
                                     {'Last update: '}
@@ -107,36 +108,15 @@ function UserRepository({ repository }) {
                                     </Text>
                                 </Text>
                             </Text>
-                        </View>
-
-                        {repository.language && (
-                            <View style={{
-                                alignItems: 'center',
-                                flexDirection: 'row',
-                                justifyContent: 'center',
-                                marginTop: 8,
-                            }}
-                            >
-                                <FontAwesome
-                                    name="circle"
-                                    size={16}
-                                    color={languageColors[repository.language].color}
-                                />
-
-                                <View style={styles.textView}>
-                                    <Text
-                                        style={
-                                            [styles.textDescription, { fontSize: 16 }]
-                                        }
-                                    >
-                                        <Text style={{ fontWeight: 'normal' }}>
-                                            {repository.language}
-                                        </Text>
-                                    </Text>
-                                </View>
-                            </View>
-                        )}
+                        </View> */}
                     </View>
+
+                    {repository.language && (
+                        <View style={styles.languageView}>
+                            <AntDesign name="codesquareo" size={24} color="white" />
+                            <Text style={styles.languageText}>{repository.language}</Text>
+                        </View>
+                    )}
                 </View>
             </LinearGradient>
         </TouchableHighlight>
