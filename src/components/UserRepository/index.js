@@ -4,19 +4,20 @@ import { Feather, FontAwesome } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import colors from '../../data/colors';
+import languageColors from '../../data/languageColors';
 import styles from './styles';
 
+import darkenColor from '../../utils/darkenColor';
 import openOnBrowser from '../../utils/openOnBrowser';
 import parseDate from '../../utils/parseDate';
 import parseRepoSize from '../../utils/parseRepoSize';
-import languageColors from '../../data/languageColors';
 
 function UserRepository({ repository }) {
     const iconSize = 24;
 
     const languageColor = repository.language ? languageColors[repository.language].color : 'white';
     // eslint-disable-next-line no-bitwise
-    const darkerLanguageColor = ((languageColor & 0xfefefe) >> 1) | (languageColor & 0x808080);
+    const darkerLanguageColor = darkenColor(languageColor);
 
     return (
         <TouchableHighlight

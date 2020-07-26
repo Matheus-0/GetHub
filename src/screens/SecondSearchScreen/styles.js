@@ -65,8 +65,6 @@ const styles = StyleSheet.create({
     },
     searchInputView: {
         alignItems: 'center',
-        borderBottomColor: 'white',
-        borderBottomWidth: 1,
         flex: 2,
         flexDirection: 'row',
         justifyContent: 'space-around',
