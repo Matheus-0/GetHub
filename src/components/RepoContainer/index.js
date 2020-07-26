@@ -28,7 +28,7 @@ export default class RepoContainer extends React.Component {
                         >
                             {`${this.props.repo.full_name}`}
                         </Text>
-                        <Text>{`${this.props.repo.description}`}</Text>
+                        {this.props.repo.description && <Text>{`${this.props.repo.description}`}</Text>}
                     </View>
                 </LinearGradient>
             </TouchableHighlight>
