@@ -7,17 +7,17 @@ import colors from '../../data/colors';
 import languageColors from '../../data/languageColors';
 import styles from './styles';
 
-import darkenColor from '../../utils/darkenColor';
 import openOnBrowser from '../../utils/openOnBrowser';
 import parseDate from '../../utils/parseDate';
 import parseRepoSize from '../../utils/parseRepoSize';
+import shadeColor from '../../utils/shadeColor';
 
 function UserRepository({ repository }) {
     const iconSize = 24;
 
-    const languageColor = repository.language ? languageColors[repository.language].color : 'white';
+    const languageColor = repository.language ? languageColors[repository.language].color : '#ffffff';
     // eslint-disable-next-line no-bitwise
-    const darkerLanguageColor = darkenColor(languageColor);
+    const darkerLanguageColor = shadeColor(languageColor, -75);
 
     return (
         <TouchableHighlight

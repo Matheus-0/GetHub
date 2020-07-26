@@ -61,10 +61,10 @@ const styles = StyleSheet.create({
         paddingHorizontal: 30,
     },
     scrollViewParent: {
-        flex: 7,
+        flex: 9,
     },
     searchInputView: {
-        alignItems: 'center',
+        alignItems: 'flex-end',
         flex: 2,
         flexDirection: 'row',
         justifyContent: 'space-around',
