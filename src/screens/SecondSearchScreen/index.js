@@ -94,7 +94,8 @@ export default class SecondSearchScreen extends React.Component {
                 <View style={styles.searchInputView}>
                     <View style={styles.searchContainer}>
                         <View style={styles.inputView}>
-                            <Feather name="search" size={24} color="black" />
+                            <Feather name="search" size={24} color="white" />
+
                             <TextInput
                                 autoCapitalize="none"
                                 placeholder="Search for user/repository"

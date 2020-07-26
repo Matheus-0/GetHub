@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
         padding: 15,
     },
     input: {
-        backgroundColor: 'white',
+        color: 'white',
         flex: 1,
         padding: 10,
         paddingLeft: 10,
@@ -23,8 +23,9 @@ const styles = StyleSheet.create({
     },
     inputView: {
         alignItems: 'center',
-        backgroundColor: '#fff',
+        borderColor: colors.hardYellow,
         borderRadius: 5,
+        borderWidth: 1,
         flexDirection: 'row',
         height: 50,
         justifyContent: 'center',
@@ -41,13 +42,15 @@ const styles = StyleSheet.create({
     pickerView: {
         height: 50,
         width: '33%',
+        borderColor: colors.hardYellow,
         borderRadius: 5,
+        borderWidth: 1,
         overflow: 'hidden',
         textAlign: 'center',
     },
     pickerOption: {
+        backgroundColor: '#1e1e1e',
         flex: 1,
-        backgroundColor: colors.softOrange,
         color: 'white',
         textAlign: 'center',
         justifyContent: 'center',
