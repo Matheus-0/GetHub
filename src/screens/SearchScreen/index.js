@@ -28,6 +28,7 @@ export default function SearchScreen({ navigation }) {
                 />
 
                 <Logo />
+
                 <SearchForm style={styles.form} navigation={navigation} />
             </View>
         </>

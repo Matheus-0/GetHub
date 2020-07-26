@@ -45,10 +45,12 @@ class SearchForm extends React.Component {
             // Remove the home route from the stack
             let { routes } = state;
             let removeNumber = 1;
+
             if (routes > 1) {
                 routes = routes.filter((route) => route.name !== 'Showcase');
                 removeNumber = 3;
             }
+
             return CommonActions.reset({
                 ...state,
                 routes,
@@ -62,6 +64,7 @@ class SearchForm extends React.Component {
             <View style={this.props.style}>
                 <View style={styles.inputView}>
                     <Feather name="search" size={28} color="black" />
+
                     <TextInput
                         autoCapitalize="none"
                         placeholder="Search for a repository or user"
@@ -76,7 +79,7 @@ class SearchForm extends React.Component {
                     onPress={() => this.setState({ searchNow: true })}
                 >
                     <LinearGradient
-                        colors={['#555fa0', '#695596', '#503769']}
+                        colors={['#555fa0', '#503769']}
                         style={styles.gradientButton}
                     >
                         <Text style={styles.buttonText}>
