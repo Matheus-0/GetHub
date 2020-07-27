@@ -4,6 +4,7 @@ An application used for seeing user information and repositories from GitHub.
 
 ## Built With
 
+- [ESLint](https://eslint.org/)
 - [Expo](https://expo.io/)
 - [React Native](https://reactnative.dev/)
 
