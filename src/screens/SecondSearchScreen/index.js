@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    KeyboardAvoidingView, Picker, Platform, ScrollView, Text, TextInput, View,
+    KeyboardAvoidingView, Picker, Platform, ScrollView, Text, TextInput, View, ActivityIndicator,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Feather } from '@expo/vector-icons';
@@ -12,6 +12,7 @@ import UserContainer from '../../components/UserContainer';
 import { searchUsers, searchRepositories } from '../../api/api';
 
 import styles from './styles';
+import colors from '../../data/colors';
 
 export default class SecondSearchScreen extends React.Component {
     constructor(props) {
@@ -20,6 +21,7 @@ export default class SecondSearchScreen extends React.Component {
         this.state = {
             prevSearch: this.props.route.params.itemName,
             option: 'user',
+            loading: false,
             searchItems: this.props.route.params.users,
             timeout: 0,
         };
@@ -57,6 +59,7 @@ export default class SecondSearchScreen extends React.Component {
 
         this.state.timeout = setTimeout(async () => {
             if (query.trim()) {
+                this.setState({ loading: true });
                 let data;
 
                 switch (this.state.option) {
@@ -71,7 +74,7 @@ export default class SecondSearchScreen extends React.Component {
                         break;
                 }
 
-                if (data) this.setState({ prevSearch: query, searchItems: data });
+                if (data) this.setState({ prevSearch: query, searchItems: data, loading: false });
             }
         }, 500);
     }
@@ -123,19 +126,31 @@ export default class SecondSearchScreen extends React.Component {
                     </View>
                 </View>
 
-                <View style={styles.scrollViewParent}>
-                    {this.state.searchItems.items.length
-                        ? (
-                            <ScrollView contentContainerStyle={styles.scrollView}>
-                                {this.state.searchItems.items.map(
-                                    this.state.option === 'user' ? this.mapUser : this.mapRepo,
+                {!this.state.loading
+                    ? (
+                        <View style={styles.scrollViewParent}>
+                            {this.state.searchItems.items.length
+                                ? (
+                                    <ScrollView contentContainerStyle={styles.scrollView}>
+                                        {this.state.searchItems.items.map(
+                                            this.state.option === 'user' ? this.mapUser : this.mapRepo,
+                                        )}
+                                    </ScrollView>
+                                )
+                                : (
+                                    <NothingFound />
                                 )}
-                            </ScrollView>
-                        )
-                        : (
-                            <NothingFound />
-                        )}
-                </View>
+                        </View>
+                    )
+                    : (
+                        <View style={styles.loadingAnimation}>
+                            <ActivityIndicator
+                                size="large"
+                                color={colors.softYellow}
+                            />
+                            <Text style={styles.loadingText}>Searching now...</Text>
+                        </View>
+                    )}
             </KeyboardAvoidingView>
         );
     }
