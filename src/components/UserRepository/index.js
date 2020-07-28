@@ -70,11 +70,13 @@ function UserRepository({ repository }) {
                             {repository.stargazers_count}
                         </Text>
 
-                        <Feather
-                            name="git-branch"
-                            size={iconSize}
-                            color={repository.fork ? colors.green : colors.softRed}
-                        />
+                        { repository.fork && (
+                            <Feather
+                                name="git-branch"
+                                size={iconSize}
+                                color={colors.green}
+                            />
+                        ) }
                     </View>
 
                     <View style={styles.repoTitle}>
