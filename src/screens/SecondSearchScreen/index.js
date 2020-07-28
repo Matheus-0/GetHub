@@ -1,10 +1,11 @@
 import React from 'react';
 import {
-    KeyboardAvoidingView, Picker, Platform, ScrollView, Text, TextInput, View, ActivityIndicator,
+    KeyboardAvoidingView, Picker, Platform, ScrollView, Text, TextInput, View,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Feather } from '@expo/vector-icons';
 
+import LoadingStatus from '../../components/LoadingStatus';
 import NothingFound from '../../components/NothingFound';
 import RepoContainer from '../../components/RepoContainer';
 import UserContainer from '../../components/UserContainer';
@@ -115,7 +116,7 @@ export default class SecondSearchScreen extends React.Component {
                                 style={styles.pickerOption}
                                 selectedValue={this.state.option}
                                 onValueChange={(itemValue) => {
-                                    this.setState({ option: itemValue });
+                                    this.setState({ option: itemValue, loading: true });
                                     this.updateUserList(this.state.prevSearch);
                                 }}
                             >
@@ -143,13 +144,7 @@ export default class SecondSearchScreen extends React.Component {
                         </View>
                     )
                     : (
-                        <View style={styles.loadingAnimation}>
-                            <ActivityIndicator
-                                size="large"
-                                color={colors.softYellow}
-                            />
-                            <Text style={styles.loadingText}>Searching now...</Text>
-                        </View>
+                        <LoadingStatus text={"Searching now..."}/>
                     )}
             </KeyboardAvoidingView>
         );
