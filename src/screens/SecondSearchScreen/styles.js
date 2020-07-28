@@ -72,6 +72,16 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
     },
+    loadingAnimation: {
+        flex: 9,
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    loadingText: {
+        fontSize: 16,
+        color: 'white',
+        marginTop: 12,
+    },
     touchableStyle: {
         borderRadius: 10,
         margin: 10,
