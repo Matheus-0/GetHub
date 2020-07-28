@@ -46,7 +46,7 @@ class SearchForm extends React.Component {
             let { routes } = state;
             let removeNumber = 1;
 
-            if (routes > 1) {
+            if (routes.length > 1) {
                 routes = routes.filter((route) => route.name !== 'Showcase');
                 removeNumber = 3;
             }
