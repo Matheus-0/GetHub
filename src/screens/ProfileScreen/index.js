@@ -28,7 +28,10 @@ export default class ProfileScreen extends React.Component {
         const { userInfo, userRepositories } = this.state;
 
         return (
-            <View style={styles.screen}>
+            <ScrollView 
+                style={styles.screen}
+                contentContainerStyle={{ alignItems: 'center', justifyContent: 'center' }}
+            >
                 <LinearGradient
                     colors={['#1e1e1e', '#0f0f0f']}
                     start={[0.6, 0.3]}
@@ -71,7 +74,7 @@ export default class ProfileScreen extends React.Component {
                     {userRepositories.length > 0 && (
                         <ScrollView
                             style={{ width: '100%' }}
-                            contentContainerStyle={{ alignItems: 'stretch', paddingBottom: 20, paddingHorizontal: 20 }}
+                            // contentContainerStyle={{ alignItems: 'stretch', paddingBottom: 20, paddingHorizontal: 20 }}
                         >
                             {userRepositories.map((repo) => (
                                 <UserRepository repository={repo} key={repo.id} />
@@ -83,7 +86,7 @@ export default class ProfileScreen extends React.Component {
                         <Text style={{ color: 'white' }}>Nothing found.</Text>
                     )}
                 </View>
-            </View>
+            </ScrollView>
         );
     }
 }
