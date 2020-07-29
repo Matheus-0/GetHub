@@ -62,7 +62,7 @@ function UserRepository({ repository }) {
                         <Feather
                             name="eye"
                             size={iconSize}
-                            color={colors.softBlue}
+                            color={colors.softYellow}
                         />
 
                         <Text style={styles.itemCount}>
