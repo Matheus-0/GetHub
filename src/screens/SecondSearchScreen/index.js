@@ -144,7 +144,7 @@ export default class SecondSearchScreen extends React.Component {
                         </View>
                     )
                     : (
-                        <LoadingStatus text={"Searching now..."}/>
+                        <LoadingStatus text="Searching now..." />
                     )}
             </KeyboardAvoidingView>
         );

@@ -28,7 +28,7 @@ export default class ProfileScreen extends React.Component {
         const { userInfo, userRepositories } = this.state;
 
         return (
-            <ScrollView 
+            <ScrollView
                 style={styles.screen}
                 contentContainerStyle={{ alignItems: 'center', justifyContent: 'center' }}
             >
@@ -74,6 +74,7 @@ export default class ProfileScreen extends React.Component {
                     {userRepositories.length > 0 && (
                         <ScrollView
                             style={{ width: '100%' }}
+                            // eslint-disable-next-line max-len
                             // contentContainerStyle={{ alignItems: 'stretch', paddingBottom: 20, paddingHorizontal: 20 }}
                         >
                             {userRepositories.map((repo) => (
