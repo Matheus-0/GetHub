@@ -79,39 +79,17 @@ function UserRepository({ repository }) {
                     </View>
 
                     <View style={styles.repoTitle}>
-                        <Text style={styles.title}>{repository.name}</Text>
+                        <Text numberOfLines={2} style={styles.title}>{repository.name}</Text>
                     </View>
 
                     <View style={{ width: '100%', maxWidth: '100%' }}>
                         {repository.description && (
                             <View style={[styles.textView, { marginBottom: 10 }]}>
-                                <Text style={styles.textDescription}>
+                                <Text numberOfLines={2} style={styles.textDescription}>
                                     {repository.description}
                                 </Text>
                             </View>
                         )}
-
-                        {/* <View style={styles.textView}>
-                            <Text style={styles.textDescription}>
-                                <Text style={{ fontWeight: 'bold' }}>
-                                    {'Last update: '}
-                                    <Text style={{ fontWeight: 'normal' }}>
-                                        { parseDate(repository.updated_at)}
-                                    </Text>
-                                </Text>
-                            </Text>
-                        </View>
-
-                        <View style={styles.textView}>
-                            <Text style={styles.textDescription}>
-                                <Text style={{ fontWeight: 'bold' }}>
-                                    {'Created at: '}
-                                    <Text style={{ fontWeight: 'normal' }}>
-                                        { parseDate(repository.created_at) }
-                                    </Text>
-                                </Text>
-                            </Text>
-                        </View> */}
                     </View>
 
                     {repository.language && (
