@@ -10,9 +10,6 @@ const styles = StyleSheet.create({
         right: 0,
         top: 0,
     },
-    repositoriesView: {
-        flex: 9,
-    },
     openProfileText: {
         fontSize: 12,
         fontWeight: 'bold',
@@ -23,16 +20,9 @@ const styles = StyleSheet.create({
         paddingHorizontal: 70,
         paddingVertical: 5,
     },
-    openProfileView: {
-        flex: 2,
-    },
     publicText: {
         color: 'white',
         fontWeight: 'bold',
-    },
-    publicView: {
-        flex: 1,
-        width: '100%',
     },
     screen: {
         flex: 1,

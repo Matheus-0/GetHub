@@ -3,9 +3,11 @@ import { Text, View } from 'react-native';
 
 import styles from './styles';
 
-export default function UserNumbers({ followers, following, repositories }) {
+export default function UserNumbers({
+    followers, following, repositories, style,
+}) {
     return (
-        <View style={styles.container}>
+        <View style={[style, styles.container]}>
             <View style={styles.containerItem}>
                 <Text style={styles.number}>{repositories}</Text>
                 <Text style={{ color: 'white' }}>repositories</Text>

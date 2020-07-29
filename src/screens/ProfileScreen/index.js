@@ -55,56 +55,47 @@ export default class ProfileScreen extends React.Component {
                 {!loading ? (
                     <ScrollView
                         style={styles.screen}
-                        contentContainerStyle={{ alignItems: 'center', justifyContent: 'center' }}
+                        contentContainerStyle={{ alignItems: 'center', paddingVertical: 35 }}
                     >
-                        <View style={{ flex: 5 }}>
-                            <UserBasicData
-                                avatar={userInfo.avatar_url}
-                                bio={userInfo.bio}
-                                location={userInfo.location}
-                                username={userInfo.login}
-                            />
-                        </View>
+                        <UserBasicData
+                            avatar={userInfo.avatar_url}
+                            bio={userInfo.bio}
+                            location={userInfo.location}
+                            username={userInfo.login}
+                        />
 
-                        <View style={{ flex: 1 }}>
-                            <UserNumbers
-                                followers={userInfo.followers}
-                                following={userInfo.following}
-                                repositories={userInfo.public_repos}
-                            />
-                        </View>
+                        <UserNumbers
+                            followers={userInfo.followers}
+                            following={userInfo.following}
+                            repositories={userInfo.public_repos}
+                            style={{ width: '90%' }}
+                        />
 
-                        <View style={styles.openProfileView}>
-                            <TouchableHighlight
-                                onPress={() => openOnBrowser(userInfo.html_url)}
-                                style={styles.openProfileTouchable}
-                                underlayColor={shadeColor(colors.hardYellow, -25)}
+                        <TouchableHighlight
+                            onPress={() => openOnBrowser(userInfo.html_url)}
+                            style={styles.openProfileTouchable}
+                            underlayColor={shadeColor(colors.hardYellow, -25)}
+                        >
+                            <Text style={styles.openProfileText}>OPEN PROFILE</Text>
+                        </TouchableHighlight>
+
+                        <Text style={styles.publicText}>PUBLIC REPOSITORIES</Text>
+
+                        {userRepositories.length > 0 && (
+                            <ScrollView
+                                style={{ width: '100%' }}
+                                // eslint-disable-next-line max-len
+                                // contentContainerStyle={{ alignItems: 'stretch', paddingBottom: 20, paddingHorizontal: 20 }}
                             >
-                                <Text style={styles.openProfileText}>OPEN PROFILE</Text>
-                            </TouchableHighlight>
-                        </View>
+                                {userRepositories.map((repo) => (
+                                    <UserRepository repository={repo} key={repo.id} />
+                                ))}
+                            </ScrollView>
+                        )}
 
-                        <View style={styles.publicView}>
-                            <Text style={styles.publicText}>PUBLIC REPOSITORIES</Text>
-                        </View>
-
-                        <View style={styles.repositoriesView}>
-                            {userRepositories.length > 0 && (
-                                <ScrollView
-                                    style={{ width: '100%' }}
-                                    // eslint-disable-next-line max-len
-                                    // contentContainerStyle={{ alignItems: 'stretch', paddingBottom: 20, paddingHorizontal: 20 }}
-                                >
-                                    {userRepositories.map((repo) => (
-                                        <UserRepository repository={repo} key={repo.id} />
-                                    ))}
-                                </ScrollView>
-                            )}
-
-                            {userRepositories.length === 0 && (
-                                <Text style={{ color: 'white' }}>Nothing found.</Text>
-                            )}
-                        </View>
+                        {userRepositories.length === 0 && (
+                            <Text style={{ color: 'white' }}>Nothing found.</Text>
+                        )}
                     </ScrollView>
                 ) : (
                     <LoadingStatus text="Loading profile..." />
