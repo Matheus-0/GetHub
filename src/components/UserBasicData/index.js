@@ -14,7 +14,7 @@ export default function UserBasicData({
             </View>
             <View style={styles.containerItem}>
                 <Text style={styles.username}>{username}</Text>
-                {bio && <Text style={styles.bio}>{bio}</Text>}
+                {bio && <Text numberOfLines={3} style={styles.bio}>{bio}</Text>}
                 {location && (
                     <View style={styles.locationView}>
                         <SimpleLineIcons name="location-pin" size={20} color="white" />
