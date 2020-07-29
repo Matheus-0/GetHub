@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-    Text, TextInput, TouchableHighlight, View,
+    Keyboard, Text, TextInput, TouchableHighlight, View,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 import { Feather } from '@expo/vector-icons';
@@ -17,26 +17,27 @@ class SearchForm extends React.Component {
 
         this.state = {
             itemName: '',
-            searchNow: false,
         };
     }
 
-    componentDidMount() {
-        // Need to set to false to guarantee no bugs
-        this.setState({ searchNow: false });
-    }
+    async handleSearchPress() {
+        Keyboard.dismiss();
 
-    async componentDidUpdate() {
-        const { itemName, searchNow } = this.state;
+        setTimeout(async () => {
+            const { itemName } = this.state;
 
-        // If we want to search and the input isn't empty
-        if (searchNow && itemName.trim()) {
-            const users = await searchUsers(itemName);
+            if (itemName.trim()) {
+                this.props.showLoading();
 
-            if (users) {
-                this.props.navigation.replace('SecondSearchScreen', { itemName, users });
+                const users = await searchUsers(itemName);
+
+                if (users) {
+                    this.props.navigation.navigate('SecondSearchScreen', { itemName, users });
+
+                    this.props.hideLoading();
+                }
             }
-        }
+        }, 100);
     }
 
     // eslint-disable-next-line class-methods-use-this
@@ -76,7 +77,7 @@ class SearchForm extends React.Component {
 
                 <TouchableHighlight
                     style={styles.touchable}
-                    onPress={() => this.setState({ searchNow: true })}
+                    onPress={() => this.handleSearchPress()}
                 >
                     <LinearGradient
                         colors={[colors.hardYellow, colors.softOrange]}
