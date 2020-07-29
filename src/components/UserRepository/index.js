@@ -8,11 +8,10 @@ import languageColors from '../../data/languageColors';
 import styles from './styles';
 
 import openOnBrowser from '../../utils/openOnBrowser';
-import parseDate from '../../utils/parseDate';
 import parseRepoSize from '../../utils/parseRepoSize';
 import shadeColor from '../../utils/shadeColor';
 
-const DEFAULT_REPOSITORY_COLOR = '#ffffff';
+const DEFAULT_REPOSITORY_COLOR = '#2d2d2d';
 
 function UserRepository({ repository }) {
     const iconSize = 20;
@@ -70,13 +69,13 @@ function UserRepository({ repository }) {
                             {repository.stargazers_count}
                         </Text>
 
-                        { repository.fork && (
+                        {repository.fork && (
                             <Feather
                                 name="git-branch"
                                 size={iconSize}
-                                color={colors.green}
+                                color={colors.softYellow}
                             />
-                        ) }
+                        )}
                     </View>
 
                     <View style={styles.repoTitle}>

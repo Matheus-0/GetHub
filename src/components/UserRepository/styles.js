@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        height: 250,
+        height: 200,
         borderRadius: 20,
         flexWrap: 'wrap',
     },
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     },
     repoContainerTouchable: {
         borderRadius: 20,
-        marginTop: 20,
+        marginBottom: 20,
     },
     repoTitle: {
         flexDirection: 'row',

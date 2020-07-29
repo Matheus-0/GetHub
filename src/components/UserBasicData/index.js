@@ -5,10 +5,10 @@ import { SimpleLineIcons } from '@expo/vector-icons';
 import styles from './styles';
 
 export default function UserBasicData({
-    avatar, bio, location, username,
+    avatar, bio, location, style, username,
 }) {
     return (
-        <View style={styles.container}>
+        <View style={[style, styles.container]}>
             <View style={styles.containerItem}>
                 <Image source={{ uri: avatar }} style={styles.image} />
             </View>

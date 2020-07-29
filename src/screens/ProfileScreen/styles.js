@@ -17,12 +17,14 @@ const styles = StyleSheet.create({
     openProfileTouchable: {
         backgroundColor: colors.hardYellow,
         borderRadius: 20,
+        marginBottom: 30,
         paddingHorizontal: 70,
         paddingVertical: 5,
     },
     publicText: {
         color: 'white',
         fontWeight: 'bold',
+        marginBottom: 30,
     },
     screen: {
         flex: 1,

@@ -55,12 +55,13 @@ export default class ProfileScreen extends React.Component {
                 {!loading ? (
                     <ScrollView
                         style={styles.screen}
-                        contentContainerStyle={{ alignItems: 'center', paddingVertical: 35 }}
+                        contentContainerStyle={{ alignItems: 'center', paddingTop: 35 }}
                     >
                         <UserBasicData
                             avatar={userInfo.avatar_url}
                             bio={userInfo.bio}
                             location={userInfo.location}
+                            style={{ marginBottom: 30 }}
                             username={userInfo.login}
                         />
 
@@ -68,7 +69,7 @@ export default class ProfileScreen extends React.Component {
                             followers={userInfo.followers}
                             following={userInfo.following}
                             repositories={userInfo.public_repos}
-                            style={{ width: '90%' }}
+                            style={{ marginBottom: 30, width: '90%' }}
                         />
 
                         <TouchableHighlight
@@ -83,7 +84,7 @@ export default class ProfileScreen extends React.Component {
 
                         {userRepositories.length > 0 && (
                             <ScrollView
-                                style={{ width: '100%' }}
+                                style={{ width: '90%' }}
                                 // eslint-disable-next-line max-len
                                 // contentContainerStyle={{ alignItems: 'stretch', paddingBottom: 20, paddingHorizontal: 20 }}
                             >
