@@ -1503,7 +1503,7 @@ const languageColors = {
         color: '#adb2cb',
         url: 'https://github.com/trending?l=VHDL',
     },
-    'Vim script': {
+    VimL: {
         color: '#199f4b',
         url: 'https://github.com/trending?l=Vim-script',
     },
