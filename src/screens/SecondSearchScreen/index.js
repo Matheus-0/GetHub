@@ -61,6 +61,7 @@ export default class SecondSearchScreen extends React.Component {
         this.state.timeout = setTimeout(async () => {
             if (query.trim()) {
                 this.setState({ loading: true });
+
                 let data;
 
                 switch (this.state.option) {

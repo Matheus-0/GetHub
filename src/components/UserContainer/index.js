@@ -7,14 +7,9 @@ import { LinearGradient } from 'expo-linear-gradient';
 import colors from '../../data/colors';
 import styles from './styles';
 
-import { getUser, getUserRepositories } from '../../api/api';
-
 export default class UserContainer extends React.Component {
-    async handleUserClick(username) {
-        const userInfo = await getUser(username);
-        const userRepositories = await getUserRepositories(username);
-
-        this.props.navigation.navigate('ProfileScreen', { userInfo, userRepositories });
+    handleUserClick(username) {
+        this.props.navigation.navigate('ProfileScreen', { username });
     }
 
     render() {
