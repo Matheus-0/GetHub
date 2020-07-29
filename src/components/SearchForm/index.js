@@ -26,7 +26,7 @@ class SearchForm extends React.Component {
         this.setState({ searchNow: false });
     }
 
-    async componentDidUpdate(prevProps, prevState) {
+    async componentDidUpdate() {
         const { itemName, searchNow } = this.state;
 
         // If we want to search and the input isn't empty
