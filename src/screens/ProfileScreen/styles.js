@@ -26,9 +26,6 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 30,
     },
-    screen: {
-        flex: 1,
-    },
 });
 
 export default styles;

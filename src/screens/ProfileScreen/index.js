@@ -54,7 +54,7 @@ export default class ProfileScreen extends React.Component {
 
                 {!loading ? (
                     <ScrollView
-                        style={styles.screen}
+                        style={{ flex: 1 }}
                         contentContainerStyle={{ alignItems: 'center', paddingTop: 35 }}
                     >
                         <UserBasicData
@@ -99,7 +99,7 @@ export default class ProfileScreen extends React.Component {
                         )}
                     </ScrollView>
                 ) : (
-                    <LoadingStatus text="Loading profile..." />
+                    <LoadingStatus style={{ flex: 1 }} text="Loading profile..." />
                 )}
             </View>
         );

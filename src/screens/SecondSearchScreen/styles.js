@@ -63,9 +63,6 @@ const styles = StyleSheet.create({
     scrollView: {
         paddingHorizontal: 30,
     },
-    scrollViewParent: {
-        flex: 9,
-    },
     searchInputView: {
         alignItems: 'center',
         flex: 2,

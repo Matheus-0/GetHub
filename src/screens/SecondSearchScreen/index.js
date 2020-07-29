@@ -130,7 +130,7 @@ export default class SecondSearchScreen extends React.Component {
 
                 {!this.state.loading
                     ? (
-                        <View style={styles.scrollViewParent}>
+                        <View style={{ flex: 9 }}>
                             {this.state.searchItems.items.length
                                 ? (
                                     <ScrollView contentContainerStyle={styles.scrollView}>
@@ -145,7 +145,7 @@ export default class SecondSearchScreen extends React.Component {
                         </View>
                     )
                     : (
-                        <LoadingStatus text="Searching now..." />
+                        <LoadingStatus style={{ flex: 9 }} text="Searching now..." />
                     )}
             </KeyboardAvoidingView>
         );
