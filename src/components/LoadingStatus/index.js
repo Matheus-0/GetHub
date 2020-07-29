@@ -4,9 +4,9 @@ import { View, ActivityIndicator, Text } from 'react-native';
 import styles from './styles';
 import colors from '../../data/colors';
 
-export default function LoadingStatus({ text }) {
+export default function LoadingStatus({ style, text }) {
     return (
-        <View style={styles.loadingAnimation}>
+        <View style={[style, styles.loadingAnimation]}>
             <ActivityIndicator
                 size="large"
                 color={colors.hardYellow}
