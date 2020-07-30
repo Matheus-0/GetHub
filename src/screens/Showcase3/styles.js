@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     buttonText: {
-        color: 'white',
+        color: 'black',
         fontSize: 15,
     },
     gradientButton: {

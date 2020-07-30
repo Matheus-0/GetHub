@@ -4,6 +4,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 import Icon from './icon';
 import styles from './styles';
+import colors from '../../data/colors';
 
 import PageSelector from '../../components/PageSelector';
 import SwitchShowcase from '../../components/SwitchShowcase';
@@ -30,7 +31,7 @@ export default function LoginScreen({ navigation }) {
                 style={styles.touchable}
             >
                 <LinearGradient
-                    colors={['#54521a', '#fa4a51', '#313131']}
+                    colors={[colors.softYellow, colors.hardYellow]}
                     style={styles.gradientButton}
                 >
                     <Text style={styles.buttonText}>
