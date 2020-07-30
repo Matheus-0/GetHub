@@ -55,14 +55,14 @@ export default class ProfileScreen extends React.Component {
                 {!loading ? (
                     <ScrollView
                         style={{ flex: 1 }}
-                        contentContainerStyle={{ alignItems: 'center', paddingTop: 35 }}
+                        contentContainerStyle={{ alignItems: 'center', paddingTop: 10 }}
                     >
                         <UserBasicData
                             avatar={userInfo.avatar_url}
                             bio={userInfo.bio}
                             location={userInfo.location}
                             style={{ marginBottom: 30 }}
-                            username={userInfo.login}
+                            username={userInfo.name}
                         />
 
                         <UserNumbers
