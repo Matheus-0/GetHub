@@ -72,6 +72,7 @@ class SearchForm extends React.Component {
                         style={styles.input}
                         underlineColorAndroid="transparent"
                         onChangeText={(item) => this.setState({ itemName: item })}
+                        returnKeyType="search"
                     />
                 </View>
 
