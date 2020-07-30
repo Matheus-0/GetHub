@@ -67,9 +67,18 @@ function Routes({ isFirstLaunch, networkAvailable }) {
                 <MainStack.Screen
                     name="ProfileScreen"
                     component={ProfileScreen}
-                    options={{
-                        headerShown: false,
-                    }}
+                    options={
+                        ({ route }) => ({
+                            title: route.params.username,
+                            headerStyle: {
+                                backgroundColor: '#1f2a2f',
+                            },
+                            headerTintColor: 'white',
+                            headerTitleStyle: {
+                                color: 'white',
+                            },
+                        })
+                    }
                 />
             </MainStack.Navigator>
         </NavigationContainer>
