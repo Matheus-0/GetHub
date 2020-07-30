@@ -18,7 +18,12 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.programminggods.gethub",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.programminggods.gethub",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
