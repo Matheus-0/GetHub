@@ -1,4 +1,13 @@
-# GetHub
+<h1 align="center">
+    <img alt="Semana OmniStack" src=".github/logo.png" width="200px" />
+</h1>
+
+<h2 align="center">
+
+  <img alt="Semana OmniStack" src=".github/rocket.svg" width="200px" />
+  <br/>
+  🚀 Semana Omnistack 11.0
+</h2>
 
 An application used for seeing user information and repositories from GitHub.
 
