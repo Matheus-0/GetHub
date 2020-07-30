@@ -37,7 +37,7 @@ export default class App extends React.Component {
 
         return (
             <>
-                <StatusBar style="light" />
+                <StatusBar style="light" translucent={false} />
                 <Routes isFirstLaunch={firstLaunch} networkAvailable={networkAvailable} />
             </>
         );
