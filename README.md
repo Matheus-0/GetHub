@@ -1,23 +1,32 @@
 <h1 align="center">
-    <img alt="Semana OmniStack" src=".github/logo.png" width="200px" />
+    <img alt="GetHub" src=".github/logo.png" width="200px" />
 </h1>
-
-<h2 align="center">
-
-  <img alt="Semana OmniStack" src=".github/rocket.svg" width="200px" />
-  <br/>
-  🚀 Semana Omnistack 11.0
-</h2>
 
 An application used for seeing user information and repositories from GitHub.
 
-## Built With
+## :rocket: Built With
 
 - [ESLint](https://eslint.org/)
 - [Expo](https://expo.io/)
 - [React Native](https://reactnative.dev/)
 
-## Authors
+Extras:
+
+- [ReactNavigation]()
+- [Axios]()
+
+## :thinking: How to contribute
+
+- Fork this repository;
+- Create a branch with your feature: `git checkout -b my-feature`;
+- Commit your changes: `git commit -m ':feat: My feature'`;
+- Push to your branch: `git push origin minha-feature`.
+
+## :memo: Licença
+
+This project is under the MIT license. See the [LICENSE](LICENSE.md) file for more details.
+
+## Made with :heart: by:
 
 <table width="100%">
   <tr>
