@@ -12,17 +12,17 @@ An application used for seeing user information and repositories from GitHub.
 
 Extras:
 
-- [ReactNavigation]()
-- [Axios]()
+- [ReactNavigation](https://reactnavigation.org/)
+- [Axios](https://github.com/axios/axios)
 
 ## :thinking: How to contribute
 
 - Fork this repository;
 - Create a branch with your feature: `git checkout -b my-feature`;
 - Commit your changes: `git commit -m ':feat: My feature'`;
-- Push to your branch: `git push origin minha-feature`.
+- Push to your branch: `git push origin my-feature`.
 
-## :memo: Licença
+## :memo: License
 
 This project is under the MIT license. See the [LICENSE](LICENSE.md) file for more details.
 
