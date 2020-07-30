@@ -29,6 +29,7 @@ export default class SecondSearchScreen extends React.Component {
 
         this.mapRepo = this.mapRepo.bind(this);
         this.mapUser = this.mapUser.bind(this);
+        this.handleKeyboardSubmit = this.handleKeyboardSubmit.bind(this);
     }
 
     mapUser(user) {
@@ -53,6 +54,10 @@ export default class SecondSearchScreen extends React.Component {
                 repo={repo}
             />
         );
+    }
+
+    handleKeyboardSubmit({ nativeEvent }) {
+        this.updateUserList(this.state.prevSearch);
     }
 
     updateUserList(query) {
@@ -107,9 +112,11 @@ export default class SecondSearchScreen extends React.Component {
                                 style={styles.input}
                                 underlineColorAndroid="transparent"
                                 onChangeText={(query) => {
-                                    this.updateUserList(query);
+                                    this.setState({ prevSearch: query });
                                 }}
+                                onSubmitEditing={this.handleKeyboardSubmit}
                                 defaultValue={this.state.prevSearch}
+                                returnKeyType="search"
                             />
                         </View>
                         <View style={styles.pickerView}>
