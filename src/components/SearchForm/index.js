@@ -20,6 +20,23 @@ class SearchForm extends React.Component {
         };
     }
 
+    componentDidMount() {
+        this.props.navigation.dispatch((state) => {
+            let { routes } = state;
+
+            console.log(routes);
+
+            if (routes.length !== 0) {
+                routes = routes.filter((route) => !route.name.includes('Showcase'));
+            }
+            return CommonActions.reset({
+                ...state,
+                routes,
+                index: 0,
+            });
+        });
+    }
+    
     async handleSearchPress() {
         Keyboard.dismiss();
 
@@ -38,26 +55,6 @@ class SearchForm extends React.Component {
                 }
             }
         }, 100);
-    }
-
-    // eslint-disable-next-line class-methods-use-this
-    goToNextScreen(itemName, users) {
-        this.props.navigation.dispatch((state) => {
-            // Remove the home route from the stack
-            let { routes } = state;
-            let removeNumber = 1;
-
-            if (routes.length > 1) {
-                routes = routes.filter((route) => route.name !== 'Showcase');
-                removeNumber = 3;
-            }
-
-            return CommonActions.reset({
-                ...state,
-                routes,
-                index: (routes.length - removeNumber) + 1,
-            });
-        });
     }
 
     render() {
