@@ -7,6 +7,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 import Routes from './src/routes';
 import colors from './src/data/colors';
 import NetworkError from './src/components/NetworkError';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default class App extends React.Component {
     constructor(props) {
@@ -41,15 +42,14 @@ export default class App extends React.Component {
         this.state.interval = setTimeout(
             async () => {
                 const { isConnected } = await getNetworkStateAsync();
-                const { showError } = this.state;
-                const connected = !this.state.networkAvailable;
+                const { showError, errorColor } = this.state;
 
-                if (!connected) {
-                    this.setState({ networkAvailable: connected, showError: true, errorColor: 'red' });
-                } else if (connected && showError) {
-                    this.setState({ networkAvailable: connected, errorColor: 'green' });
+                if (!isConnected) {
+                    this.setState({ networkAvailable: isConnected, showError: true, errorColor: 'red' });
+                } else if (isConnected && showError && errorColor === 'red') {
+                    this.setState({ networkAvailable: isConnected, errorColor: 'green' });
                 } else {
-                    this.setState({ networkAvailable: connected, showError: false });
+                    this.setState({ networkAvailable: isConnected, showError: false });
                 }
             },
             2000,
