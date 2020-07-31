@@ -24,11 +24,10 @@ class SearchForm extends React.Component {
         this.props.navigation.dispatch((state) => {
             let { routes } = state;
 
-            console.log(routes);
-
             if (routes.length !== 0) {
                 routes = routes.filter((route) => !route.name.includes('Showcase'));
             }
+
             return CommonActions.reset({
                 ...state,
                 routes,
@@ -36,7 +35,7 @@ class SearchForm extends React.Component {
             });
         });
     }
-    
+
     async handleSearchPress() {
         Keyboard.dismiss();
 

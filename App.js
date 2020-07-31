@@ -1,13 +1,11 @@
 import React from 'react';
-import { View, Text } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { getNetworkStateAsync } from 'expo-network';
 import AsyncStorage from '@react-native-community/async-storage';
 
 import Routes from './src/routes';
-import colors from './src/data/colors';
+
 import NetworkError from './src/components/NetworkError';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export default class App extends React.Component {
     constructor(props) {
@@ -19,7 +17,7 @@ export default class App extends React.Component {
             showError: false,
             errorColor: 'green',
             interval: null,
-            tries: 0,
+            // tries: 0,
         };
     }
 
@@ -39,6 +37,7 @@ export default class App extends React.Component {
 
     componentDidUpdate() {
         if (this.state.interval) clearTimeout(this.state.interval);
+
         this.state.interval = setTimeout(
             async () => {
                 const { isConnected } = await getNetworkStateAsync();

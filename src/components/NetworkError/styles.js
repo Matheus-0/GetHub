@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-    errorView: { 
+    errorView: {
         position: 'absolute',
         backgroundColor: '#2f3f1f',
         bottom: 0,
