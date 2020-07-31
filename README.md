@@ -2,7 +2,9 @@
     <img alt="GetHub" src=".github/logo.png" width="200px" />
 </h1>
 
-An application used for seeing user information and repositories from GitHub.
+<p align="center">
+    An application used for seeing user information and repositories from GitHub.
+</p>
 
 ## :rocket: Built With
 
@@ -12,15 +14,16 @@ An application used for seeing user information and repositories from GitHub.
 
 Extras:
 
-- [ReactNavigation](https://reactnavigation.org/)
 - [Axios](https://github.com/axios/axios)
+- [React Navigation](https://reactnavigation.org/)
 
-## :thinking: How to contribute
+## :thinking: Contributing
 
 - Fork this repository;
-- Create a branch with your feature: `git checkout -b my-feature`;
-- Commit your changes: `git commit -m ':feat: My feature'`;
-- Push to your branch: `git push origin my-feature`.
+- Create a branch with your feature (`git checkout -b my-feature`);
+- Commit your changes (`git commit -m 'Add my feature!'`);
+- Push to your branch (`git push origin my-feature`);
+- Create a pull request.
 
 ## :memo: License
 
