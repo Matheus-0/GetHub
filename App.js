@@ -1,7 +1,7 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { getNetworkStateAsync } from 'expo-network';
 import AsyncStorage from '@react-native-community/async-storage';
+import NetInfo from '@react-native-community/netinfo';
 
 import Routes from './src/routes';
 
@@ -12,16 +12,32 @@ export default class App extends React.Component {
         super(props);
 
         this.state = {
+            connectedColor: 'green',
             firstLaunch: false,
             networkAvailable: true,
-            showError: false,
-            errorColor: 'green',
+            showStatus: false,
+            errorColor: 'red',
             interval: null,
-            // tries: 0,
         };
     }
 
     async componentDidMount() {
+        NetInfo.addEventListener((state) => {
+            if (this.state.interval) clearTimeout(this.state.interval);
+
+            this.state.interval = setTimeout(() => {
+                this.setState({ networkAvailable: state.isConnected });
+
+                if (!state.isConnected) {
+                    this.setState({ showStatus: true });
+                } else {
+                    setTimeout(() => {
+                        this.setState({ showStatus: false });
+                    }, 3000);
+                }
+            }, 3000);
+        });
+
         try {
             const firstLaunch = await AsyncStorage.getItem('firstLaunch');
 
@@ -33,26 +49,6 @@ export default class App extends React.Component {
         } catch (error) {
             this.setState({ firstLaunch: true });
         }
-    }
-
-    componentDidUpdate() {
-        if (this.state.interval) clearTimeout(this.state.interval);
-
-        this.state.interval = setTimeout(
-            async () => {
-                const { isConnected } = await getNetworkStateAsync();
-                const { showError, errorColor } = this.state;
-
-                if (!isConnected) {
-                    this.setState({ networkAvailable: isConnected, showError: true, errorColor: 'red' });
-                } else if (isConnected && showError && errorColor === 'red') {
-                    this.setState({ networkAvailable: isConnected, errorColor: 'green' });
-                } else {
-                    this.setState({ networkAvailable: isConnected, showError: false });
-                }
-            },
-            2000,
-        );
     }
 
     render() {
@@ -69,9 +65,10 @@ export default class App extends React.Component {
                     networkAvailable={networkAvailable}
                 />
 
-                {this.state.showError && (
+                {this.state.showStatus && (
                     <NetworkError
-                        color={this.state.errorColor}
+                        color={networkAvailable ? this.state.connectedColor : this.state.errorColor}
+                        connected={networkAvailable}
                     />
                 )}
             </>

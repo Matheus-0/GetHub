@@ -3,13 +3,13 @@ import { View, Text } from 'react-native';
 
 import styles from './styles';
 
-export default function NetworkError({ color }) {
+export default function NetworkError({ color, connected }) {
     return (
         <View
             style={[styles.errorView, { backgroundColor: color }]}
         >
             <Text style={styles.errorText}>
-                {color === 'green' ? 'Connection established.' : 'Trying to connect...'}
+                {connected ? 'Connection established.' : 'No connection.'}
             </Text>
         </View>
     );
