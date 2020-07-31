@@ -41,7 +41,7 @@ export default class SearchScreen extends React.Component {
                         showLoading={() => this.setState({ loading: true })}
                     />
 
-                    {loading && <LoadingStatus style={{ position: 'absolute', bottom: 40 }} text="Searching now..." />}
+                    {loading && <LoadingStatus style={{ position: 'absolute', bottom: 30 }} />}
                 </View>
             </>
         );

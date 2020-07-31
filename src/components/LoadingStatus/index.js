@@ -11,7 +11,7 @@ export default function LoadingStatus({ style, text }) {
                 size="large"
                 color={colors.hardYellow}
             />
-            <Text style={styles.loadingText}>{ text }</Text>
+            {text && <Text style={styles.loadingText}>{ text }</Text>}
         </View>
     );
 }

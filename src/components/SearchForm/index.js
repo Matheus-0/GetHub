@@ -64,6 +64,7 @@ class SearchForm extends React.Component {
 
                     <TextInput
                         autoCapitalize="none"
+                        onSubmitEditing={() => this.handleSearchPress()}
                         placeholder="Search for user/repository"
                         style={styles.input}
                         underlineColorAndroid="transparent"
