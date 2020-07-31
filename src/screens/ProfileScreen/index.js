@@ -62,7 +62,7 @@ export default class ProfileScreen extends React.Component {
                             bio={userInfo.bio}
                             location={userInfo.location}
                             style={{ marginBottom: 30 }}
-                            username={userInfo.name}
+                            username={userInfo.name ? userInfo.name : userInfo.login}
                         />
 
                         <UserNumbers
