@@ -16,15 +16,19 @@ const DEFAULT_REPOSITORY_COLOR = '#2d2d2d';
 function UserRepository({ repository }) {
     const iconSize = 20;
 
-    // First, need to check if repository has a language, if not, set a default color
-    const languageColor = repository.language
-        ? languageColors[repository.language].color
-        : DEFAULT_REPOSITORY_COLOR;
+    let languageColor;
 
-    // Now we need to check if we could successfully get a color, if not, set default
-    const darkerLanguageColor = languageColor
-        ? shadeColor(languageColor, -75)
-        : DEFAULT_REPOSITORY_COLOR;
+    try {
+        // We need to check if repository has a language, if not, set a default color
+        languageColor = repository.language
+            ? languageColors[repository.language]
+            : DEFAULT_REPOSITORY_COLOR;
+    } catch (error) {
+        // If no color is found, set default
+        languageColor = DEFAULT_REPOSITORY_COLOR;
+    }
+
+    const darkerLanguageColor = shadeColor(languageColor, -75);
 
     return (
         <TouchableHighlight
