@@ -3,6 +3,7 @@ import {
     ScrollView, Text, TouchableHighlight, View,
 } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { Feather } from '@expo/vector-icons';
 
 import colors from '../../data/colors';
 import styles from './styles';
@@ -95,7 +96,10 @@ export default class ProfileScreen extends React.Component {
                         )}
 
                         {userRepositories.length === 0 && (
-                            <Text style={{ color: 'white' }}>Nothing found.</Text>
+                            <View style={{ alignItems: 'center', marginTop: 15 }}>
+                                <Feather name="alert-circle" size={100} style={{ marginBottom: 15 }} color="white" />
+                                <Text style={{ color: 'white' }}>No repositories found.</Text>
+                            </View>
                         )}
                     </ScrollView>
                 ) : (
