@@ -9,7 +9,7 @@ export default function NetworkError({ color }) {
             style={[styles.errorView, { backgroundColor: color }]}
         >
             <Text style={styles.errorText}>
-                {color === 'green' ? 'Connection estabilished' : 'Trying to connect'}
+                {color === 'green' ? 'Connection established.' : 'Trying to connect...'}
             </Text>
         </View>
     );
