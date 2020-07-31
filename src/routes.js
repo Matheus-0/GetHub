@@ -77,7 +77,11 @@ function Routes({ isFirstLaunch, networkAvailable }) {
                             headerLeft: () => (
                                 <TouchableHighlight
                                     onPress={() => navigation.goBack()}
-                                    style={{ paddingHorizontal: 15, paddingVertical: 12 }}
+                                    style={{
+                                        justifyContent: 'center',
+                                        height: '100%',
+                                        paddingHorizontal: 15,
+                                    }}
                                     underlayColor="transparent"
                                 >
                                     <Ionicons name="ios-arrow-back" size={24} color={colors.softYellow} />

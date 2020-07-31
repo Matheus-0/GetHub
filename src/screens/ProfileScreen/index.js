@@ -84,7 +84,7 @@ export default class ProfileScreen extends React.Component {
                         <Text style={styles.publicText}>PUBLIC REPOSITORIES</Text>
 
                         {userRepositories.length > 0 && (
-                            <ScrollView
+                            <View
                                 style={{ width: '90%' }}
                                 // eslint-disable-next-line max-len
                                 // contentContainerStyle={{ alignItems: 'stretch', paddingBottom: 20, paddingHorizontal: 20 }}
@@ -92,7 +92,7 @@ export default class ProfileScreen extends React.Component {
                                 {userRepositories.map((repo) => (
                                     <UserRepository repository={repo} key={repo.id} />
                                 ))}
-                            </ScrollView>
+                            </View>
                         )}
 
                         {userRepositories.length === 0 && (
