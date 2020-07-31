@@ -28,7 +28,7 @@ function UserRepository({ repository }) {
         languageColor = DEFAULT_REPOSITORY_COLOR;
     }
 
-    const darkerLanguageColor = shadeColor(languageColor, -75);
+    const darkerLanguageColor = shadeColor(languageColor || DEFAULT_REPOSITORY_COLOR, -75);
 
     return (
         <TouchableHighlight
