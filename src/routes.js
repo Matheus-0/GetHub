@@ -1,6 +1,8 @@
 import React from 'react';
+import { TouchableHighlight } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { Ionicons } from '@expo/vector-icons';
 
 import NoConnectionScreen from './screens/NoConnectionScreen';
 import ProfileScreen from './screens/ProfileScreen';
@@ -9,6 +11,8 @@ import SecondSearchScreen from './screens/SecondSearchScreen';
 import Showcase1 from './screens/Showcase1';
 import Showcase2 from './screens/Showcase2';
 import Showcase3 from './screens/Showcase3';
+
+import colors from './data/colors';
 
 const MainStack = createStackNavigator();
 
@@ -68,14 +72,26 @@ function Routes({ isFirstLaunch, networkAvailable }) {
                     name="ProfileScreen"
                     component={ProfileScreen}
                     options={
-                        ({ route }) => ({
+                        ({ navigation, route }) => ({
                             title: route.params.username,
+                            headerLeft: () => (
+                                <TouchableHighlight
+                                    onPress={() => navigation.goBack()}
+                                    style={{ paddingHorizontal: 15, paddingVertical: 12 }}
+                                    underlayColor="transparent"
+                                >
+                                    <Ionicons name="ios-arrow-back" size={24} color={colors.softYellow} />
+                                </TouchableHighlight>
+                            ),
                             headerStyle: {
-                                backgroundColor: '#1f2a2f',
+                                backgroundColor: '#282828',
+                                height: 75,
                             },
-                            headerTintColor: 'white',
+                            headerTintColor: 'yellow',
                             headerTitleStyle: {
                                 color: 'white',
+                                fontSize: 15,
+                                fontWeight: '100',
                             },
                         })
                     }

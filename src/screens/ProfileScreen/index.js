@@ -55,7 +55,7 @@ export default class ProfileScreen extends React.Component {
                 {!loading ? (
                     <ScrollView
                         style={{ flex: 1 }}
-                        contentContainerStyle={{ alignItems: 'center', paddingTop: 10 }}
+                        contentContainerStyle={{ alignItems: 'center', paddingTop: 20 }}
                     >
                         <UserBasicData
                             avatar={userInfo.avatar_url}
