@@ -27,6 +27,7 @@ export default function LoginScreen({ navigation }) {
                 nextScreenName={null}
             />
             <TouchableOpacity
+                activeOpacity={0.7}
                 onPress={() => goToSearchScreen()}
                 style={styles.touchable}
             >
