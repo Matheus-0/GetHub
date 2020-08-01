@@ -7,7 +7,7 @@ import NetInfo from '@react-native-community/netinfo';
 
 import Routes from './src/routes';
 
-import NetworkError from './src/components/NetworkError';
+import NetworkStatus from './src/components/NetworkStatus';
 
 export default class App extends React.Component {
     constructor(props) {
@@ -86,15 +86,16 @@ export default class App extends React.Component {
                     style="light"
                     translucent
                 />
+
                 <Routes
                     isFirstLaunch={firstLaunch}
                     networkAvailable={networkAvailable}
                 />
 
                 {this.state.showStatus && (
-                    <NetworkError
+                    <NetworkStatus
                         color={networkAvailable ? this.state.connectedColor : this.state.errorColor}
-                        connected={networkAvailable}
+                        text={networkAvailable ? 'Connection established.' : 'No connection.'}
                     />
                 )}
             </>
