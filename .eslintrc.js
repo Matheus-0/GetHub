@@ -17,8 +17,10 @@ module.exports = {
         'react',
     ],
     rules: {
-        indent: ['error', 4, { SwitchCase: 1 }],
+        'class-methods-use-this': 0,
         'func-names': 0,
+        'global-require': 0,
+        indent: ['error', 4, { SwitchCase: 1 }],
         'linebreak-style': 0,
         'no-alert': 0,
         'no-unused-vars': 0,
