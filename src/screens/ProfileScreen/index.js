@@ -27,6 +27,7 @@ export default class ProfileScreen extends React.Component {
             userInfo: '',
             username: this.props.route.params.username,
             userRepositories: '',
+            error: false,
         };
     }
 
@@ -36,16 +37,18 @@ export default class ProfileScreen extends React.Component {
         const userInfo = await getUser(username);
         const userRepositories = await getUserRepositories(username);
 
-        this.setState({ userInfo });
-        this.setState({ userRepositories });
-        this.setState({ loading: false });
+        if (!username || !userRepositories) {
+            this.setState({ error: true });
+        } else {
+            this.setState({ userInfo, userRepositories, loading: false, error: false });
+        }
     }
 
     render() {
-        const { loading, userInfo, userRepositories } = this.state;
+        const { loading, userInfo, userRepositories, error } = this.state;
 
         return (
-            <View style={{ flex: 1 }}>
+            {!error ? <View style={{ flex: 1 }}>
                 <LinearGradient
                     colors={['#1e1e1e', '#0f0f0f']}
                     start={[0.6, 0.3]}
