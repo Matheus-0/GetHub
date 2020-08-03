@@ -116,7 +116,7 @@ export default class ProfileScreen extends React.Component {
                         )}
                     </>
                 ) : (
-                    <NothingFound />
+                    <NothingFound text="No internet connection." />
                 )}
             </View>
         );
