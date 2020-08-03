@@ -15,6 +15,11 @@ import { searchUsers, searchRepositories } from '../../api/api';
 import styles from './styles';
 import colors from '../../data/colors';
 
+function handleScrollChange({ nativeEvent }) {
+    const { contentOffset, contentSize, layoutMeasurement } = nativeEvent;
+    console.log(contentOffset)
+} 
+
 export default class SecondSearchScreen extends React.Component {
     constructor(props) {
         super(props);
@@ -140,7 +145,10 @@ export default class SecondSearchScreen extends React.Component {
                         <View style={{ flex: 9 }}>
                             {this.state.searchItems.items.length
                                 ? (
-                                    <ScrollView contentContainerStyle={styles.scrollView}>
+                                    <ScrollView
+                                        contentContainerStyle={styles.scrollView} 
+                                        onScroll={({ nativeEvent }) => handleScrollChange(nativeEvent)}
+                                    >
                                         {this.state.searchItems.items.map(
                                             this.state.option === 'user' ? this.mapUser : this.mapRepo,
                                         )}
