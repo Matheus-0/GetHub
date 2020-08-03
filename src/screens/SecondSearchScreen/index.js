@@ -33,9 +33,9 @@ export default class SecondSearchScreen extends React.Component {
     }
 
     handleScrollChange(nativeEvent) {
-        //Offset to start a new request. it is a random number, i'll test what is the best option here.
+        // Offset to start a new request. it is a random number, i'll test what is the best option here.
         const scrollOffset = 150;
-        const { contentOffset, contentSize, layoutMeasurement } = nativeEvent;  
+        const { contentOffset, contentSize, layoutMeasurement } = nativeEvent;
         const pointerPosition = contentOffset.y + layoutMeasurement.height + scrollOffset;
         if (pointerPosition >= contentSize.height) {
             const data = this.state.searchItems;
@@ -93,7 +93,6 @@ export default class SecondSearchScreen extends React.Component {
                         data = await searchUsers(query);
                         break;
                 }
-
                 if (data) this.setState({ prevSearch: query, searchItems: data, loading: false });
             }
         }, 500);
@@ -154,7 +153,7 @@ export default class SecondSearchScreen extends React.Component {
                             {this.state.searchItems.items.length
                                 ? (
                                     <ScrollView
-                                        contentContainerStyle={styles.scrollView} 
+                                        contentContainerStyle={styles.scrollView}
                                         // onScroll={({ nativeEvent }) => this.handleScrollChange(nativeEvent)}
                                     >
                                         {this.state.searchItems.items.map(

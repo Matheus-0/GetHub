@@ -9,7 +9,11 @@ import styles from './styles';
 
 export default class UserContainer extends React.Component {
     handleUserClick(username) {
-        this.props.navigation.navigate('ProfileScreen', { username });
+        try {
+            this.props.navigation.navigate('ProfileScreen', { username });
+        } catch(error) {
+            console.log(error)
+        }
     }
 
     render() {

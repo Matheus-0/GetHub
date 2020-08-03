@@ -17,6 +17,7 @@ import openOnBrowser from '../../utils/openOnBrowser';
 import shadeColor from '../../utils/shadeColor';
 
 import { getUser, getUserRepositories } from '../../api/api';
+import NothingFound from '../../components/NothingFound';
 
 export default class ProfileScreen extends React.Component {
     constructor(props) {
@@ -40,73 +41,82 @@ export default class ProfileScreen extends React.Component {
         if (!username || !userRepositories) {
             this.setState({ error: true });
         } else {
-            this.setState({ userInfo, userRepositories, loading: false, error: false });
+            this.setState({
+                userInfo, userRepositories, loading: false, error: false,
+            });
         }
     }
 
     render() {
-        const { loading, userInfo, userRepositories, error } = this.state;
+        const {
+            loading, userInfo, userRepositories, error,
+        } = this.state;
 
         return (
-            {!error ? <View style={{ flex: 1 }}>
+            <View style={{ flex: 1 }}>
                 <LinearGradient
                     colors={['#1e1e1e', '#0f0f0f']}
                     start={[0.6, 0.3]}
                     end={[0.3, 0.7]}
                     style={styles.gradient}
                 />
-
-                {!loading ? (
-                    <ScrollView
-                        style={{ flex: 1 }}
-                        contentContainerStyle={{ alignItems: 'center', paddingTop: 20 }}
-                    >
-                        <UserBasicData
-                            avatar={userInfo.avatar_url}
-                            bio={userInfo.bio}
-                            location={userInfo.location}
-                            style={{ marginBottom: 30 }}
-                            username={userInfo.name ? userInfo.name : userInfo.login}
-                        />
-
-                        <UserNumbers
-                            followers={userInfo.followers}
-                            following={userInfo.following}
-                            repositories={userInfo.public_repos}
-                            style={{ marginBottom: 30, width: '90%' }}
-                        />
-
-                        <TouchableHighlight
-                            onPress={() => openOnBrowser(userInfo.html_url)}
-                            style={styles.openProfileTouchable}
-                            underlayColor={shadeColor(colors.hardYellow, -25)}
-                        >
-                            <Text style={styles.openProfileText}>OPEN PROFILE</Text>
-                        </TouchableHighlight>
-
-                        <Text style={styles.publicText}>PUBLIC REPOSITORIES</Text>
-
-                        {userRepositories.length > 0 && (
-                            <View
-                                style={{ width: '90%' }}
-                                // eslint-disable-next-line max-len
-                                // contentContainerStyle={{ alignItems: 'stretch', paddingBottom: 20, paddingHorizontal: 20 }}
+                {!error ? (
+                    <>
+                        {!loading ? (
+                            <ScrollView
+                                style={{ flex: 1 }}
+                                contentContainerStyle={{ alignItems: 'center', paddingTop: 20 }}
                             >
-                                {userRepositories.map((repo) => (
-                                    <UserRepository repository={repo} key={repo.id} />
-                                ))}
-                            </View>
-                        )}
+                                <UserBasicData
+                                    avatar={userInfo.avatar_url}
+                                    bio={userInfo.bio}
+                                    location={userInfo.location}
+                                    style={{ marginBottom: 30 }}
+                                    username={userInfo.name ? userInfo.name : userInfo.login}
+                                />
 
-                        {userRepositories.length === 0 && (
-                            <View style={{ alignItems: 'center', marginTop: 15 }}>
-                                <Feather name="alert-circle" size={100} style={{ marginBottom: 15 }} color="white" />
-                                <Text style={{ color: 'white' }}>No repositories found.</Text>
-                            </View>
+                                <UserNumbers
+                                    followers={userInfo.followers}
+                                    following={userInfo.following}
+                                    repositories={userInfo.public_repos}
+                                    style={{ marginBottom: 30, width: '90%' }}
+                                />
+
+                                <TouchableHighlight
+                                    onPress={() => openOnBrowser(userInfo.html_url)}
+                                    style={styles.openProfileTouchable}
+                                    underlayColor={shadeColor(colors.hardYellow, -25)}
+                                >
+                                    <Text style={styles.openProfileText}>OPEN PROFILE</Text>
+                                </TouchableHighlight>
+
+                                <Text style={styles.publicText}>PUBLIC REPOSITORIES</Text>
+
+                                {userRepositories.length > 0 && (
+                                    <View
+                                        style={{ width: '90%' }}
+                                        // eslint-disable-next-line max-len
+                                        // contentContainerStyle={{ alignItems: 'stretch', paddingBottom: 20, paddingHorizontal: 20 }}
+                                    >
+                                        {userRepositories.map((repo) => (
+                                            <UserRepository repository={repo} key={repo.id} />
+                                        ))}
+                                    </View>
+                                )}
+
+                                {userRepositories.length === 0 && (
+                                    <View style={{ alignItems: 'center', marginTop: 15 }}>
+                                        <Feather name="alert-circle" size={100} style={{ marginBottom: 15 }} color="white" />
+                                        <Text style={{ color: 'white' }}>No repositories found.</Text>
+                                    </View>
+                                )}
+                            </ScrollView>
+                        ) : (
+                            <LoadingStatus style={{ flex: 1 }} text="Loading profile..." />
                         )}
-                    </ScrollView>
+                    </>
                 ) : (
-                    <LoadingStatus style={{ flex: 1 }} text="Loading profile..." />
+                    <NothingFound />
                 )}
             </View>
         );
