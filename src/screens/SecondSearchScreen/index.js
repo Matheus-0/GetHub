@@ -42,11 +42,7 @@ export default class SecondSearchScreen extends React.Component {
             data.items = [...data.items, data.items[1]];
 
             this.setState({ searchItems: data });
-            //console.log(this.state.searchItems)
         }
-        //contentsize.y
-        //contentoffset.y
-        //layoutMeasurement.height
     }
 
     mapUser(user) {
@@ -159,7 +155,7 @@ export default class SecondSearchScreen extends React.Component {
                                 ? (
                                     <ScrollView
                                         contentContainerStyle={styles.scrollView} 
-                                        onScroll={({ nativeEvent }) => this.handleScrollChange(nativeEvent)}
+                                        // onScroll={({ nativeEvent }) => this.handleScrollChange(nativeEvent)}
                                     >
                                         {this.state.searchItems.items.map(
                                             this.state.option === 'user' ? this.mapUser : this.mapRepo,
