@@ -15,9 +15,14 @@ import { searchUsers, searchRepositories } from '../../api/api';
 import styles from './styles';
 import colors from '../../data/colors';
 
-function handleScrollChange({ nativeEvent }) {
+function handleScrollChange(nativeEvent) {
+    const scrollOffset = 30;
     const { contentOffset, contentSize, layoutMeasurement } = nativeEvent;
-    console.log(contentOffset)
+    console.log(contentSize.height, contentOffset.y, layoutMeasurement.height)
+
+    //contentsize.y
+    //contentoffset.y
+    //layoutMeasurement.height
 } 
 
 export default class SecondSearchScreen extends React.Component {
