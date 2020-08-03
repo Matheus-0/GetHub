@@ -16,9 +16,12 @@ import styles from './styles';
 import colors from '../../data/colors';
 
 function handleScrollChange(nativeEvent) {
-    const scrollOffset = 30;
+    //Offset to start a new request. it is a random number, i'll test what is the best option here.
+    const scrollOffset = 150;
     const { contentOffset, contentSize, layoutMeasurement } = nativeEvent;
-    console.log(contentSize.height, contentOffset.y, layoutMeasurement.height)
+
+    const pointerPosition = contentOffset.y + layoutMeasurement.height + scrollOffset;
+    console.log(pointerPosition, contentSize.height)
 
     //contentsize.y
     //contentoffset.y
