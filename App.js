@@ -1,11 +1,13 @@
 import React from 'react';
+import { AppLoading } from 'expo';
+import { Asset } from 'expo-asset';
 import { StatusBar } from 'expo-status-bar';
 import AsyncStorage from '@react-native-community/async-storage';
 import NetInfo from '@react-native-community/netinfo';
 
 import Routes from './src/routes';
 
-import NetworkError from './src/components/NetworkError';
+import NetworkStatus from './src/components/NetworkStatus';
 
 export default class App extends React.Component {
     constructor(props) {
@@ -13,11 +15,12 @@ export default class App extends React.Component {
 
         this.state = {
             connectedColor: 'green',
+            errorColor: 'red',
             firstLaunch: false,
+            interval: null,
+            isReady: false,
             networkAvailable: true,
             showStatus: false,
-            errorColor: 'red',
-            interval: null,
         };
     }
 
@@ -51,8 +54,31 @@ export default class App extends React.Component {
         }
     }
 
+    async cacheResourcesAsync() {
+        const images = [
+            require('./assets/favicon.png'),
+            require('./assets/icon.png'),
+            require('./assets/logo.png'),
+            require('./assets/splash.png'),
+        ];
+
+        const cacheImages = images.map((image) => Asset.fromModule(image).downloadAsync());
+
+        return Promise.all(cacheImages);
+    }
+
     render() {
-        const { firstLaunch, networkAvailable } = this.state;
+        const { firstLaunch, isReady, networkAvailable } = this.state;
+
+        if (!isReady) {
+            // Add an AppLoading in case it's needed later
+            return (
+                <AppLoading
+                    startAsync={this.cacheResourcesAsync}
+                    onFinish={() => this.setState({ isReady: true })}
+                />
+            );
+        }
 
         return (
             <>
@@ -61,22 +87,15 @@ export default class App extends React.Component {
                     translucent
                 />
 
-                {!firstLaunch ? (
-                    <Routes
-                        isFirstLaunch
-                        networkAvailable={networkAvailable}
-                    />
-                ) : (
-                    <Routes
-                        isFirstLaunch={false}
-                        networkAvailable={networkAvailable}
-                    />
-                )}
+                <Routes
+                    isFirstLaunch={firstLaunch}
+                    networkAvailable={networkAvailable}
+                />
 
                 {this.state.showStatus && (
-                    <NetworkError
+                    <NetworkStatus
                         color={networkAvailable ? this.state.connectedColor : this.state.errorColor}
-                        connected={networkAvailable}
+                        text={networkAvailable ? 'Connection established.' : 'No connection.'}
                     />
                 )}
             </>

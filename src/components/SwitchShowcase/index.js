@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, TouchableOpacity } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
 import styles from './styles';
@@ -20,16 +20,16 @@ export default function SwitchShowcase({ navigation, prevScreenName = null, next
         <View style={styles.buttons}>
             <TouchableOpacity
                 onPress={() => leftActionHandler(prevScreenName, navigation)}
-                disabled={prevScreenName == null}
+                disabled={prevScreenName === null}
             >
-                <Feather color="#fff" size={32} name="chevrons-left" />
+                {prevScreenName && <Feather color="#fff" size={32} name="chevrons-left" />}
             </TouchableOpacity>
 
             <TouchableOpacity
                 onPress={() => rightActionHandler(nextScreenName, navigation)}
-                disabled={nextScreenName == null}
+                disabled={nextScreenName === null}
             >
-                <Feather color="#fff" size={32} name="chevrons-right" />
+                {nextScreenName && <Feather color="#fff" size={32} name="chevrons-right" />}
             </TouchableOpacity>
         </View>
     );
