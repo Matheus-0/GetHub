@@ -15,19 +15,6 @@ import { searchUsers, searchRepositories } from '../../api/api';
 import styles from './styles';
 import colors from '../../data/colors';
 
-function handleScrollChange(nativeEvent) {
-    //Offset to start a new request. it is a random number, i'll test what is the best option here.
-    const scrollOffset = 150;
-    const { contentOffset, contentSize, layoutMeasurement } = nativeEvent;
-
-    const pointerPosition = contentOffset.y + layoutMeasurement.height + scrollOffset;
-    console.log(pointerPosition, contentSize.height)
-
-    //contentsize.y
-    //contentoffset.y
-    //layoutMeasurement.height
-} 
-
 export default class SecondSearchScreen extends React.Component {
     constructor(props) {
         super(props);
@@ -39,10 +26,27 @@ export default class SecondSearchScreen extends React.Component {
             searchItems: this.props.route.params.users,
             timeout: 0,
         };
-
+        this.handleScrollChange = this.handleScrollChange.bind(this);
         this.mapRepo = this.mapRepo.bind(this);
         this.mapUser = this.mapUser.bind(this);
         this.handleKeyboardSubmit = this.handleKeyboardSubmit.bind(this);
+    }
+
+    handleScrollChange(nativeEvent) {
+        //Offset to start a new request. it is a random number, i'll test what is the best option here.
+        const scrollOffset = 150;
+        const { contentOffset, contentSize, layoutMeasurement } = nativeEvent;  
+        const pointerPosition = contentOffset.y + layoutMeasurement.height + scrollOffset;
+        if (pointerPosition >= contentSize.height) {
+            const data = this.state.searchItems;
+            data.items = [...data.items, data.items[1]];
+
+            this.setState({ searchItems: data });
+            //console.log(this.state.searchItems)
+        }
+        //contentsize.y
+        //contentoffset.y
+        //layoutMeasurement.height
     }
 
     mapUser(user) {
@@ -155,7 +159,7 @@ export default class SecondSearchScreen extends React.Component {
                                 ? (
                                     <ScrollView
                                         contentContainerStyle={styles.scrollView} 
-                                        onScroll={({ nativeEvent }) => handleScrollChange(nativeEvent)}
+                                        onScroll={({ nativeEvent }) => this.handleScrollChange(nativeEvent)}
                                     >
                                         {this.state.searchItems.items.map(
                                             this.state.option === 'user' ? this.mapUser : this.mapRepo,
