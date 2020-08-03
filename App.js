@@ -60,10 +60,18 @@ export default class App extends React.Component {
                     style="light"
                     translucent
                 />
-                <Routes
-                    isFirstLaunch={firstLaunch}
-                    networkAvailable={networkAvailable}
-                />
+
+                {!firstLaunch ? (
+                    <Routes
+                        isFirstLaunch
+                        networkAvailable={networkAvailable}
+                    />
+                ) : (
+                    <Routes
+                        isFirstLaunch={false}
+                        networkAvailable={networkAvailable}
+                    />
+                )}
 
                 {this.state.showStatus && (
                     <NetworkError
