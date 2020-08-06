@@ -2,12 +2,8 @@
     <img alt="GetHub" src=".github/logo.png" width="200px" />
 </h1>
 
-<div style="background-color: #c5c5c5; 
-padding: 20px 20px; margin: 20px; border-radius: 10px; display: grid;grid-template-columns: 
-repeat(3, 1fr); row-gap: 20px; column-gap: 10px">
-  <img alt="" src=".github/phone1.png" />
-  <img alt="" src=".github/phone2.png" />
-  <img alt="" src=".github/phone3.png" />
+<div align="center">
+  <img alt="" src=".github/phone1.png" width= "200px" />
 </div>
 
 <p align="center">
