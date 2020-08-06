@@ -3,14 +3,14 @@
 </h1>
 
 <div align="center">
-  <img alt="" src=".github/phone1.png" width= "200px" />
+  <img alt="Preview!" src=".github/preview.png" />
 </div>
 
 <p align="center">
     An application used for seeing user information and repositories from GitHub.
 </p>
 
-## :rocket: Built With
+## :rocket: Technologies
 
 - [ESLint](https://eslint.org/)
 - [Expo](https://expo.io/)
