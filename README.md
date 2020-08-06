@@ -2,13 +2,6 @@
     <img alt="GetHub" src=".github/logo.png" width="200px" />
 </h1>
 
-<style>
-  img {
-    padding: 0;
-    margin: 0;
-  }
-</style>
-
 <div style="background-color: #c5c5c5; 
 padding: 20px 20px; margin: 20px; border-radius: 10px; display: grid;grid-template-columns: 
 repeat(3, 1fr); row-gap: 20px; column-gap: 10px">
