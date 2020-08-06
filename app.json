@@ -23,6 +23,10 @@
       "buildNumber": "1.0.1"
     },
     "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#0a0a0a",
+        "foregroundImage": "./assets/iconAndroid.png"
+      },
       "package": "com.programminggods.gethub",
       "versionCode": 2
     },
