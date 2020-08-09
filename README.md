@@ -12,6 +12,8 @@
 
 ## :rocket: Technologies
 
+This project was developed with the following technologies:
+
 - [ESLint](https://eslint.org/)
 - [Expo](https://expo.io/)
 - [React Native](https://reactnative.dev/)
@@ -23,41 +25,18 @@ Extras:
 
 ## :thinking: Contributing
 
-- Fork this repository;
-- Create a branch with your feature (`git checkout -b my-feature`);
-- Commit your changes (`git commit -m 'Add my feature!'`);
-- Push to your branch (`git push origin my-feature`);
-- Create a pull request.
+1. Fork this repository.
+2. Create a branch with your feature (`git checkout -b my-feature`).
+3. Commit your changes (`git commit -m 'Add my feature!'`).
+4. Push to your branch (`git push origin my-feature`).
+5. Create a pull request.
 
 ## :memo: License
 
 This project is under the MIT license. See the [LICENSE](LICENSE.md) file for more details.
 
-## Made with :heart: by:
+## :heart: Contributors:
 
-<table width="100%">
-  <tr>
-    <td align="center" width="500">
-      <a href="https://github.com/Dywyll">
-        <img src="https://avatars3.githubusercontent.com/u/57298342?s=400&u=d871893b24a05d395aaa0159649a09f70553ba76&v=4" height="auto" width="175">
-      </a>
-      <h3>Matheus Alves</h3>
-      <p>
-        Developer
-        <br>
-        Majoring in Computer Engineering at IFPB
-      </p>
-    </td>
-    <td align="center" width="500">
-      <a href="https://github.com/Elismar13">
-        <img src="https://avatars3.githubusercontent.com/u/49734800?s=460&u=80e44f6df8df52b72d9de74fa6492fbd05e84aab&v=4" height="auto" width="175">
-      </a>
-      <h3>Elismar Silva</h3>
-      <p>
-        Developer
-        <br>
-        Majoring in Computer Engineering at IFPB
-      </p>
-    </td>
-  </tr>
-</table>
+<a href="https://github.com/Dywyll/GetHub/graphs/contributors">
+<img src="https://contributors-img.web.app/image?repo=Dywyll/GetHub" />
+</a>
