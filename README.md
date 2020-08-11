@@ -37,6 +37,6 @@ This project is under the MIT license. See the [LICENSE](LICENSE.md) file for mo
 
 ## :heart: Contributors
 
-<a href="https://github.com/Dywyll/GetHub/graphs/contributors">
-<img src="https://contributors-img.web.app/image?repo=Dywyll/GetHub" />
+<a href="https://github.com/OneGwynn/GetHub/graphs/contributors">
+  <img src="https://contributors-img.web.app/image?repo=OneGwynn/GetHub" />
 </a>
